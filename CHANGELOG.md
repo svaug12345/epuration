@@ -1,5 +1,9 @@
 # Journal des versions
 
+## v0.7.0 — 4 novembre 2026
+
+Une vidéo de 4 à 5 minutes par module, avec la voix SebastienV, en français, et une signature discrète.
+
 ## v0.6.0 — 4 novembre 2026
 
 Une présentation PowerPoint par module, téléchargeable depuis sa page, avec la voix off dans les notes. Schémas corrigés (azote, boues activées, courbe de Monod recalculée). Consignes et feuille de route à jour.
