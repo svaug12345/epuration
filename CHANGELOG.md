@@ -1,5 +1,9 @@
 # Journal des versions
 
+## v0.3.0 — 4 novembre 2026
+
+Docteur STEP : 7 symptômes, de la question à la cause probable et au remède, avec arbre en données contrôlé par des tests.
+
 ## v0.2.0 — 4 novembre 2026
 
 Calculateur boues activées.
