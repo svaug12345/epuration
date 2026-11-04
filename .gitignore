@@ -1,0 +1,17 @@
+# Le livre source (protégé par le droit d'auteur) et tout extrait privé : JAMAIS sur GitHub
+# (ce dossier contient aussi le logo, qui n'est pas utilisé sur le site, et les notes de travail)
+sources/
+
+# Dossier de transmission : il a servi au démarrage, il n'a pas sa place dans le site public
+transmission-epuration/
+PROMPT-DEMARRAGE.md
+
+# Fichiers de travail pour produire les vidéos (seuls les .mp4 finaux sont publiés)
+outils/travail/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+node_modules/
+__pycache__/
+.venv/
