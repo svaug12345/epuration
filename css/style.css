@@ -1,0 +1,225 @@
+/* Feuille de style unique du site.
+   Principe « mobile d'abord » : les règles de base visent le téléphone,
+   et les @media (min-width) ajoutent de la place sur les grands écrans. */
+
+/* ---------- Couleurs ----------
+   Toutes les couleurs sont des variables : le thème sombre n'a qu'à les redéfinir.
+   L'orange vif #EB690B manque de contraste pour du petit texte sur fond clair :
+   on le garde pour les décors et on utilise --accent-texte pour le texte et les boutons. */
+:root {
+  color-scheme: light;
+  --accent: #eb690b;
+  --accent-texte: #c2540a;
+  --sur-accent: #ffffff;
+  --texte: #2c2a29;
+  --texte-doux: #5f5556;
+  --taupe: #897879;
+  --mauve: #8685bb;
+  --fond: #f6f7f8;
+  --carte: #ffffff;
+  --bord: #d8d8d8;
+  --attention-fond: #fdf0e6;
+  --danger: #b3261e;
+  --danger-fond: #fbeceb;
+  --info-fond: #efeff7;
+  --ok: #2e7d32;
+  --ok-fond: #eaf4ea;
+}
+
+/* Le thème sombre suit le téléphone, sauf si la personne a choisi le thème clair. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='clair']) {
+    color-scheme: dark;
+    --accent: #f08a3c;
+    --accent-texte: #f5a163;
+    --sur-accent: #2c2a29;
+    --texte: #f1eeed;
+    --texte-doux: #c9c1c2;
+    --taupe: #b5a6a7;
+    --mauve: #b0afdb;
+    --fond: #1d1c1b;
+    --carte: #2c2a29;
+    --bord: #4a4644;
+    --attention-fond: #40291a;
+    --danger: #f2a39d;
+    --danger-fond: #43221f;
+    --info-fond: #2f2e3f;
+    --ok: #9bd29e;
+    --ok-fond: #223423;
+  }
+}
+:root[data-theme='sombre'] {
+  color-scheme: dark;
+  --accent: #f08a3c;
+  --accent-texte: #f5a163;
+  --sur-accent: #2c2a29;
+  --texte: #f1eeed;
+  --texte-doux: #c9c1c2;
+  --taupe: #b5a6a7;
+  --mauve: #b0afdb;
+  --fond: #1d1c1b;
+  --carte: #2c2a29;
+  --bord: #4a4644;
+  --attention-fond: #40291a;
+  --danger: #f2a39d;
+  --danger-fond: #43221f;
+  --info-fond: #2f2e3f;
+  --ok: #9bd29e;
+  --ok-fond: #223423;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+main { max-width: 52rem; margin: 0 auto; padding: 1rem 1rem 3rem; }
+h1, h2, h3 { line-height: 1.25; margin: 1.6em 0 .5em; }
+h1 { font-size: 1.75rem; margin-top: .6em; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.1rem; }
+p, ul, ol { margin: 0 0 1em; }
+a { color: var(--accent-texte); }
+img, svg, video { max-width: 100%; height: auto; display: block; }
+:focus-visible { outline: 3px solid var(--mauve); outline-offset: 2px; }
+.intro { font-size: 1.1rem; color: var(--texte-doux); }
+.discret { color: var(--texte-doux); font-size: .875rem; }
+
+/* ---------- En-tête et navigation ---------- */
+.entete {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--carte);
+  border-bottom: 3px solid var(--accent);
+}
+.entete-ligne {
+  max-width: 52rem; margin: 0 auto; padding: .4rem 1rem;
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+}
+.marque { font-weight: 700; font-size: 1.15rem; color: var(--texte); text-decoration: none; padding: .4rem 0; }
+.navigation { display: flex; align-items: center; gap: .1rem; }
+.navigation a {
+  color: var(--texte); text-decoration: none; font-size: .9rem;
+  padding: .6rem .45rem; min-height: 44px; display: inline-flex; align-items: center;
+}
+.navigation a[aria-current='page'] { color: var(--accent-texte); font-weight: 700; }
+.bouton-theme {
+  background: none; border: 1px solid var(--bord); border-radius: 6px; color: var(--texte);
+  min-width: 44px; min-height: 44px; font-size: 1.1rem; cursor: pointer; margin-left: .2rem;
+}
+
+/* ---------- Bandeau « outil pédagogique » ---------- */
+.bandeau {
+  background: var(--attention-fond);
+  border-left: 4px solid var(--accent);
+  padding: .6rem .8rem; margin: 0 0 1rem; font-size: .9rem;
+}
+
+/* ---------- Pied de page ---------- */
+.pied {
+  border-top: 1px solid var(--bord); color: var(--texte-doux); font-size: .8125rem;
+  padding: 1rem; text-align: center;
+}
+.pied p { margin: 0 0 .25rem; }
+.signature { color: var(--taupe); }
+
+/* ---------- Cartes ---------- */
+.cartes { display: grid; gap: .8rem; grid-template-columns: 1fr; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+.carte {
+  background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: 1rem;
+}
+.carte h2, .carte h3 { margin-top: 0; }
+a.carte { display: block; color: inherit; text-decoration: none; border-left: 4px solid var(--accent); }
+a.carte:hover { border-color: var(--accent); }
+a.carte strong { color: var(--accent-texte); display: block; font-size: 1.05rem; margin-bottom: .2rem; }
+a.carte span { color: var(--texte-doux); font-size: .95rem; }
+
+/* ---------- Formulaires ---------- */
+.formulaire { display: grid; gap: .8rem; grid-template-columns: 1fr; }
+.champ label { display: block; font-weight: 700; font-size: .95rem; margin-bottom: .2rem; }
+.champ input, .champ select {
+  width: 100%; min-height: 44px; padding: .5rem .6rem; font: inherit;
+  color: var(--texte); background: var(--fond);
+  border: 1px solid var(--taupe); border-radius: 6px;
+}
+.champ small { color: var(--texte-doux); }
+.bouton {
+  display: inline-block; min-height: 44px; padding: .6rem 1rem; border: 0; border-radius: 6px;
+  background: var(--accent-texte); color: var(--sur-accent); font: inherit; font-weight: 700;
+  cursor: pointer; text-decoration: none;
+}
+.bouton.secondaire { background: none; color: var(--accent-texte); border: 1px solid var(--accent-texte); }
+.boutons { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0 1rem; }
+
+/* ---------- Résultats ---------- */
+.resultats { display: grid; gap: .6rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 1rem 0; }
+.resultat { background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: .7rem; }
+.resultat b { display: block; font-size: 1.3rem; line-height: 1.2; }
+.resultat span { color: var(--texte-doux); font-size: .85rem; display: block; }
+.alerte { border-left: 4px solid var(--taupe); padding: .6rem .8rem; margin: 0 0 .6rem; background: var(--info-fond); border-radius: 0 6px 6px 0; }
+.alerte.danger { border-color: var(--danger); background: var(--danger-fond); }
+.alerte.attention { border-color: var(--accent); background: var(--attention-fond); }
+.alerte.ok { border-color: var(--ok); background: var(--ok-fond); }
+.alerte p { margin: 0; }
+.alerte small { color: var(--texte-doux); display: block; margin-top: .2rem; }
+
+/* ---------- Tableaux : ils défilent seuls, la page ne déborde jamais ---------- */
+.tableau { overflow-x: auto; margin: 0 0 1rem; }
+table { border-collapse: collapse; width: 100%; background: var(--carte); font-size: .95rem; }
+th, td { border: 1px solid var(--bord); padding: .4rem .55rem; text-align: left; }
+th { background: var(--info-fond); }
+
+/* ---------- Curseur et graphique ---------- */
+input[type='range'] { width: 100%; min-height: 44px; accent-color: var(--accent-texte); }
+.graphique { background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: .5rem; margin: 0 0 1rem; }
+.legende { display: flex; flex-wrap: wrap; gap: .3rem .9rem; font-size: .85rem; margin: .3rem .3rem 0; }
+.legende i { display: inline-block; width: 1rem; height: .2rem; vertical-align: middle; margin-right: .3rem; }
+
+/* ---------- Modules : deux niveaux, quiz, cartes de révision ---------- */
+.onglets { display: flex; gap: .4rem; margin: 1rem 0; }
+.onglets button {
+  flex: 1; min-height: 44px; font: inherit; font-weight: 700; cursor: pointer; border-radius: 6px;
+  background: var(--carte); color: var(--texte); border: 1px solid var(--bord);
+}
+.onglets button[aria-selected='true'] { background: var(--accent-texte); color: var(--sur-accent); border-color: var(--accent-texte); }
+.schema { background: #fff; border: 1px solid var(--bord); border-radius: 8px; padding: .5rem; margin: 0 0 .3rem; }
+figure { margin: 0 0 1rem; }
+figcaption { font-size: .85rem; color: var(--texte-doux); }
+.formule { background: var(--info-fond); padding: .5rem .8rem; border-radius: 6px; overflow-x: auto; font-family: Consolas, Menlo, monospace; font-size: .95rem; margin: 0 0 1rem; }
+.memo { border-top: 4px solid var(--mauve); }
+.question { margin: 0 0 1rem; }
+.question fieldset { border: 1px solid var(--bord); border-radius: 8px; background: var(--carte); padding: .8rem; margin: 0; }
+.question legend { font-weight: 700; padding: 0 .3rem; }
+.question label { display: flex; gap: .5rem; align-items: flex-start; padding: .5rem .2rem; min-height: 44px; cursor: pointer; }
+.question input { margin-top: .35rem; flex: none; }
+.correction { margin-top: .5rem; }
+details { background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: .6rem .8rem; margin: 0 0 .8rem; }
+summary { cursor: pointer; font-weight: 700; min-height: 32px; }
+.carte-revision {
+  background: var(--carte); border: 1px solid var(--bord); border-top: 4px solid var(--accent);
+  border-radius: 8px; padding: 1.2rem; min-height: 11rem; margin: 0 0 .8rem;
+}
+
+/* ---------- Grands écrans ---------- */
+@media (min-width: 40rem) {
+  .cartes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .formulaire { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resultats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .navigation a { padding-inline: .6rem; font-size: 1rem; }
+}
+
+/* On respecte le réglage « réduire les animations » du système. */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* À l'impression, on garde le contenu sans la navigation. */
+@media print {
+  .entete, .onglets, .boutons { display: none; }
+}

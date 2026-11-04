@@ -1,0 +1,302 @@
+{
+  "_commentaire": "Toutes les valeurs chiffrées des calculateurs. Numéros de page = pages imprimées du livre. Une règle avec verifie:false est refusée par js/regles.js.",
+  "regles": [
+    {
+      "id": "ba.classes_charge",
+      "libelle": "Classes de charge des boues activées (aération fines bulles injectées à au moins 3 m)",
+      "valeur": [
+        { "nom": "Très faible", "degre": "Minéralisation totale", "cv": 0.18, "cb": 0.05, "o2Min": 2, "o2Max": 2, "bouesProduites": 0.30, "bouesSens": "≤" },
+        { "nom": "Faible", "degre": "Épuration complète et nitrification partielle", "cv": 0.7, "cb": 0.2, "o2Min": 1.3, "o2Max": 1.5, "bouesProduites": 0.75, "bouesSens": "≈" },
+        { "nom": "Moyenne", "degre": "Épuration complète, DBO5 résiduelle d'environ 25 mg/l", "cv": 1.8, "cb": 0.5, "o2Min": 0.7, "o2Max": 1.1, "bouesProduites": 0.9, "bouesSens": "≈" },
+        { "nom": "Forte", "degre": "Épuration complète, DBO5 résiduelle d'environ 40 mg/l", "cv": 3.6, "cb": 1.0, "o2Min": 0.6, "o2Max": 0.8, "bouesProduites": 1.2, "bouesSens": "≈" },
+        { "nom": "Très forte", "degre": "Épuration complète, DBO5 résiduelle d'environ 80 mg/l", "cv": 7.2, "cb": 2.0, "o2Min": 0.3, "o2Max": 0.6, "bouesProduites": 1.4, "bouesSens": "≥" }
+      ],
+      "unite": "cv : kg DBO5/m³.j ; cb : kg DBO5/kg B.j ; o2 : kg O2/kg DBO5 ; boues : kg B/kg DBO5 éliminée",
+      "source": { "ouvrage": "Edeline 1997", "page": 157, "ref": "Tab. 6.I (d'après WLB 1968, R. Köhler)" },
+      "verifie": true
+    },
+    {
+      "id": "ba.effluent",
+      "libelle": "Composition de l'effluent selon la charge des boues",
+      "valeur": {
+        "cb": [0.15, 0.30, 0.50, 1.00],
+        "dbo5": [5, 16, 25, 50],
+        "dco": [20, 50, 70, 120],
+        "nh4": [2.5, 22, 35, 36],
+        "norg": [0.5, 1, 2, 3],
+        "no3": [29, 10, 1, 0],
+        "n2": [10, 7, 2, 0]
+      },
+      "unite": "mg/l ; cb en kg DBO5/kg MS.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 158, "ref": "Tab. 6.III (d'après Beuthe 1970)" },
+      "verifie": true,
+      "remarque": "Cas particulier d'une eau brute décantée à 230 mg/l de DBO5, à lire comme une tendance."
+    },
+    {
+      "id": "ba.age_boues.coefficient",
+      "libelle": "Âge des boues selon la charge : coefficient de θc = a · Cb^n",
+      "valeur": 1.224,
+      "unite": "j",
+      "source": { "ouvrage": "Edeline 1997", "page": 160, "ref": "Éq. 6.39" },
+      "verifie": true
+    },
+    {
+      "id": "ba.age_boues.exposant",
+      "libelle": "Âge des boues selon la charge : exposant de θc = a · Cb^n",
+      "valeur": -1.125,
+      "unite": "sans dimension",
+      "source": { "ouvrage": "Edeline 1997", "page": 160, "ref": "Éq. 6.39" },
+      "verifie": true
+    },
+    {
+      "id": "ba.nitrification.charge_max",
+      "libelle": "Au-delà de cette charge des boues, pas de nitrification",
+      "valeur": 0.35,
+      "unite": "kg DBO5/kg MS.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 161, "ref": "Fig. 6.12" },
+      "verifie": true,
+      "remarque": "Système traditionnel, mélange complet."
+    },
+    {
+      "id": "ba.zone_eviter.min",
+      "libelle": "Début de la plage de charge à éviter (décantation)",
+      "valeur": 0.5,
+      "unite": "kg DBO5/kg B.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 160, "ref": "Texte, d'après Koot 1980" },
+      "verifie": true
+    },
+    {
+      "id": "ba.zone_eviter.max",
+      "libelle": "Fin de la plage de charge à éviter (décantation)",
+      "valeur": 1.0,
+      "unite": "kg DBO5/kg B.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 160, "ref": "Texte, d'après Koot 1980" },
+      "verifie": true
+    },
+    {
+      "id": "ba.gonflement.charge_risque",
+      "libelle": "Au-delà de cette charge, toutes les boues activées risquent de gonfler",
+      "valeur": 0.5,
+      "unite": "kg DBO5/kg MS.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 133, "ref": "Remède n° 4 (écrit 500 g DBO5/kg MS.j)" },
+      "verifie": true
+    },
+    {
+      "id": "ba.age_mauvais.min",
+      "libelle": "Début du domaine d'âge des boues donnant des boues de mauvaise qualité",
+      "valeur": 0.4,
+      "unite": "j",
+      "source": { "ouvrage": "Edeline 1997", "page": 160, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "ba.age_mauvais.max",
+      "libelle": "Fin du domaine d'âge des boues donnant des boues de mauvaise qualité",
+      "valeur": 3,
+      "unite": "j",
+      "source": { "ouvrage": "Edeline 1997", "page": 160, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "ba.age_brulee",
+      "libelle": "Exemple d'âge où la boue est « brûlée » et flocule mal",
+      "valeur": 100,
+      "unite": "j",
+      "source": { "ouvrage": "Edeline 1997", "page": 160, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "nit.mu.coefficient",
+      "libelle": "Taux de croissance des nitrifiants à 15 °C (Downing et Hopwood)",
+      "valeur": 0.47,
+      "unite": "1/j",
+      "source": { "ouvrage": "Edeline 1997", "page": 245, "ref": "Éq. 10.3" },
+      "verifie": true
+    },
+    {
+      "id": "nit.mu.theta",
+      "libelle": "Facteur de température de la croissance des nitrifiants (Downing et Hopwood)",
+      "valeur": 1.103,
+      "unite": "sans dimension",
+      "source": { "ouvrage": "Edeline 1997", "page": 245, "ref": "Éq. 10.3" },
+      "verifie": true
+    },
+    {
+      "id": "nit.temperature_baisse",
+      "libelle": "Température au-delà de laquelle l'activité des nitrifiants diminue",
+      "valeur": 31,
+      "unite": "°C",
+      "source": { "ouvrage": "Edeline 1997", "page": 245, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "nit.o2_reel",
+      "libelle": "Besoin réel en oxygène de la nitrification",
+      "valeur": 4.33,
+      "unite": "g O2/g N",
+      "source": { "ouvrage": "Edeline 1997", "page": 243, "ref": "Texte" },
+      "verifie": true,
+      "remarque": "Besoin théorique : 4,57 g O2/g N."
+    },
+    {
+      "id": "nit.o2_min",
+      "libelle": "Teneur minimale en oxygène pour la flore nitrifiante",
+      "valeur": 1.0,
+      "unite": "mg O2/l",
+      "source": { "ouvrage": "Edeline 1997", "page": 243, "ref": "Tab. 10.I" },
+      "verifie": true
+    },
+    {
+      "id": "denit.methanol_reel",
+      "libelle": "Méthanol nécessaire en pratique pour réduire l'azote nitrique",
+      "valeur": 2.5,
+      "unite": "g CH3OH/g N",
+      "source": { "ouvrage": "Edeline 1997", "page": 227, "ref": "Texte" },
+      "verifie": true,
+      "remarque": "Théorie : 1,90 g/g ; le reste part dans la synthèse cellulaire."
+    },
+    {
+      "id": "denit.nitrate_flottation",
+      "libelle": "Sous cette teneur de nitrate dans l'effluent, les boues flottantes ne se produisent pas",
+      "valeur": 16,
+      "unite": "mg/l de nitrate",
+      "source": { "ouvrage": "Edeline 1997", "page": 226, "ref": "Texte" },
+      "verifie": true,
+      "remarque": "Valeur écrite « environ 16 »."
+    },
+    {
+      "id": "lb.flux_nitrification_lit",
+      "libelle": "Flux à ne pas dépasser pour une nitrification complète (lit ordinaire)",
+      "valeur": 2,
+      "unite": "g DBO5/m².j",
+      "source": { "ouvrage": "Edeline 1997", "page": 107, "ref": "Texte" },
+      "verifie": true,
+      "remarque": "Au-delà, la biomasse n'est pas stabilisée et un décanteur secondaire est indispensable."
+    },
+    {
+      "id": "lb.flux_nitrification_disque",
+      "libelle": "Flux à ne pas dépasser pour une nitrification complète (biodisques)",
+      "valeur": 4,
+      "unite": "g DBO5/m².j",
+      "source": { "ouvrage": "Edeline 1997", "page": 107, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "lb.charge_atv",
+      "libelle": "Charge volumique recommandée par l'ATV",
+      "valeur": 0.4,
+      "unite": "kg DBO5/m³.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 107, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "lb.irrigation_min",
+      "libelle": "Taux d'irrigation minimal souvent cité (lit traditionnel)",
+      "valeur": 0.8,
+      "unite": "m/h",
+      "source": { "ouvrage": "Edeline 1997", "page": 106, "ref": "Texte" },
+      "verifie": true,
+      "remarque": "Des lits à faible charge fonctionnent bien à 0,05-0,25 m/h. Support plastique : 1,4 m/h."
+    },
+    {
+      "id": "lb.rincage_optimum",
+      "libelle": "Force de rinçage optimale",
+      "valeur": 2,
+      "unite": "mm",
+      "source": { "ouvrage": "Edeline 1997", "page": 106, "ref": "Texte, d'après Wolf 1980" },
+      "verifie": true,
+      "remarque": "Trop élevée : le film est arraché. Trop faible : il s'épaissit et des mares se forment."
+    },
+    {
+      "id": "lb.recyclage_inutile",
+      "libelle": "Recyclage à ne pas recommander si la DBO5 de l'eau reste sous cette valeur",
+      "valeur": 150,
+      "unite": "mg O2/l",
+      "source": { "ouvrage": "Edeline 1997", "page": 106, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "meth.age_min",
+      "libelle": "Âge minimal des boues pour une digestion correcte",
+      "valeur": 3,
+      "unite": "j",
+      "source": { "ouvrage": "Edeline 1997", "page": 197, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "meth.age_pratique_min",
+      "libelle": "Âge des boues adopté en pratique : borne basse",
+      "valeur": 10,
+      "unite": "j",
+      "source": { "ouvrage": "Edeline 1997", "page": 197, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "meth.age_pratique_max",
+      "libelle": "Âge des boues adopté en pratique : borne haute",
+      "valeur": 30,
+      "unite": "j",
+      "source": { "ouvrage": "Edeline 1997", "page": 197, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "lag.k_temperature",
+      "libelle": "Constante k d'un bassin facultatif selon la température",
+      "valeur": {
+        "t": [5, 10, 15, 20, 25, 30, 35],
+        "k": [0.10, 0.12, 0.24, 0.35, 0.53, 0.80, 1.20]
+      },
+      "unite": "t en °C ; k en 1/j",
+      "source": { "ouvrage": "Edeline 1997", "page": 263, "ref": "Tab. 12.I" },
+      "verifie": true
+    },
+    {
+      "id": "lag.rendement_fiable",
+      "libelle": "Rendement en DBO5 en dessous duquel les prévisions du modèle sont acceptables",
+      "valeur": 90,
+      "unite": "%",
+      "source": { "ouvrage": "Edeline 1997", "page": 263, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "lag.charge_courante",
+      "libelle": "Charge surfacique à retenir",
+      "valeur": 100,
+      "unite": "kg DBO5/ha.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 267, "ref": "Texte (plage 10 à 350)" },
+      "verifie": true
+    },
+    {
+      "id": "lag.charge_max",
+      "libelle": "Haut de la plage de charge surfacique citée",
+      "valeur": 350,
+      "unite": "kg DBO5/ha.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 267, "ref": "Texte" },
+      "verifie": true
+    },
+    {
+      "id": "lag.surface_par_eh",
+      "libelle": "Surface de bassin par équivalent-habitant",
+      "valeur": 5,
+      "unite": "m²/EH",
+      "source": { "ouvrage": "Edeline 1997", "page": 267, "ref": "Texte" },
+      "verifie": true,
+      "remarque": "La norme allemande, jugée sévère, demande 10 m²/EH."
+    },
+    {
+      "id": "choix.garanties",
+      "libelle": "Charge volumique à ne pas dépasser pour garantir une DBO5 de sortie",
+      "valeur": [
+        { "procede": "Lit bactérien", "dbo80": 30, "dboMoyenne": 15, "cvMax": 0.35 },
+        { "procede": "Lit bactérien", "dbo80": 35, "dboMoyenne": 20, "cvMax": 0.50 },
+        { "procede": "Lit bactérien", "dbo80": 45, "dboMoyenne": 25, "cvMax": 0.65 },
+        { "procede": "Boues activées", "dbo80": 25, "dboMoyenne": 15, "cvMax": 0.80 },
+        { "procede": "Boues activées", "dbo80": 35, "dboMoyenne": 20, "cvMax": 1.60 }
+      ],
+      "unite": "dbo en mg O2/l ; cvMax en kg DBO5/m³.j",
+      "source": { "ouvrage": "Edeline 1997", "page": 294, "ref": "Appendice" },
+      "verifie": true,
+      "remarque": "dbo80 : valeur que 80 % des mesures de sortie ne dépassent pas."
+    }
+  ]
+}

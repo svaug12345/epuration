@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources et mentions</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="img/icone.svg" type="image/svg+xml">
+  <script type="module" src="js/ui/habillage.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Sources et mentions</h1>
+
+    <h2>Nature du projet</h2>
+    <p>Ce site est un projet personnel indépendant, sans lien avec une entreprise, réalisé par JM T.
+      C'est un outil pédagogique : il ne remplace pas une étude de dimensionnement,
+      et ses résultats ne doivent pas servir seuls à concevoir ou à piloter une installation.</p>
+
+    <h2>Source principale</h2>
+    <p>F. Edeline, <cite>L'épuration biologique des eaux — Théorie &amp; technologie des réacteurs</cite>,
+      4e édition, Cebedoc, 1997. Le site reprend des faits, des formules et des ordres de grandeur en citant la page.
+      Les textes sont rédigés avec nos propres mots et les schémas sont redessinés. Le livre n'est pas diffusé ici.</p>
+    <p>Chaque valeur des calculateurs figure dans
+      <a href="data/regles.json">le fichier des règles</a>, avec sa page et son statut de vérification.
+      Une valeur non vérifiée y est refusée par le code.</p>
+
+    <h2>Limites à connaître</h2>
+    <ul>
+      <li>Le livre date de 1997. Ses fondamentaux tiennent, mais ses normes de rejet sont anciennes
+        et il ne couvre pas les procédés récents (voir le module 7).</li>
+      <li>Les tableaux du livre donnent des points de repère issus de cas particuliers.
+        Entre deux points, les calculateurs interpolent, ce qui reste une approximation.</li>
+      <li>Les résumés réglementaires ne remplacent pas les textes officiels, qui évoluent.</li>
+    </ul>
+
+    <h2>Sources complémentaires</h2>
+    <ul>
+      <li><a href="https://aida.ineris.fr/node/28428" rel="noopener">Arrêté du 21 juillet 2015, texte consolidé (AIDA, INERIS)</a></li>
+      <li><a href="https://eur-lex.europa.eu/eli/dir/2024/3019/oj/fra" rel="noopener">Directive (UE) 2024/3019 relative au traitement des eaux urbaines résiduaires (EUR-Lex)</a></li>
+      <li><a href="https://assainissement.developpement-durable.gouv.fr/pages/documents/MTE-DERU-4p-A5_SR-V6.pdf" rel="noopener">Plaquette du ministère sur la directive révisée</a></li>
+      <li><a href="https://ofb.gouv.fr/gestion-des-pollutions-urbaines" rel="noopener">Office français de la biodiversité : guides sur les pollutions urbaines</a></li>
+    </ul>
+
+    <h2>Crédits</h2>
+    <p>Voix des vidéos générée avec ElevenLabs. Le code est sous licence MIT ;
+      les textes, schémas, présentations et vidéos restent protégés (tous droits réservés).</p>
+  </main>
+</body>
+</html>

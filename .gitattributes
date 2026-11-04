@@ -1,0 +1,5 @@
+# Fins de ligne identiques partout, pour éviter de faux changements entre Windows et GitHub
+* text=auto eol=lf
+*.png binary
+*.mp4 binary
+*.pptx binary
