@@ -1,4 +1,4 @@
-// Tests de cohérence de data/regles.json, à lancer avec : node --test tests/
+// Tests de cohérence de data/regles.json, à lancer avec : node --test
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';

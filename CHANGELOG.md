@@ -1,5 +1,14 @@
 # Journal des versions
 
+## v0.2.0 — 4 novembre 2026
+
+Calculateur boues activées.
+
+- Moteur de calcul testé avec les tableaux 6.I et 6.III : charges, âge des boues, classe de charge, qualité d'eau, oxygène, boues produites.
+- Alertes sourcées : nitrification, charge à éviter, gonflement, âge des boues, effet du froid.
+- Graphique interactif de l'effet de la charge, avec couleurs validées pour les daltonismes.
+- Serveur de test local sans dépendance.
+
 ## v0.1.0 — 4 novembre 2026
 
 Socle du site.

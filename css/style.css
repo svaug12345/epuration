@@ -24,6 +24,10 @@
   --info-fond: #efeff7;
   --ok: #2e7d32;
   --ok-fond: #eaf4ea;
+  /* Couleurs des courbes, passées au validateur de palette (daltonismes et contraste). */
+  --serie-1: #c2540a;
+  --serie-2: #5c56c4;
+  --serie-3: #00908a;
 }
 
 /* Le thème sombre suit le téléphone, sauf si la personne a choisi le thème clair. */
@@ -46,6 +50,9 @@
     --info-fond: #2f2e3f;
     --ok: #9bd29e;
     --ok-fond: #223423;
+    --serie-1: #dd6f12;
+    --serie-2: #7f7ce8;
+    --serie-3: #0f9d94;
   }
 }
 :root[data-theme='sombre'] {
@@ -66,6 +73,9 @@
   --info-fond: #2f2e3f;
   --ok: #9bd29e;
   --ok-fond: #223423;
+  --serie-1: #dd6f12;
+  --serie-2: #7f7ce8;
+  --serie-3: #0f9d94;
 }
 
 /* ---------- Base ---------- */

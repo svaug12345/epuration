@@ -33,11 +33,11 @@ Il n'y a ni framework ni étape de compilation. Il faut juste un petit serveur l
 JavaScript ne se chargent pas depuis un fichier ouvert directement :
 
 ```bash
-npx serve .
+node outils/serveur.mjs
 ```
 
 ```bash
-node --test tests/
+node --test
 ```
 
 ## Licence
