@@ -108,14 +108,15 @@ Principes :
 3. **Site public** sur GitHub Pages. Publication **automatique** à chaque version, sans redemander.
 4. **Formats** : leçons interactives + **une présentation PowerPoint** et **une vidéo de 2 min 30 à 3 min par module**
    (Sébastien a demandé en novembre 2026 un format plus dynamique que les 3 à 5 min de départ).
-5. **Charte** (remplace la charte SV) : palette ci-dessous, **sans aucun logo ni nom d'entreprise** sur le site,
-   les présentations et les vidéos. La raison de ce choix est notée dans `sources/decisions-privees.md`.
+5. **Charte** (remplace la charte SV) : palette ci-dessous, **sans aucun logo ni nom d'entreprise tierce** sur le site,
+   les présentations et les vidéos. Le logo personnel **JMT, « Jamais Mal Traitée »**, s'affiche partout (`img/logo-jmt.svg`). La raison de ce choix est notée dans `sources/decisions-privees.md`.
    Mention obligatoire : « Projet personnel indépendant, sans lien avec une entreprise ».
-   Orange `#EB690B` (accent, grands éléments), orange foncé `#C2540A` (texte et boutons, contraste suffisant),
+   Orange `#E36C1F` (accent, grands éléments), orange foncé `#C2540A` (texte et boutons, contraste suffisant),
    anthracite `#2C2A29`, taupe `#897879`, mauve `#8685BB`, fond `#F5F5F7`.
    Polices libres hébergées avec le site : Plus Jakarta Sans (titres) et Inter (texte).
 6. **Signature** : discrète, « JM T. », dans le pied de page, les présentations et la fin des vidéos.
-7. **Voix des vidéos** : ElevenLabs, voix **SebastienV** (`4BvORvhWrVjpfXilyDBc`). Français uniquement.
+7. **Voix des vidéos** : ElevenLabs, voix **Paul K** (`0igQGE0lbNpTaWsexf1r`), modèle `eleven_multilingual_v2` (le modèle v4 ignore les pauses). Français uniquement.
+   Sigles écrits en phonétique pour la voix (« dé bé o cinq »). Sébastien a écarté SebastienV à l'écoute.
 
 ## 7. Niveau d'exigence visuelle
 

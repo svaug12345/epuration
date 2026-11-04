@@ -10,7 +10,7 @@ export const L = 1280;
 export const H = 720;
 
 export const C = {
-  orange: '#EB690B', orangeClair: '#F7A25F', mauve: '#9C9BE0', taupe: '#B5A6A7',
+  orange: '#E36C1F', orangeClair: '#F7A25F', mauve: '#9C9BE0', taupe: '#B5A6A7',
   blanc: '#FFFFFF', doux: '#D9D3D2', fond: '#17151A', carte: 'rgba(255,255,255,.07)', bord: 'rgba(255,255,255,.16)',
   eau: '#37B6E8', o2: '#2FD6C4', vert: '#63C95E', rouge: '#FF6B5E', jaune: '#FFC94D',
 };

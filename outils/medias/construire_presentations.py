@@ -57,9 +57,11 @@ def diapo_titre(prs, module):
     halo.line.fill.background()
     # Disque orange seulement décoratif : on le signale aux lecteurs d'écran.
     halo._element.nvSpPr.cNvPr.set("descr", "")
+    logo = d.shapes.add_picture(str(TRAVAIL / "logo-jmt.png"), Inches(0.9), Inches(0.55), height=Inches(1.1))
+    logo._element.nvPicPr.cNvPr.set("descr", "Logo JMT : Jamais Mal Traitée")
     texte(d, Inches(0.9), Inches(2.0), Inches(9), Inches(0.5), f"Module {module['numero']} sur 7", 22, True, ORANGE_CLAIR, TITRE)
-    texte(d, Inches(0.9), Inches(2.55), Inches(10.5), Inches(1.8), module["titre"], 50, True, BLANC, TITRE)
-    texte(d, Inches(0.9), Inches(4.7), Inches(10), Inches(1.2), module["accroche"], 22, False, DOUX)
+    texte(d, Inches(0.9), Inches(2.55), Inches(8.2), Inches(1.8), module["titre"], 50, True, BLANC, TITRE)
+    texte(d, Inches(0.9), Inches(4.85), Inches(10), Inches(1.2), module["accroche"], 22, False, DOUX)
     signature(d)
 
 

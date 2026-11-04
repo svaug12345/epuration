@@ -55,8 +55,11 @@ function creerEntete() {
   const marque = document.createElement('a');
   marque.className = 'marque';
   marque.href = lien('./');
-  const logo = document.createElement('i');
-  logo.append(picto('goutte', 20));
+  const logo = document.createElement('img');
+  logo.src = lien('img/logo-jmt.svg');
+  logo.alt = 'Logo JMT';
+  logo.width = 31;
+  logo.height = 40;
   marque.append(logo, 'Épuration');
 
   const etat = charger();
@@ -97,6 +100,16 @@ function creerEntete() {
 function creerPied() {
   const pied = document.createElement('footer');
   pied.className = 'pied';
+  // La marque : le logo et « Jamais Mal Traitée », avec les initiales en orange.
+  const marque = document.createElement('div');
+  marque.className = 'signature-marque';
+  marque.innerHTML = '<span><b>J</b>amais <b>M</b>al <b>T</b>raitée</span>';
+  const goutte = document.createElement('img');
+  goutte.src = lien('img/logo-jmt.svg');
+  goutte.alt = '';
+  goutte.width = 28;
+  goutte.height = 36;
+  marque.prepend(goutte);
   const mention = document.createElement('p');
   mention.append('Projet personnel indépendant, sans lien avec une entreprise. ');
   const a = document.createElement('a');
@@ -113,7 +126,7 @@ function creerPied() {
   signature.className = 'signature';
   signature.textContent = 'JM T.';
   version.append(signature);
-  pied.append(mention, version);
+  pied.append(marque, mention, version);
   return pied;
 }
 

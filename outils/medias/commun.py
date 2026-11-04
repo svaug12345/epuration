@@ -22,17 +22,18 @@ SIGNATURE = "JM T."
 
 # Ce que la voix de synthèse lit mal est réécrit pour elle. L'ordre compte : le plus long d'abord.
 PRONONCIATION = [
-    ("ASM", "A S M"),
-    ("DBO5", "D B O 5"),
-    ("DCO", "D C O"),
-    ("SVI", "S V I"),
-    ("AGV", "A G V"),
+    ("ASM", "a esse ème"),
+    ("DBO5", "dé bé o cinq"),
+    ("DCO", "dé cé o"),
+    ("SVI", "esse vé i"),
+    ("AGV", "a gé vé"),
     ("EPNAC", "Epnac"),
-    ("IWA", "I W A"),
-    ("DERU 2", "Déru 2"),
-    ("notée Cb", "notée C B"),
-    ("Ks", "K S"),
+    ("IWA", "i double vé a"),
+    ("DERU 2", "Déru deux"),
+    ("notée Cb", "notée cé bé"),
+    ("Ks", "ka esse"),
     ("split-phase", "split phase"),
+    ("pH", "pé ache"),
 ]
 
 

@@ -37,9 +37,49 @@ function dureeAudio(fichier) {
   return Number(r.stdout.trim());
 }
 
+/** Liste les silences d'un fichier : [[début, fin], ...]. */
+function silences(fichier, duree) {
+  const r = spawnSync(FFMPEG, ['-hide_banner', '-i', fichier, '-af', `silencedetect=noise=-40dB:d=${duree}`, '-f', 'null', '-'], { encoding: 'utf8' });
+  return [...r.stderr.matchAll(/silence_start: ([\d.]+)[\s\S]*?silence_end: ([\d.]+)/g)].map((m) => [Number(m[1]), Number(m[2])]);
+}
+
+/**
+ * Resserre la voix pour un rythme plus vif : 0,4 s au plus entre deux phrases, 1 s entre deux scènes.
+ * Une pause naturelle pouvant être aussi longue qu'une pause de scène, on repère les changements
+ * de scène par leur position attendue, d'après la longueur du texte déjà lu.
+ * Le fichier obtenu a alors des pauses de scène sans ambiguïté, que caler() retrouve exactement.
+ */
+function resserrer(voix, scenes) {
+  const duree = dureeAudio(voix);
+  const tous = silences(voix, 0.4).filter(([, fin]) => fin < duree - 0.2);
+  const longs = tous.filter(([a, b]) => b - a >= 1.3);
+  const total = scenes.reduce((s, x) => s + x.narration.length, 0);
+  let cumul = 0;
+  const bornes = new Set();
+  for (const scene of scenes.slice(0, -1)) {
+    cumul += scene.narration.length;
+    const attendu = (duree * cumul) / total;
+    const proche = longs.reduce((m, s) => (Math.abs(s[0] - attendu) < Math.abs(m[0] - attendu) ? s : m));
+    if (Math.abs(proche[0] - attendu) > 9 || bornes.has(proche)) throw new Error(`${voix} : pause de scène introuvable vers ${attendu.toFixed(0)} s`);
+    bornes.add(proche);
+  }
+  // On retire le surplus de chaque silence, en gardant le milieu de la respiration.
+  const coupes = tous.map((s) => {
+    const garder = bornes.has(s) ? 1.0 : 0.4;
+    const surplus = s[1] - s[0] - garder;
+    return surplus > 0.02 ? [s[0] + garder / 2, s[0] + garder / 2 + surplus] : null;
+  }).filter(Boolean);
+  const condition = coupes.map(([a, b]) => `between(t,${a.toFixed(3)},${b.toFixed(3)})`).join('+');
+  const sortie = voix.replace(/\.mp3$/, '-vif.wav');
+  const r = spawnSync(FFMPEG, ['-y', '-loglevel', 'error', '-i', voix, '-af', `aselect='not(${condition})',asetpts=N/SR/TB`, sortie], { encoding: 'utf8' });
+  if (r.status !== 0) throw new Error(`Resserrage : ${r.stderr}`);
+  console.log(`${voix.split(/[\\/]/).pop()} : ${duree.toFixed(0)} s → ${dureeAudio(sortie).toFixed(0)} s`);
+  return sortie;
+}
+
 /** Renvoie [[début, fin], ...] de chaque scène, d'après les pauses de la voix. */
 function caler(fichier, nbScenes) {
-  const r = spawnSync(FFMPEG, ['-hide_banner', '-i', fichier, '-af', 'silencedetect=noise=-40dB:d=1.1', '-f', 'null', '-'], { encoding: 'utf8' });
+  const r = spawnSync(FFMPEG, ['-hide_banner', '-i', fichier, '-af', 'silencedetect=noise=-40dB:d=0.8', '-f', 'null', '-'], { encoding: 'utf8' });
   const pauses = [...r.stderr.matchAll(/silence_start: ([\d.]+)[\s\S]*?silence_end: ([\d.]+)/g)].map((m) => [Number(m[1]), Number(m[2])]);
   const duree = dureeAudio(fichier);
   // Le silence éventuel de toute fin de fichier n'est pas une pause entre deux scènes.
@@ -51,7 +91,10 @@ function caler(fichier, nbScenes) {
   let debut = 0;
   for (const [a, b] of utiles) { calage.push([debut, a]); debut = b; }
   calage.push([debut, duree]);
-  return { calage, duree };
+  // Les pauses plus courtes, entre deux phrases, servent à caler les sous-titres.
+  const fines = spawnSync(FFMPEG, ['-hide_banner', '-i', fichier, '-af', 'silencedetect=noise=-40dB:d=0.2', '-f', 'null', '-'], { encoding: 'utf8' });
+  const fins = [...fines.stderr.matchAll(/silence_start: ([\d.]+)[\s\S]*?silence_end: ([\d.]+)/g)].map((m) => (Number(m[1]) + Number(m[2])) / 2);
+  return { calage, duree, pauses: fins };
 }
 
 /** Fond sonore : un accord très doux, et un souffle bref à chaque changement de scène. */
@@ -73,10 +116,11 @@ function construireSon(voix, sortie, calage, total) {
 
 async function rendre(page, slug) {
   const module_ = JSON.parse(readFileSync(join(RACINE, `data/modules/${slug}.json`), 'utf8'));
-  const voix = join(TRAVAIL, `voix/${slug}.mp3`);
-  if (!existsSync(voix)) { console.log(`Voix absente : ${slug}`); return; }
-  const { calage, duree } = caler(voix, module_.scenes.length);
-  const total = await page.evaluate(([s, c, d]) => window.preparer(s, c, d), [slug, calage, duree]);
+  const source = join(TRAVAIL, `voix/${slug}.mp3`);
+  if (!existsSync(source)) { console.log(`Voix absente : ${slug}`); return; }
+  const voix = resserrer(source, module_.scenes);
+  const { calage, duree, pauses } = caler(voix, module_.scenes.length);
+  const total = await page.evaluate(([s, c, d, q]) => window.preparer(s, c, d, q), [slug, calage, duree, pauses]);
   const nbImages = Math.ceil(total * IPS);
 
   const son = join(TRAVAIL, `voix/${slug}-mix.m4a`);

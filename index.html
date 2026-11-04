@@ -8,14 +8,18 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="img/icone.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icone-192.png">
+  <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#17151a">
   <script type="module" src="js/ui/habillage.js"></script>
   <script type="module" src="js/ui/accueil.js"></script>
 </head>
 <body>
+  <script src="js/ui/intro.js"></script>
   <section class="heros">
     <canvas id="ambiance" aria-hidden="true"></canvas>
     <div class="heros-contenu">
+      <div class="signature-marque"><img src="img/logo-jmt.svg" alt="Logo JMT" width="34" height="44"><span><b>J</b>amais <b>M</b>al <b>T</b>raitée</span></div>
       <p class="surtitre">Formation interactive · Gratuite · En français</p>
       <h1>Des milliards de bactéries travaillent pour vous. <em>Apprenez à les piloter.</em></h1>
       <p>Leçons animées de 3 minutes, simulateur en direct et diagnostic guidé : tout pour comprendre une station d'épuration.</p>

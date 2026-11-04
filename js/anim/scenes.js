@@ -14,7 +14,7 @@ const SCENES = {
       const p = ((t * 0.35 + i / 3) % 1);
       x.beginPath();
       x.arc(L / 2, cy, 70 + p * 300, 0, 7);
-      x.strokeStyle = `rgba(235,105,11,${0.32 * (1 - p)})`;
+      x.strokeStyle = `rgba(227,108,31,${0.32 * (1 - p)})`;
       x.lineWidth = 2;
       x.stroke();
     }
@@ -54,7 +54,7 @@ const SCENES = {
       x.save();
       x.globalAlpha *= sortie(p);
       x.translate(-50 * (1 - sortie(p)), 0);
-      carte(x, 70, b, 1140, h, { lueur: i === Math.min(n - 1, Math.floor(prog(t, 0.6, d) * n)) ? 'rgba(235,105,11,.55)' : null });
+      carte(x, 70, b, 1140, h, { lueur: i === Math.min(n - 1, Math.floor(prog(t, 0.6, d) * n)) ? 'rgba(227,108,31,.55)' : null });
       medaillon(x, item.picto, 70 + h * 0.56, b + h / 2, h * 0.33, 1, item.couleur ?? C.orange);
       const decal = item.sous ? -7 : 13;
       ecrire(x, item.texte, 70 + h * 1.08, b + h / 2 + decal, { taille: 36, poids: 700, largeur: 1000 });

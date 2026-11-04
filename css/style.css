@@ -7,12 +7,14 @@
 @font-face { font-family: 'Plus Jakarta Sans Variable'; src: url('../fonts/plus-jakarta-sans-latin-wght-normal.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
 @font-face { font-family: 'Plus Jakarta Sans Variable'; src: url('../fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2') format('woff2'); font-weight: 200 800; font-display: swap; unicode-range: U+0100-02BA, U+1E00-1EFF, U+2020, U+20A0-20AB, U+2113, U+2C60-2C7F; }
 
+@font-face { font-family: 'Nunito Variable'; src: url('../fonts/nunito-latin-wght-normal.woff2') format('woff2'); font-weight: 200 1000; font-display: block; }
+
 /* Fondu entre les pages, sans rechargement brutal. */
 @view-transition { navigation: auto; }
 
 :root {
   color-scheme: light;
-  --orange: #eb690b;
+  --orange: #e36c1f;
   --orange-texte: #c2540a;
   --orange-clair: #fdebdc;
   --mauve: #6f6dc9;
@@ -100,7 +102,7 @@ img, video, canvas { max-width: 100%; display: block; }
 }
 .entete-ligne { max-width: 72rem; margin: 0 auto; padding: .45rem 1rem; display: flex; align-items: center; gap: .5rem; }
 .marque { display: flex; align-items: center; gap: .5rem; font-family: var(--titre); font-weight: 800; font-size: 1.1rem; color: var(--texte); text-decoration: none; margin-right: auto; min-height: 44px; }
-.marque i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: linear-gradient(135deg, #f7a25f, #eb690b); color: #fff; box-shadow: 0 4px 14px rgba(235, 105, 11, .4); }
+.marque img { height: 40px; width: auto; display: block; }
 .nav-haut { display: none; gap: .2rem; margin-right: .6rem; }
 .nav-haut a { display: flex; align-items: center; gap: .4rem; padding: .5rem .85rem; border-radius: 999px; color: var(--texte-doux); text-decoration: none; font-weight: 600; font-size: .95rem; transition: background .2s, color .2s; }
 .nav-haut a:hover { background: var(--surface-2); color: var(--texte); }
@@ -128,7 +130,7 @@ img, video, canvas { max-width: 100%; display: block; }
 .heros::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23,21,26,.35), rgba(23,21,26,.72)); pointer-events: none; }
 .heros-contenu { position: relative; z-index: 1; max-width: 72rem; margin: 0 auto; padding: clamp(2.4rem, 9vw, 6rem) 1rem clamp(2.4rem, 8vw, 5rem); }
 .heros h1 { margin: 0 0 .9rem; max-width: 15em; color: #fff; }
-.heros h1 em { font-style: normal; background: linear-gradient(95deg, #ffb37a, #eb690b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.heros h1 em { font-style: normal; background: linear-gradient(95deg, #ffb37a, #e36c1f); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .heros p { color: #dcd7dc; font-size: clamp(1.05rem, 2.6vw, 1.3rem); max-width: 36rem; }
 .heros .surtitre { color: #ffb37a; }
 
@@ -158,7 +160,7 @@ a.carte, button.carte {
 a.carte:hover, button.carte:hover { transform: translateY(-3px); box-shadow: var(--ombre-forte); border-color: color-mix(in srgb, var(--orange) 45%, transparent); }
 .carte strong.titre-carte { display: block; font-family: var(--titre); font-size: 1.05rem; font-weight: 700; margin-bottom: .15rem; }
 .carte .sous { color: var(--texte-doux); font-size: .92rem; display: block; line-height: 1.45; }
-.medaille { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; flex: none; color: #fff; background: linear-gradient(135deg, #f7a25f, #eb690b); box-shadow: 0 6px 16px rgba(235, 105, 11, .3); }
+.medaille { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; flex: none; color: #fff; background: linear-gradient(135deg, #f7a25f, #e36c1f); box-shadow: 0 6px 16px rgba(227, 108, 31, .3); }
 .medaille.mauve { background: linear-gradient(135deg, #b9b8ee, #6f6dc9); box-shadow: 0 6px 16px rgba(111, 109, 201, .3); }
 .medaille.eau { background: linear-gradient(135deg, #7ed0f0, #1b86b8); box-shadow: 0 6px 16px rgba(27, 134, 184, .3); }
 .medaille.vert { background: linear-gradient(135deg, #8fd88f, #2e7d32); box-shadow: 0 6px 16px rgba(46, 125, 50, .3); }
@@ -171,7 +173,7 @@ a.carte:hover, button.carte:hover { transform: translateY(-3px); box-shadow: var
 
 /* ---------- Progression ---------- */
 .barre { height: 8px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
-.barre i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #f7a25f, #eb690b); transition: width .5s cubic-bezier(.2,.8,.2,1); }
+.barre i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #f7a25f, #e36c1f); transition: width .5s cubic-bezier(.2,.8,.2,1); }
 .anneau { --p: 0; width: 76px; height: 76px; border-radius: 50%; flex: none; display: grid; place-items: center; background: conic-gradient(var(--orange) calc(var(--p) * 1%), var(--surface-2) 0); }
 .anneau b { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: var(--surface); font-family: var(--titre); font-size: 1rem; }
 .bilan { display: flex; align-items: center; gap: 1rem; }
@@ -181,7 +183,7 @@ a.carte:hover, button.carte:hover { transform: translateY(-3px); box-shadow: var
 .chemin::before { content: ''; position: absolute; left: 31px; top: 12px; bottom: 12px; width: 4px; border-radius: 4px; background: linear-gradient(180deg, var(--orange), var(--mauve)); opacity: .35; }
 .chemin li { position: relative; margin-bottom: .9rem; }
 .chemin a.carte { align-items: center; padding: .9rem; }
-.chemin .medaille { width: 64px; height: 64px; border-radius: 50%; position: relative; z-index: 1; margin-left: -.15rem; box-shadow: 0 0 0 6px var(--fond), 0 6px 16px rgba(235, 105, 11, .3); }
+.chemin .medaille { width: 64px; height: 64px; border-radius: 50%; position: relative; z-index: 1; margin-left: -.15rem; box-shadow: 0 0 0 6px var(--fond), 0 6px 16px rgba(227, 108, 31, .3); }
 .chemin .fait .medaille { background: linear-gradient(135deg, #8fd88f, #2e7d32); }
 .chemin .texte { flex: 1; min-width: 0; }
 .chemin .barre { margin-top: .5rem; }
@@ -267,7 +269,7 @@ input[type='range'] { width: 100%; height: 34px; accent-color: var(--orange-text
 .retourne-int { position: relative; min-height: 15rem; transform-style: preserve-3d; transition: transform .55s cubic-bezier(.3,1.2,.4,1); }
 .retourne.vue .retourne-int { transform: rotateY(180deg); }
 .face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; padding: 1.4rem; border-radius: var(--rayon); box-shadow: var(--ombre-forte); overflow: auto; }
-.face.avant { background: var(--sombre); color: #fff; background-image: radial-gradient(circle at 15% 10%, rgba(235,105,11,.45), transparent 55%), radial-gradient(circle at 90% 90%, rgba(111,109,201,.4), transparent 55%); }
+.face.avant { background: var(--sombre); color: #fff; background-image: radial-gradient(circle at 15% 10%, rgba(227,108,31,.45), transparent 55%), radial-gradient(circle at 90% 90%, rgba(111,109,201,.4), transparent 55%); }
 .face.arriere { background: var(--surface); transform: rotateY(180deg); border: 1px solid var(--bord); }
 .face .question-texte { font-family: var(--titre); font-weight: 700; font-size: 1.25rem; line-height: 1.3; margin: 0; }
 .face .reponse-texte { font-family: var(--titre); font-weight: 800; font-size: 1.3rem; color: var(--orange-texte); margin: 0 0 .5rem; }
@@ -350,3 +352,52 @@ summary { cursor: pointer; font-weight: 700; font-family: var(--titre); min-heig
 
 /* Cartes non cliquables d'une grille : même mise en page que les cartes-liens. */
 .grille > li.carte { display: flex; gap: .9rem; align-items: flex-start; }
+
+/* ---------- La marque JMT ---------- */
+.signature-marque { display: inline-flex; align-items: center; gap: .55rem; font-family: 'Nunito Variable', var(--titre); font-weight: 900; text-decoration: none; color: inherit; line-height: 1.05; }
+.signature-marque img { height: 44px; width: auto; }
+.signature-marque b { color: #e36c1f; font-weight: 900; }
+.heros .signature-marque { margin-bottom: 1.1rem; font-size: 1.05rem; color: #fff; }
+.heros .signature-marque b { color: #f7a25f; }
+.pied .signature-marque { font-size: .95rem; color: var(--texte); margin-bottom: .5rem; }
+.pied .signature-marque img { height: 36px; }
+
+/* ---------- Animation d'entrée : un calque au-dessus du site, qui s'efface tout seul ---------- */
+#intro {
+  position: fixed; inset: 0; z-index: 9999; background: #f4f5f7; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-family: 'Nunito Variable', Arial, sans-serif;
+  animation: intro-disparition .6s ease-in 4.4s forwards;
+}
+#intro.passee { animation: intro-disparition .25s ease-in forwards; }
+#intro svg { width: 100%; height: 100%; max-width: 1920px; }
+:where(#intro svg *) { transform-box: fill-box; }
+#chute { transform-box: view-box; transform-origin: 730px 730px; animation: intro-chute .65s cubic-bezier(.55,0,1,.45) both; }
+@keyframes intro-chute {
+  from { transform: translateY(-820px); opacity: 1; }
+  95% { transform: translateY(0) scaleY(1); opacity: 1; }
+  to { transform: translateY(0) scaleY(.4); opacity: 0; }
+}
+.onde { transform-origin: 50% 50%; opacity: 0; animation: intro-onde 1s ease-out forwards; }
+.onde.o1 { animation-delay: .62s; } .onde.o2 { animation-delay: .82s; } .onde.o3 { animation-delay: 1.02s; }
+@keyframes intro-onde { from { transform: scale(.05); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+/* La base de la goutte reste collée au point d'impact pendant qu'elle grandit. */
+#goutte {
+  transform-box: view-box; transform-origin: 0 0;
+  transform: translate(var(--gx), var(--gy)) scale(var(--gs));
+  animation: intro-jaillit .7s cubic-bezier(.34,1.56,.64,1) .75s both;
+}
+@keyframes intro-jaillit {
+  from { transform: translate(var(--ix), var(--iy)) scale(0); }
+  to { transform: translate(var(--gx), var(--gy)) scale(var(--gs)); }
+}
+#reflet { stroke-dasharray: 80; stroke-dashoffset: 80; animation: intro-trait .5s ease-out 1.35s forwards; }
+@keyframes intro-trait { to { stroke-dashoffset: 0; } }
+#lettres { animation: intro-monte .5s ease-out 1.3s both; }
+@keyframes intro-monte { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.ligne { animation: intro-glisse .5s cubic-bezier(.2,.8,.2,1) both; }
+.l0 { animation-delay: 1.75s; } .l1 { animation-delay: 2.05s; } .l2 { animation-delay: 2.3s; } .l3 { animation-delay: 2.55s; }
+@keyframes intro-glisse { from { transform: translateX(-40px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+#souligne { stroke-dasharray: 420; stroke-dashoffset: 420; animation: intro-vague .7s ease-in-out 3s forwards; }
+@keyframes intro-vague { to { stroke-dashoffset: 0; } }
+@keyframes intro-disparition { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { #intro { display: none; } }

@@ -1,6 +1,7 @@
 // Studio : dessine n'importe quelle image d'une vidéo, à la demande du script de rendu.
-import { L, H, C, fond, volet, sousTitres, ecrire, medaillon, entree, prog, sortie, doux, hasard, bacterie, bulle } from '../../js/anim/moteur.js';
+import { L, H, C, fond, volet, sousTitres, ecrire, entree, prog, sortie, doux, rebond, hasard, bacterie, bulle } from '../../js/anim/moteur.js';
 import { dessinerVisuel } from '../../js/anim/scenes.js';
+import { LOGO } from '../../js/anim/logo-trace.js';
 
 const canvas = document.querySelector('#c');
 const x = canvas.getContext('2d');
@@ -14,40 +15,127 @@ async function lireModule(slug) {
   return r.json();
 }
 
-/** Découpe un texte en phrases et répartit leur durée selon leur longueur. */
-function decouper(texte, debut, fin) {
+/**
+ * Découpe un texte en phrases. Leur durée suit d'abord leur longueur, puis chaque fin de phrase
+ * se cale sur la pause réelle la plus proche dans la voix : les sous-titres restent synchrones.
+ */
+function decouper(texte, debut, fin, pauses) {
   const phrases = texte.match(/[^.!?]+[.!?]*\s*/g).map((s) => s.trim()).filter(Boolean);
   const total = phrases.reduce((s, p) => s + p.length, 0);
+  const internes = pauses.filter((p) => p > debut + 0.3 && p < fin - 0.3);
+  let cumul = 0;
   let t = debut;
-  return phrases.map((p) => {
-    const duree = (fin - debut) * (p.length / total);
-    const element = { texte: p, debut: t, fin: t + duree };
-    t += duree;
+  return phrases.map((p, i) => {
+    cumul += p.length;
+    let bord = i === phrases.length - 1 ? fin : debut + (fin - debut) * (cumul / total);
+    if (i < phrases.length - 1 && internes.length) {
+      const proche = internes.reduce((a, b) => (Math.abs(b - bord) < Math.abs(a - bord) ? b : a));
+      if (Math.abs(proche - bord) < 1.6 && proche > t + 0.3) bord = proche;
+    }
+    const element = { texte: p, debut: t, fin: bord };
+    t = bord;
     return element;
   });
 }
 
-/** Générique de début : le titre du module se pose sur un essaim de bactéries. */
-function generique(m, t) {
-  fond(x, t, { teinte: C.orange });
-  for (let i = 0; i < 18; i += 1) {
-    const p = (hasard(i) * 0.4 + t * 0.09) % 1;
-    bulle(x, hasard(i + 5) * L, 730 - p * 780, 5 + hasard(i + 8) * 12);
-    const a = doux(prog(t, 0, 1.3));
-    bacterie(x, L / 2 + Math.cos(i * 2.1 + t * 0.4) * (720 - 260 * a), H / 2 + Math.sin(i * 1.3 + t * 0.4) * (420 - 110 * a), 16 + hasard(i) * 9, i + t * 0.3, t + i, i % 3 ? C.orange : C.mauve);
+const ORANGE_LOGO = '#E36C1F';
+const TRACES = { goutte: new Path2D(LOGO.goutte), reflet: new Path2D(LOGO.reflet), lettres: new Path2D(LOGO.lettres) };
+
+/** Le logo, sa pointe basse posée sur (a, b). echelle 1 : 256 de haut. */
+function logo(a, b, echelle, { lettres = 1, reflet = 1 } = {}) {
+  x.save();
+  x.translate(a - 100 * echelle, b - 250 * echelle);
+  x.scale(echelle, echelle);
+  x.fillStyle = ORANGE_LOGO;
+  x.shadowColor = ORANGE_LOGO;
+  x.shadowBlur = 40;
+  x.fill(TRACES.goutte);
+  x.shadowBlur = 0;
+  if (reflet > 0) {
+    x.strokeStyle = 'rgba(255,255,255,.55)';
+    x.lineWidth = 8;
+    x.lineCap = 'round';
+    x.setLineDash([80 * reflet, 80]);
+    x.stroke(TRACES.reflet);
+    x.setLineDash([]);
   }
-  medaillon(x, m.picto, L / 2, 262, 84, prog(t, 0.2, 0.8));
-  entree(x, t, 0.5, () => ecrire(x, `Module ${m.numero} sur 7`, L / 2, 410, { taille: 34, poids: 700, couleur: C.orangeClair, align: 'center' }));
-  entree(x, t, 0.7, () => ecrire(x, m.titre, L / 2, 485, { taille: 66, poids: 800, align: 'center', largeur: 1120 }));
+  x.globalAlpha *= lettres;
+  x.fillStyle = C.blanc;
+  x.fill(TRACES.lettres);
+  x.restore();
 }
 
-/** Carte de fin, signée. */
+/** « Jamais Mal Traitée », sur trois lignes, initiales en orange. */
+function marque(a, b, taille) {
+  x.font = `900 ${taille}px "Nunito Variable", Arial`;
+  x.textAlign = 'left';
+  x.textBaseline = 'alphabetic';
+  [['J', 'amais'], ['M', 'al'], ['T', 'raitée.']].forEach(([i, reste], n) => {
+    const y = b + n * taille * 1.02;
+    x.fillStyle = '#F7A25F';
+    x.fillText(i, a, y);
+    const l = x.measureText(i).width;
+    x.fillStyle = C.blanc;
+    x.fillText(reste, a + l, y);
+  });
+}
+
+/** Générique : la goutte tombe, l'onde se propage, le logo jaillit, le titre se pose. */
+function generique(m, t) {
+  fond(x, t, { teinte: ORANGE_LOGO });
+  const ix = L / 2;
+  const iy = 345;
+  for (let i = 0; i < 16; i += 1) {
+    const p = (hasard(i) * 0.4 + t * 0.09) % 1;
+    bulle(x, hasard(i + 5) * L, 730 - p * 780, 5 + hasard(i + 8) * 12, 0.5);
+    const a = doux(prog(t, 0, 1.3));
+    bacterie(x, L / 2 + Math.cos(i * 2.1 + t * 0.4) * (720 - 180 * a), H / 2 + Math.sin(i * 1.3 + t * 0.4) * (430 - 60 * a), 14 + hasard(i) * 8, i + t * 0.3, t + i, i % 3 ? C.orange : C.mauve);
+  }
+  // 1. La petite goutte qui tombe en accélérant
+  const chute = prog(t, 0, 0.5);
+  if (chute < 1) {
+    x.save();
+    x.translate(ix, iy - 620 * (1 - chute * chute));
+    x.beginPath();
+    x.moveTo(0, -36);
+    x.bezierCurveTo(0, -36, -17, -12, -17, 0);
+    x.arc(0, 0, 17, Math.PI, 0, true);
+    x.bezierCurveTo(17, -12, 0, -36, 0, -36);
+    x.fillStyle = ORANGE_LOGO;
+    x.fill();
+    x.restore();
+  }
+  // 2. Les ronds dans l'eau
+  [0.48, 0.66, 0.84].forEach((d) => {
+    const p = prog(t, d, d + 1);
+    if (p <= 0 || p >= 1) return;
+    x.save();
+    x.globalAlpha = (1 - p) * 0.9;
+    x.strokeStyle = ORANGE_LOGO;
+    x.lineWidth = 4;
+    x.beginPath();
+    x.ellipse(ix, iy, 40 + p * 420, 6 + p * 62, 0, 0, 7);
+    x.stroke();
+    x.restore();
+  });
+  // 3. Le logo jaillit, avec un rebond
+  const j = prog(t, 0.55, 1.2);
+  if (j > 0) logo(ix, iy, rebond(j) * 1.05, { lettres: sortie(prog(t, 1, 1.4)), reflet: prog(t, 1.05, 1.5) });
+  // 4. Le titre du module
+  entree(x, t, 1.3, () => ecrire(x, `Module ${m.numero} sur 7`, L / 2, 420, { taille: 34, poids: 700, couleur: C.orangeClair, align: 'center' }));
+  entree(x, t, 1.5, () => ecrire(x, m.titre, L / 2, 495, { taille: 66, poids: 800, align: 'center', largeur: 1120 }));
+}
+
+/** Carte de fin : le logo complet, l'adresse et les mentions. */
 function finale(m, t) {
-  fond(x, t, { teinte: C.orange });
-  medaillon(x, 'trophee', L / 2, 200, 74, prog(t, 0, 0.6));
-  entree(x, t, 0.25, () => ecrire(x, 'À vous de jouer !', L / 2, 345, { taille: 66, poids: 800, align: 'center' }));
-  entree(x, t, 0.5, () => ecrire(x, 'Quiz, simulateur et diagnostic sur', L / 2, 420, { taille: 34, poids: 500, couleur: C.doux, align: 'center' }));
-  entree(x, t, 0.7, () => ecrire(x, 'baiji.fr/epuration', L / 2, 485, { taille: 52, poids: 800, couleur: C.orangeClair, align: 'center' }));
+  fond(x, t, { teinte: ORANGE_LOGO });
+  const j = prog(t, 0, 0.6);
+  if (j > 0) logo(380, 430, rebond(j) * 1.4);
+  entree(x, t, 0.3, () => {
+    ecrire(x, 'Avec moi, l\u2019eau n\u2019est', 590, 170, { taille: 32, poids: 500, couleur: C.doux });
+    marque(590, 248, 80);
+  });
+  entree(x, t, 0.7, () => ecrire(x, 'Quiz, simulateur et diagnostic sur baiji.fr/epuration', L / 2, 530, { taille: 34, poids: 700, couleur: C.orangeClair, align: 'center', largeur: 1200 }));
   entree(x, t, 1, () => {
     ecrire(x, 'Outil pédagogique : il ne remplace pas une étude de dimensionnement.', L / 2, 610, { taille: 24, poids: 500, couleur: C.taupe, align: 'center', largeur: 1200 });
     ecrire(x, 'Projet personnel indépendant, sans lien avec une entreprise.', L / 2, 644, { taille: 24, poids: 500, couleur: C.taupe, align: 'center', largeur: 1200 });
@@ -55,7 +143,8 @@ function finale(m, t) {
 }
 
 function signature() {
-  ecrire(x, 'JM T.', L - 30, 40, { taille: 22, poids: 700, couleur: 'rgba(255,255,255,.55)', align: 'right' });
+  logo(L - 100, 48, 0.15, { reflet: 0 });
+  ecrire(x, 'JM T.', L - 24, 40, { taille: 22, poids: 700, couleur: 'rgba(255,255,255,.7)', align: 'right' });
 }
 
 /** Barre de chapitres, en haut : un segment par scène, comme dans les « stories ». */
@@ -74,10 +163,11 @@ function chapitres(plan, t) {
 let courant = null;
 
 /** Prépare une vidéo. calage : début et fin de chaque scène dans l'audio, en secondes. */
-window.preparer = async (slug, calage, dureeAudio) => {
+window.preparer = async (slug, calage, dureeAudio, pauses = []) => {
   const m = await lireModule(slug);
   const plan = m.scenes.map((s, i) => ({ scene: s, debut: INTRO + calage[i][0], fin: INTRO + calage[i][1], suivant: i + 1 < calage.length ? INTRO + calage[i + 1][0] : INTRO + dureeAudio }));
-  const phrases = plan.flatMap((p) => decouper(p.scene.narration, p.debut, p.fin));
+  const pausesVideo = pauses.map((p) => INTRO + p);
+  const phrases = plan.flatMap((p) => decouper(p.scene.narration, p.debut, p.fin, pausesVideo));
   const total = INTRO + dureeAudio + FIN;
   courant = { m, plan, phrases, total };
   return total;
@@ -158,4 +248,5 @@ window.planche = async (slug, f) => {
 
 await document.fonts.load('800 40px "Plus Jakarta Sans Variable"');
 await document.fonts.load('500 40px "Plus Jakarta Sans Variable"');
+await document.fonts.load('900 40px "Nunito Variable"');
 window.studioPret = true;

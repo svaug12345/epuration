@@ -1,5 +1,13 @@
 # Journal des versions
 
+## v1.1.0 — 4 novembre 2026
+
+- Logo JMT « Jamais Mal Traitée » sur tout le site, les vidéos et les présentations, et comme icône de l'application.
+- Animation d'entrée à l'arrivée sur le site : une fois par visite, en paysage ou en portrait, et un toucher suffit pour la passer.
+- Nouvelle voix des vidéos (Paul K), avec des sigles écrits en phonétique et des silences resserrés pour un rythme plus vif.
+- Générique des vidéos repris de l'animation d'entrée, carte de fin signée, sous-titres calés sur les pauses réelles de la voix.
+- Orange du site aligné sur celui du logo.
+
 ## v1.0.0 — 4 novembre 2026
 
 Refonte complète : le site devient une véritable appli de formation.

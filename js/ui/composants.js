@@ -46,7 +46,7 @@ export function carteOutil(o, prefixe) {
 /** Pluie de confettis, pour marquer une réussite. */
 export function confettis(conteneur) {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const couleurs = ['#eb690b', '#f7a25f', '#6f6dc9', '#2fd6c4', '#ffc94d'];
+  const couleurs = ['#e36c1f', '#f7a25f', '#6f6dc9', '#2fd6c4', '#ffc94d'];
   for (let i = 0; i < 36; i += 1) {
     const c = element('i', 'confetti');
     c.style.left = `${Math.random() * 100}%`;
