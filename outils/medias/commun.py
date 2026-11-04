@@ -22,7 +22,7 @@ SIGNATURE = "JM T."
 
 # Ce que la voix de synthèse lit mal est réécrit pour elle. L'ordre compte : le plus long d'abord.
 PRONONCIATION = [
-    ("ASM1 à ASM3", "A S M 1 à A S M 3"),
+    ("ASM", "A S M"),
     ("DBO5", "D B O 5"),
     ("DCO", "D C O"),
     ("SVI", "S V I"),
@@ -48,8 +48,8 @@ def texte_pour_la_voix(texte):
 
 
 def narration_complete(module):
-    """Tout le texte d'une vidéo, une scène par paragraphe."""
-    return "\n\n".join(texte_pour_la_voix(s["narration"]) for s in module["scenes"])
+    """Tout le texte d'une vidéo. Les pauses marquées permettent de caler l'image sur la voix."""
+    return ' <break time="1.6s" /> '.join(texte_pour_la_voix(s["narration"]) for s in module["scenes"])
 
 
 def symboles_suspects(texte):

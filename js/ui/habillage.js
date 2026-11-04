@@ -1,119 +1,181 @@
-// Ajoute à chaque page ce qui est commun : en-tête, bandeau, pied de page, thème.
-// Avantage : pour modifier le menu ou la signature, un seul fichier à changer.
+// Ajoute à chaque page ce qui est commun : barre du haut, onglets du bas, pied, thème, recherche.
+// Pour changer le menu ou la signature, un seul fichier à modifier.
 import { VERSION } from '../version.js';
+import { picto } from '../pictos.js';
+import { charger, noterJour, sauver } from '../progression.js';
 
-// Racine du site calculée depuis l'adresse de ce fichier. Elle reste juste
-// en local comme sur baiji.fr/epuration/, et depuis n'importe quel sous-dossier.
-const RACINE = new URL('../../', import.meta.url);
+// Racine du site, juste en local comme sur baiji.fr/epuration/, depuis n'importe quel sous-dossier.
+export const RACINE = new URL('../../', import.meta.url);
+export const lien = (chemin) => new URL(chemin, RACINE).href;
 
 const MENU = [
-  ['Modules', 'modules/'],
-  ['Outils', 'outils/'],
-  ['Glossaire', 'glossaire.html'],
+  { nom: 'Accueil', chemin: './', picto: 'accueil', exact: true },
+  { nom: 'Parcours', chemin: 'modules/', picto: 'route' },
+  { nom: 'Labo', chemin: 'outils/', picto: 'fiole' },
+  { nom: 'Réviser', chemin: 'revision.html', picto: 'cartes' },
 ];
 
-// --- Thème clair ou sombre ---
-// Le stockage local peut être bloqué (navigation privée) : on protège chaque accès,
-// et le site fonctionne alors simplement avec le thème du téléphone.
-function lireTheme() {
-  try { return localStorage.getItem('theme'); } catch { return null; }
-}
-function ecrireTheme(theme) {
-  try { localStorage.setItem('theme', theme); } catch { /* sans gravité */ }
-}
-function themeActuel() {
-  const choisi = document.documentElement.dataset.theme;
-  if (choisi) return choisi;
-  return matchMedia('(prefers-color-scheme: dark)').matches ? 'sombre' : 'clair';
+// Le thème mémorisé s'applique tout de suite, pour éviter un flash de couleur.
+const lireTheme = () => { try { return localStorage.getItem('theme'); } catch { return null; } };
+const ecrireTheme = (t) => { try { localStorage.setItem('theme', t); } catch { /* sans gravité */ } };
+const themeActuel = () => document.documentElement.dataset.theme
+  || (matchMedia('(prefers-color-scheme: dark)').matches ? 'sombre' : 'clair');
+const memorise = lireTheme();
+if (memorise) document.documentElement.dataset.theme = memorise;
+
+const estActif = (entree) => {
+  const cible = new URL(entree.chemin, RACINE).pathname;
+  const ici = location.pathname.replace(/index\.html$/, '');
+  return entree.exact ? ici === cible : ici.startsWith(cible);
+};
+
+function creerLiens(conteneurClasse) {
+  const nav = document.createElement('nav');
+  nav.className = conteneurClasse;
+  nav.setAttribute('aria-label', 'Navigation principale');
+  for (const entree of MENU) {
+    const a = document.createElement('a');
+    a.href = lien(entree.chemin);
+    a.append(picto(entree.picto, 22));
+    const texte = document.createElement('span');
+    texte.textContent = entree.nom;
+    a.append(texte);
+    if (estActif(entree)) a.setAttribute('aria-current', 'page');
+    nav.append(a);
+  }
+  return nav;
 }
 
 function creerEntete() {
   const entete = document.createElement('header');
   entete.className = 'entete';
-
   const ligne = document.createElement('div');
   ligne.className = 'entete-ligne';
 
   const marque = document.createElement('a');
   marque.className = 'marque';
-  marque.href = RACINE.href;
-  marque.textContent = 'Épuration';
+  marque.href = lien('./');
+  const logo = document.createElement('i');
+  logo.append(picto('goutte', 20));
+  marque.append(logo, 'Épuration');
 
-  const nav = document.createElement('nav');
-  nav.className = 'navigation';
-  nav.setAttribute('aria-label', 'Navigation principale');
-  for (const [libelle, chemin] of MENU) {
-    const lien = document.createElement('a');
-    lien.href = new URL(chemin, RACINE).href;
-    lien.textContent = libelle;
-    if (location.pathname.startsWith(new URL(chemin, RACINE).pathname)) {
-      lien.setAttribute('aria-current', 'page');
-    }
-    nav.append(lien);
-  }
+  const etat = charger();
+  const pastille = document.createElement('a');
+  pastille.className = 'pastille-xp';
+  pastille.href = lien('modules/');
+  pastille.append(picto('etoile', 16), `${etat.xp}`);
+  pastille.setAttribute('aria-label', `${etat.xp} points. Voir mon parcours`);
 
-  const bouton = document.createElement('button');
-  bouton.className = 'bouton-theme';
-  bouton.type = 'button';
-  const majBouton = () => {
+  const recherche = document.createElement('button');
+  recherche.className = 'bouton-icone';
+  recherche.type = 'button';
+  recherche.setAttribute('aria-label', 'Rechercher');
+  recherche.append(picto('recherche', 22));
+  recherche.addEventListener('click', ouvrirRecherche);
+
+  const theme = document.createElement('button');
+  theme.className = 'bouton-icone';
+  theme.type = 'button';
+  const majTheme = () => {
     const sombre = themeActuel() === 'sombre';
-    bouton.textContent = sombre ? '☀' : '☾';
-    bouton.setAttribute('aria-label', sombre ? 'Passer au thème clair' : 'Passer au thème sombre');
+    theme.replaceChildren(picto(sombre ? 'soleil' : 'theme', 22));
+    theme.setAttribute('aria-label', sombre ? 'Passer au thème clair' : 'Passer au thème sombre');
   };
-  bouton.addEventListener('click', () => {
+  theme.addEventListener('click', () => {
     const suivant = themeActuel() === 'sombre' ? 'clair' : 'sombre';
     document.documentElement.dataset.theme = suivant;
     ecrireTheme(suivant);
-    majBouton();
+    majTheme();
   });
-  majBouton();
-  nav.append(bouton);
+  majTheme();
 
-  ligne.append(marque, nav);
+  ligne.append(marque, creerLiens('nav-haut'), pastille, recherche, theme);
   entete.append(ligne);
   return entete;
-}
-
-/** Bandeau obligatoire des pages d'outils (voir CLAUDE.md, règle 4). */
-function creerBandeau() {
-  const bandeau = document.createElement('p');
-  bandeau.className = 'bandeau';
-  bandeau.textContent = 'Outil pédagogique : il ne remplace pas une étude de dimensionnement.';
-  return bandeau;
 }
 
 function creerPied() {
   const pied = document.createElement('footer');
   pied.className = 'pied';
-
   const mention = document.createElement('p');
   mention.append('Projet personnel indépendant, sans lien avec une entreprise. ');
-  const lien = document.createElement('a');
-  lien.href = new URL('a-propos.html', RACINE).href;
-  lien.textContent = 'Sources et mentions';
-  mention.append(lien);
-
+  const a = document.createElement('a');
+  a.href = lien('a-propos.html');
+  a.textContent = 'Sources et mentions';
+  mention.append(a, ' · ');
+  const g = document.createElement('a');
+  g.href = lien('glossaire.html');
+  g.textContent = 'Glossaire';
+  mention.append(g);
   const version = document.createElement('p');
-  version.innerHTML = `Version ${VERSION} · <span class="signature">JM T.</span>`;
-
+  version.append(`Version ${VERSION} · `);
+  const signature = document.createElement('span');
+  signature.className = 'signature';
+  signature.textContent = 'JM T.';
+  version.append(signature);
   pied.append(mention, version);
   return pied;
 }
 
-// Le thème mémorisé s'applique dès que possible, pour éviter un flash de couleur.
-const memorise = lireTheme();
-if (memorise) document.documentElement.dataset.theme = memorise;
+/** Recherche chargée à la demande : la page reste légère tant qu'on ne s'en sert pas. */
+async function ouvrirRecherche() {
+  const { ouvrir } = await import('./recherche.js');
+  ouvrir();
+}
+
+/** Petite notification, par exemple quand on gagne des points. */
+export function annoncer(texte, nomPicto = 'etoile') {
+  document.querySelector('.toast')?.remove();
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.setAttribute('role', 'status');
+  toast.append(picto(nomPicto, 18), texte);
+  document.body.append(toast);
+  setTimeout(() => toast.remove(), 2700);
+}
+
+/** Met à jour le compteur de points dans la barre du haut. */
+export function actualiserPoints() {
+  const etat = charger();
+  const pastille = document.querySelector('.pastille-xp');
+  if (pastille) pastille.replaceChildren(picto('etoile', 16), `${etat.xp}`);
+}
+
+/** Fait apparaître les éléments .revele quand ils entrent dans l'écran. */
+export function activerApparitions(racine = document) {
+  const observateur = new IntersectionObserver((entrees) => {
+    for (const e of entrees) {
+      if (e.isIntersecting) { e.target.classList.add('vu'); observateur.unobserve(e.target); }
+    }
+  }, { rootMargin: '0px 0px -8% 0px' });
+  racine.querySelectorAll('.revele:not(.vu)').forEach((el) => observateur.observe(el));
+}
+
+/** Crée le bandeau obligatoire des pages d'outils (voir CLAUDE.md, règle 4). */
+function creerBandeau() {
+  const bandeau = document.createElement('p');
+  bandeau.className = 'bandeau';
+  bandeau.append(picto('ampoule', 16), 'Outil pédagogique : il ne remplace pas une étude de dimensionnement.');
+  return bandeau;
+}
 
 document.body.prepend(creerEntete());
-document.body.append(creerPied());
-
-// Une page d'outil ou de module demande le bandeau avec data-bandeau sur <main>.
+document.body.append(creerPied(), creerLiens('onglets-bas'));
 const principal = document.querySelector('main');
 if (principal?.hasAttribute('data-bandeau')) principal.prepend(creerBandeau());
+activerApparitions();
 
-// Consultation hors ligne : si le navigateur le permet, on inscrit le service worker.
+// Ctrl+K ou ⌘K ouvre la recherche, comme dans les applications modernes.
+addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); ouvrirRecherche(); }
+});
+
+// Compte le jour d'activité, pour la série de jours d'affilée.
+const etat = charger();
+noterJour(etat);
+sauver(etat);
+
+// Consultation hors ligne, si le navigateur le permet.
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register(new URL('sw.js', RACINE)).catch(() => {
-    /* sans service worker, le site fonctionne en ligne comme d'habitude */
-  });
+  navigator.serviceWorker.register(new URL('sw.js', RACINE)).catch(() => { /* le site marche sans */ });
 }

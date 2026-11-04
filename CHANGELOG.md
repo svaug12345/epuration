@@ -1,5 +1,18 @@
 # Journal des versions
 
+## v1.0.0 — 4 novembre 2026
+
+Refonte complète : le site devient une véritable appli de formation.
+
+- Nouveau design : polices modernes, héros animé, pictos maison, thème sombre revu, transitions entre pages.
+- Navigation d'appli : onglets en bas sur mobile, recherche instantanée dans les leçons, le glossaire et les outils (Ctrl+K).
+- Leçons courtes étape par étape, avec animation en direct et questions de vérification intégrées.
+- Progression sans compte, gardée dans le navigateur : points, niveaux, badges, jours d'affilée et reprise là où on s'est arrêté.
+- Parcours visuel, révision espacée (méthode de Leitner) avec cartes qui se retournent, Docteur STEP en conversation.
+- Simulateur boues activées : le bassin animé réagit aux curseurs en direct.
+- Vidéos refaites en motion design, en Full HD : 2 min 30 à 3 min, nouveaux textes et voix, image calée sur la voix, sous-titres mot à mot, barre de chapitres, fond sonore discret.
+- Présentations refaites, en pleine image.
+
 ## v0.7.1 — 4 novembre 2026
 
 Virgule décimale sur l'axe du graphique, et icônes PNG pour installer l'application sur Android.

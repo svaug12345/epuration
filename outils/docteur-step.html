@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Docteur STEP</title>
   <meta name="description" content="Du symptôme à la cause probable et au remède, pour une station d'épuration biologique.">
   <link rel="stylesheet" href="../css/style.css">
@@ -12,8 +12,9 @@
   <script type="module" src="../js/ui/docteur-step.js"></script>
 </head>
 <body>
-  <main data-bandeau>
-    <h1>Docteur STEP</h1>
+  <main data-bandeau class="etroit">
+    <p class="surtitre">Diagnostic guidé</p>
+    <h1 style="margin-top:0;font-size:clamp(1.7rem,6vw,2.8rem)">Docteur STEP</h1>
     <p class="intro">Quelques questions pour remonter du symptôme à la cause probable.</p>
     <div id="diagnostic" aria-live="polite"></div>
     <p class="discret">Le diagnostic donne une piste à vérifier sur place, pas une certitude. Les causes viennent du livre d'Edeline (1997) ;

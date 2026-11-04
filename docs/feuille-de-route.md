@@ -12,6 +12,7 @@ et testée sur mobile.
 - [x] **Phase 4 : calculateurs** (v0.4.0) : lit bactérien, azote, méthanisation, lagunage, choix du procédé.
 - [x] **Phase 5 : modules** (v0.5.0) : 7 modules à deux niveaux, quiz, révision.
 - [x] **Présentations** (v0.6.0) et **vidéos** (v0.7.0), une par module.
+- [x] **Refonte** (v1.0.0) : design d'appli, leçons animées, progression, révision espacée, simulateur, vidéos en motion design.
 
 ## Reste à faire
 
@@ -32,28 +33,27 @@ et testée sur mobile.
 ### Options
 - Station virtuelle (jeu de pilotage avec événements : orage, rejet industriel, froid).
 - Atlas des micro-organismes indicateurs.
-- Sous-titres des vidéos.
 - Agent vocal « expert épuration » (ElevenLabs) avec une base de connaissances **rédigée par nous**, pas le texte du livre.
 
 ## Refaire les présentations et les vidéos
 
-Les scripts de `outils/medias/` lisent `data/modules/*.json`. Si un texte change, il faut relancer les scripts,
-et aussi régénérer la voix du module (cela consomme des crédits ElevenLabs) pour que la vidéo reste fidèle au texte.
+Les scripts de `outils/medias/` lisent `data/modules/*.json`. Si un texte change, il faut aussi régénérer la voix
+du module (cela consomme des crédits ElevenLabs), avec une pause `<break time="1.6s" />` entre chaque scène.
+Les voix sont attendues dans `outils/travail/voix/<module>.mp3` (dossier non publié).
+Il faut aussi `playwright-core` dans `outils/travail/studio/`, et le site servi par `node outils/serveur.mjs`.
+
+```bash
+node outils/medias/rendre_videos.mjs
+```
+
+```bash
+node outils/medias/rendre_diapos.mjs
+```
 
 ```bash
 pip install -r outils/medias/requirements.txt
 ```
 
 ```bash
-python outils/medias/rendre_schemas.py
-```
-
-```bash
 python outils/medias/construire_presentations.py
 ```
-
-```bash
-python outils/medias/construire_videos.py
-```
-
-Les voix sont attendues dans `outils/travail/voix/<module>.mp3` (dossier non publié).

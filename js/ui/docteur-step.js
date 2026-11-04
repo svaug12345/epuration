@@ -1,100 +1,102 @@
-// Interface de Docteur STEP : une question à la fois, puis la conclusion.
-import { demarrer, repondre } from '../diagnostic/moteur.js';
+// Docteur STEP sous forme de conversation : une question à la fois, puis une ordonnance.
+import { demarrer, repondre, lireNoeud } from '../diagnostic/moteur.js';
+import { picto } from '../pictos.js';
+import { element, medaille } from './composants.js';
 
 const zone = document.querySelector('#diagnostic');
-const reponse = await fetch(new URL('../../data/diagnostic.json', import.meta.url));
-const arbre = await reponse.json();
+const arbre = await (await fetch(new URL('../../data/diagnostic.json', import.meta.url))).json();
 
-// Le chemin parcouru permet de revenir en arrière et de résumer les réponses données.
-let historique = [];
-
-const element = (balise, texte, classe) => {
-  const e = document.createElement(balise);
-  if (texte) e.textContent = texte;
-  if (classe) e.className = classe;
-  return e;
+const PICTOS_SYMPTOMES = {
+  'boue-decante-mal': 'boues', 'effluent-trouble': 'vague', 'boues-flottantes': 'bulles', nitrification: 'atome',
+  'lit-colmate': 'couches', digesteur: 'flamme', lagune: 'soleil',
 };
 
-const bouton = (texte, action, classe = 'bouton') => {
-  const b = element('button', texte, classe);
-  b.type = 'button';
-  b.addEventListener('click', action);
-  return b;
-};
+// Le fil garde chaque question posée et chaque réponse donnée.
+let fil = [];
 
 function afficherAccueil() {
-  historique = [];
-  const liste = element('ul', '', 'cartes');
-  for (const symptome of arbre.symptomes) {
-    const carte = element('button', '', 'carte');
+  fil = [];
+  const liste = element('ul', 'grille deux');
+  for (const s of arbre.symptomes) {
+    const carte = element('button', 'carte');
     carte.type = 'button';
-    carte.style.cssText = 'display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;border-left:4px solid var(--accent)';
-    const titre = element('strong', symptome.titre);
-    titre.style.cssText = 'display:block;color:var(--accent-texte)';
-    carte.append(titre, element('span', symptome.description, 'discret'));
-    carte.addEventListener('click', () => afficherNoeud(demarrer(arbre, symptome.id)));
-    const ligne = document.createElement('li');
-    ligne.append(carte);
-    liste.append(ligne);
+    const texte = document.createElement('div');
+    texte.append(element('strong', 'titre-carte', s.titre), element('span', 'sous', s.description));
+    carte.append(medaille(PICTOS_SYMPTOMES[s.id] ?? 'stetho'), texte);
+    carte.addEventListener('click', () => afficherNoeud(demarrer(arbre, s.id), s.titre));
+    const li = document.createElement('li');
+    li.append(carte);
+    liste.append(li);
   }
-  const venir = element('p', `Pas encore couverts : ${arbre.aVenir.join(' ; ')}.`, 'discret');
-  zone.replaceChildren(element('h2', 'Que constatez-vous ?'), liste, venir);
+  const venir = element('p', 'discret', `Pas encore couverts : ${arbre.aVenir.join(' ; ')}.`);
+  zone.replaceChildren(element('h2', '', 'Que constatez-vous ?'), liste, venir);
 }
 
-function afficherQuestion(noeud) {
-  const bloc = element('div', '', 'carte');
-  bloc.append(element('h2', noeud.question));
-  bloc.lastChild.style.fontSize = '1.1rem';
-  if (noeud.aide) bloc.append(element('p', noeud.aide, 'discret'));
-  const choix = element('div', '', 'boutons');
-  choix.style.flexDirection = 'column';
-  noeud.reponses.forEach((r, i) => {
-    choix.append(bouton(r.texte, () => {
-      historique.push({ id: noeud.id, texte: r.texte, question: noeud.question });
-      afficherNoeud(repondre(arbre, noeud.id, i));
-    }, 'bouton secondaire'));
-  });
-  bloc.append(choix);
-  return bloc;
-}
-
-function afficherConclusion(noeud) {
-  const bloc = element('div', '', 'carte');
-  bloc.style.borderTop = '4px solid var(--accent)';
-  bloc.append(element('p', 'Cause probable', 'discret'));
-  bloc.lastChild.style.margin = '0';
-  bloc.append(element('h2', noeud.cause));
-  bloc.lastChild.style.marginTop = '0';
-  bloc.append(element('p', noeud.explication));
-  bloc.append(element('h3', 'Que faire ?'));
+function ordonnance(noeud) {
+  const bloc = element('section', 'ordonnance');
+  const tete = document.createElement('div');
+  tete.style.cssText = 'display:flex;gap:.8rem;align-items:center;margin-bottom:.6rem';
+  const titre = document.createElement('div');
+  titre.append(element('p', 'surtitre', 'Diagnostic probable'));
+  titre.lastChild.style.margin = '0';
+  titre.append(element('h2', '', noeud.cause));
+  titre.lastChild.style.cssText = 'margin:0;font-size:1.3rem';
+  tete.append(medaille('stetho', 'mauve'), titre);
+  bloc.append(tete, element('p', '', noeud.explication), element('h3', '', 'Que faire ?'));
   const remedes = document.createElement('ul');
-  for (const remede of noeud.remedes) remedes.append(element('li', remede));
-  bloc.append(remedes);
-  bloc.append(element('p', `Source : ${noeud.sources.join(' ; ')}`, 'discret'));
+  for (const r of noeud.remedes) remedes.append(element('li', '', r));
+  bloc.append(remedes, element('p', 'discret', `Source : ${noeud.sources.join(' ; ')}`));
   return bloc;
 }
 
-function afficherNoeud(noeud) {
-  const contenu = [noeud.reponses ? afficherQuestion(noeud) : afficherConclusion(noeud)];
-  if (historique.length && !noeud.reponses) {
-    const resume = element('details');
-    resume.append(element('summary', 'Vos réponses'));
-    const liste = document.createElement('ul');
-    for (const etape of historique) liste.append(element('li', `${etape.question} ${etape.texte}.`));
-    resume.append(liste);
-    contenu.push(resume);
+function afficherNoeud(noeud, symptome) {
+  if (symptome) fil.push({ vous: symptome });
+  const conversation = element('div', 'fil');
+  for (const e of fil) {
+    if (e.docteur) conversation.append(element('div', 'bulle docteur', e.docteur));
+    if (e.vous) conversation.append(element('div', 'bulle vous', e.vous));
   }
-  const actions = element('div', '', 'boutons');
-  if (historique.length) {
-    actions.append(bouton('Revenir', () => {
-      const precedent = historique.pop();
-      afficherNoeud({ id: precedent.id, ...arbre.noeuds[precedent.id] });
-    }, 'bouton secondaire'));
+  const contenu = [conversation];
+
+  if (noeud.reponses) {
+    const question = element('div', 'bulle docteur');
+    question.append(element('strong', '', noeud.question));
+    if (noeud.aide) question.append(element('div', 'discret', noeud.aide));
+    conversation.append(question);
+    const reponses = element('div', 'reponses');
+    noeud.reponses.forEach((r, i) => {
+      const b = element('button', 'bouton secondaire', r.texte);
+      b.type = 'button';
+      b.addEventListener('click', () => {
+        fil.push({ docteur: noeud.question, vous: r.texte, id: noeud.id });
+        afficherNoeud(repondre(arbre, noeud.id, i));
+      });
+      reponses.append(b);
+    });
+    contenu.push(reponses);
+  } else {
+    const espace = document.createElement('div');
+    espace.style.height = '.6rem';
+    contenu.push(espace, ordonnance(noeud));
   }
-  actions.append(bouton('Nouveau diagnostic', afficherAccueil, 'bouton secondaire'));
+
+  const actions = element('div', 'boutons');
+  if (fil.some((e) => e.id)) {
+    const retour = element('button', 'bouton secondaire');
+    retour.type = 'button';
+    retour.append(picto('retour', 18), 'Revenir');
+    retour.addEventListener('click', () => {
+      const precedent = fil.pop();
+      afficherNoeud(lireNoeud(arbre, precedent.id));
+    });
+    actions.append(retour);
+  }
+  const nouveau = element('button', 'bouton secondaire', 'Nouveau diagnostic');
+  nouveau.type = 'button';
+  nouveau.addEventListener('click', afficherAccueil);
+  actions.append(nouveau);
   contenu.push(actions);
   zone.replaceChildren(...contenu);
-  zone.scrollIntoView({ block: 'nearest' });
 }
 
 afficherAccueil();

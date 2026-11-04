@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Réviser</title>
-  <meta name="description" content="Cartes question-réponse pour réviser l'épuration biologique.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Réviser · Épuration</title>
+  <meta name="description" content="Révision espacée : les cartes reviennent au bon moment pour ancrer l'essentiel.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="img/icone.svg" type="image/svg+xml">
@@ -12,14 +12,16 @@
   <script type="module" src="js/ui/revision.js"></script>
 </head>
 <body>
-  <main>
-    <h1>Réviser</h1>
-    <p class="intro">Essayez de répondre de tête, puis retournez la carte. Le tirage est aléatoire.</p>
-    <div class="champ">
+  <main class="etroit">
+    <p class="surtitre" style="margin-top:1rem">Révision espacée</p>
+    <h1 style="margin-top:0;font-size:clamp(1.7rem,6vw,2.8rem)">Retenez pour de bon</h1>
+    <p class="intro">Répondez de tête, retournez la carte, soyez honnête : les cartes reviennent juste avant que vous ne les oubliiez.</p>
+    <div class="boites" id="boites" aria-label="Répartition de vos cartes"></div>
+    <div class="champ" style="margin-bottom:1rem">
       <label for="module">Module</label>
       <select id="module"><option value="">Tous les modules</option></select>
     </div>
-    <div id="carte" style="margin-top:1rem" aria-live="polite"></div>
+    <div id="carte" aria-live="polite"></div>
   </main>
 </body>
 </html>

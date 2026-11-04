@@ -1,14 +1,37 @@
-// Relie la page du calculateur boues activées au moteur de calcul.
+// Relie le simulateur boues activées au moteur de calcul et au bassin animé.
 import { chargerRegles, val } from '../regles.js';
 import { analyserBouesActivees, effluentAttendu } from '../moteur/boues-activees.js';
 import { afficherResultats, afficherAlertes, brancher, nombre } from './formulaire.js';
 import { dessinerCourbes } from './graphique.js';
+import { lancerVisuel } from '../anim/lecteur.js';
 
 const R = await chargerRegles();
 const $ = (selecteur) => document.querySelector(selecteur);
 
+// L'état partagé avec l'animation : le dessin le relit à chaque image, sans recréer la scène.
+const etatBassin = { boues: 4, cb: 0.1, age: 20, dbo5: 5, nh4: 2.5, nitrification: true, gonflement: false };
+lancerVisuel($('#bassin'), { type: 'simulation', etat: etatBassin }, { duree: 1e9, boucle: false });
+
+const majSorties = () => {
+  for (const champ of document.querySelectorAll('input[data-unite]')) {
+    const sortie = document.querySelector(`output[for="${champ.id}"]`);
+    sortie.textContent = `${Number(champ.value).toLocaleString('fr-FR')} ${champ.dataset.unite}`;
+  }
+};
+
 function calculer(entrees) {
+  majSorties();
   const r = analyserBouesActivees(entrees, R);
+
+  Object.assign(etatBassin, {
+    boues: entrees.boues_g_l,
+    cb: r.chargeBoues_kgDBO5_par_kgMS_j,
+    age: r.ageBoues_j,
+    dbo5: r.effluent.dbo5,
+    nh4: r.effluent.nh4,
+    nitrification: r.nitrificationPossible,
+    gonflement: r.alertes.some((a) => a.id === 'gonflement'),
+  });
 
   afficherResultats($('#resultats'), [
     { valeur: nombre(r.chargeBoues_kgDBO5_par_kgMS_j, 3), libelle: 'Charge des boues Cb (kg DBO5/kg MS.j)' },
@@ -28,6 +51,7 @@ function calculer(entrees) {
   const classe = $('#classe');
   classe.replaceChildren();
   const titre = document.createElement('strong');
+  titre.className = 'titre-carte';
   titre.textContent = `Classe de charge la plus proche : ${r.classe.nom}`;
   const degre = document.createElement('p');
   degre.style.margin = '.2rem 0 .3rem';
@@ -39,7 +63,7 @@ function calculer(entrees) {
     : 'Nitrification : pas à attendre avec ces valeurs.';
   classe.append(titre, degre, nitrif);
 
-  afficherAlertes($('#alertes'), r.alertes);
+  afficherAlertes($('#alertes'), r.alertes, 'Votre bassin est dans une plage saine avec ces valeurs.');
 
   const e = r.effluent;
   afficherResultats($('#effluent'), [
@@ -57,8 +81,6 @@ function calculer(entrees) {
     $('#effluent').after(note);
     $('#effluent').dataset.note = 'oui';
   }
-
-  // Le curseur démarre sur la charge calculée, tant qu'elle reste dans la plage.
   deplacer(r.chargeBoues_kgDBO5_par_kgMS_j);
 }
 
@@ -81,12 +103,17 @@ const placer = dessinerCourbes($('#graphique'), {
 });
 
 const curseur = $('#curseur');
+const sortieCurseur = document.querySelector('output[for="curseur"]');
+const placerCurseur = (cb) => {
+  placer(cb);
+  sortieCurseur.textContent = cb.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
+};
 function deplacer(cb) {
   const borne = Math.min(Number(curseur.max), Math.max(Number(curseur.min), cb));
   curseur.value = borne;
-  placer(borne);
+  placerCurseur(borne);
 }
-curseur.addEventListener('input', () => placer(Number(curseur.value)));
+curseur.addEventListener('input', () => placerCurseur(Number(curseur.value)));
 
 brancher($('#formulaire'), $('#erreur'), (entrees) => {
   // On retire l'éventuelle note hors plage du calcul précédent.

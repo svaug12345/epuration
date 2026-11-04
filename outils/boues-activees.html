@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calculateur boues activées</title>
-  <meta name="description" content="Charge des boues, âge des boues, classe de charge et qualité d'eau attendue.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Simulateur boues activées · Épuration</title>
+  <meta name="description" content="Réglez une station virtuelle et regardez le bassin réagir : charge, âge des boues, qualité d'eau.">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
@@ -13,53 +13,59 @@
 </head>
 <body>
   <main data-bandeau>
-    <h1>Calculateur boues activées</h1>
-    <p class="intro">Entrez les données de votre bassin : tout se recalcule à chaque modification.</p>
+    <p class="surtitre">Simulateur</p>
+    <h1 style="margin-top:0;font-size:clamp(1.7rem,6vw,2.8rem)">Pilotez votre bassin</h1>
+    <p class="intro">Bougez les curseurs : le bassin réagit en direct. Essayez de doubler le débit, puis regardez le froid à l'œuvre.</p>
 
-    <form id="formulaire" class="formulaire" novalidate>
-      <div class="champ"><label for="q">Débit (m³/j)</label>
-        <input id="q" name="debit_m3_j" inputmode="decimal" value="2000"></div>
-      <div class="champ"><label for="s">DBO5 en entrée (mg/l)</label>
-        <input id="s" name="dbo5Entree_mg_l" inputmode="decimal" value="250"></div>
-      <div class="champ"><label for="v">Volume d'aération (m³)</label>
-        <input id="v" name="volume_m3" inputmode="decimal" value="1500"></div>
-      <div class="champ"><label for="b">Concentration en boues (g/l)</label>
-        <input id="b" name="boues_g_l" inputmode="decimal" value="4"></div>
-      <div class="champ"><label for="t">Température de l'eau (°C)</label>
-        <input id="t" name="temperature_C" inputmode="decimal" value="15"></div>
-    </form>
+    <div class="simulateur">
+      <canvas id="bassin" class="scene-toile" role="img" aria-label="Bassin simulé : les bactéries, les bulles et la pollution varient selon vos réglages. Les valeurs sont reprises en texte plus bas."></canvas>
+      <form id="formulaire" class="carte formulaire" style="display:grid" novalidate>
+        <div class="champ"><label for="q">Débit <output for="q"></output></label>
+          <input id="q" name="debit_m3_j" type="range" min="200" max="6000" step="50" value="2000" data-unite="m³/j"></div>
+        <div class="champ"><label for="s">DBO5 en entrée <output for="s"></output></label>
+          <input id="s" name="dbo5Entree_mg_l" type="range" min="50" max="800" step="10" value="250" data-unite="mg/l"></div>
+        <div class="champ"><label for="v">Volume d'aération <output for="v"></output></label>
+          <input id="v" name="volume_m3" type="range" min="100" max="4000" step="50" value="1500" data-unite="m³"></div>
+        <div class="champ"><label for="b">Concentration en boues <output for="b"></output></label>
+          <input id="b" name="boues_g_l" type="range" min="1" max="8" step="0.1" value="4" data-unite="g/l"></div>
+        <div class="champ"><label for="t">Température de l'eau <output for="t"></output></label>
+          <input id="t" name="temperature_C" type="range" min="5" max="30" step="1" value="15" data-unite="°C"></div>
+      </form>
+    </div>
 
     <div id="erreur" aria-live="polite"></div>
-    <h2>Résultats</h2>
-    <div id="resultats"></div>
-    <div id="classe" class="carte"></div>
-    <h2>Alertes</h2>
+    <h2>Ce qui se passe</h2>
     <div id="alertes"></div>
+    <div id="resultats"></div>
+    <div id="classe" class="carte" style="display:block"></div>
 
     <h2>Qualité d'eau attendue</h2>
     <div id="effluent"></div>
     <p class="discret">Repère issu d'un cas particulier (eau brute décantée à 230 mg/l de DBO5, Edeline 1997, p. 158),
       interpolé entre les charges 0,15 et 1. À lire comme une tendance, pas comme une prévision.</p>
 
-    <h2>Explorer l'effet de la charge</h2>
+    <h2>L'effet de la charge</h2>
     <p>Quand la charge monte, la DBO5 de sortie augmente, le nitrate s'efface et l'ammonium reste :
-      <strong>la nitrification disparaît</strong>. Déplacez le curseur pour le constater.</p>
+      <strong>la nitrification disparaît</strong>.</p>
     <div class="champ">
-      <label for="curseur">Charge des boues explorée (kg DBO5/kg MS.j)</label>
+      <label for="curseur">Charge des boues explorée <output for="curseur"></output></label>
       <input id="curseur" type="range" min="0.15" max="1" step="0.01" value="0.3">
     </div>
     <div id="graphique" class="graphique"></div>
 
-    <h2>Comment c'est calculé</h2>
-    <pre class="formule">Cv = Q × S0 / 1000 / V
+    <details>
+      <summary>Comment c'est calculé</summary>
+      <pre class="formule">Cv = Q × S0 / 1000 / V
 Cb = Cv / B
 θl = V / Q × 24
 θc = 1,224 × Cb^(−1,125)</pre>
-    <p class="discret">Cb et θc reliés par l'éq. 6.39 (Edeline 1997, p. 160). Oxygène et boues produites :
-      valeurs types de la classe de charge la plus proche (p. 157). Âge minimal de nitrification : 1/µ avec
-      µ = 0,47 × 1,103^(T−15) (p. 245), mortalité négligée, donc sans marge de sécurité.
-      Cet âge est estimé depuis la charge : mesuré sur une vraie station, il peut être différent.</p>
-    <p><a href="../modules/boues-activees.html">Revoir le cours sur les boues activées</a></p>
+      <p class="discret">Cb et θc reliés par l'éq. 6.39 (Edeline 1997, p. 160). Oxygène et boues produites :
+        valeurs types de la classe de charge la plus proche (p. 157). Âge minimal de nitrification : 1/µ avec
+        µ = 0,47 × 1,103^(T−15) (p. 245), mortalité négligée, donc sans marge de sécurité.
+        Cet âge est estimé depuis la charge : mesuré sur une vraie station, il peut être différent.
+        Le bassin animé illustre ces résultats, il ne simule pas chaque bactérie.</p>
+    </details>
+    <p><a href="../modules/boues-activees.html">Revoir la leçon sur les boues activées</a></p>
   </main>
 </body>
 </html>

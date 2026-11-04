@@ -1,5 +1,6 @@
 // Outils communs aux pages de calcul : lire un formulaire, afficher résultats et alertes.
 // Ce module ne contient aucun calcul : il relie la page au moteur.
+import { picto } from '../pictos.js';
 
 /** Format français : virgule décimale et chiffres significatifs raisonnables. */
 export function nombre(valeur, decimales = 2) {
@@ -31,21 +32,26 @@ export function afficherResultats(conteneur, resultats) {
   }));
 }
 
+const PICTO_NIVEAU = { danger: 'alerte', attention: 'alerte', ok: 'coche', info: 'ampoule' };
+const MOTS = { danger: 'À corriger', attention: 'Attention', ok: 'Correct', info: 'À savoir' };
+
 /** Crée le bloc d'une alerte. Le mot en tête évite de reposer sur la seule couleur. */
 function blocAlerte({ niveau, message, source }) {
-  const mots = { danger: 'À corriger', attention: 'Attention', ok: 'Correct', info: 'À savoir' };
   const bloc = document.createElement('div');
   bloc.className = `alerte ${niveau}`;
+  bloc.append(picto(PICTO_NIVEAU[niveau] ?? 'ampoule', 20));
+  const corps = document.createElement('div');
   const texte = document.createElement('p');
   const mot = document.createElement('strong');
-  mot.textContent = `${mots[niveau] ?? 'À savoir'} : `;
+  mot.textContent = `${MOTS[niveau] ?? 'À savoir'} : `;
   texte.append(mot, message);
-  bloc.append(texte);
+  corps.append(texte);
   if (source) {
     const petit = document.createElement('small');
     petit.textContent = `Source : ${source}`;
-    bloc.append(petit);
+    corps.append(petit);
   }
+  bloc.append(corps);
   return bloc;
 }
 

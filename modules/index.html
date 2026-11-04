@@ -2,27 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modules de formation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Parcours · Épuration</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
   <script type="module" src="../js/ui/habillage.js"></script>
+  <script type="module" src="../js/ui/parcours.js"></script>
 </head>
 <body>
-  <main data-bandeau>
-    <h1>Modules de formation</h1>
-    <p class="intro">Chaque module propose un niveau « Comprendre » sans équation, un niveau « Approfondir » avec les formules, une vidéo, une présentation, une fiche mémo et un quiz.</p>
-    <ul class="cartes">
-      <li><a class="carte" href="bases.html"><strong>1. Les bases</strong><span>DBO, DCO, biomasse et loi de Monod.</span></a></li>
-      <li><a class="carte" href="boues-activees.html"><strong>2. Les boues activées</strong><span>Charge, âge des boues et décantation.</span></a></li>
-      <li><a class="carte" href="lits-bacteriens.html"><strong>3. Les lits bactériens</strong><span>Biofilm, flux et force de rinçage.</span></a></li>
-      <li><a class="carte" href="azote-phosphore.html"><strong>4. L'azote et le phosphore</strong><span>Nitrification, dénitrification et déphosphatation.</span></a></li>
-      <li><a class="carte" href="methanisation.html"><strong>5. La méthanisation</strong><span>Digérer sans oxygène et produire du biogaz.</span></a></li>
-      <li><a class="carte" href="lagunage.html"><strong>6. Le lagunage</strong><span>Algues, bactéries et filières rustiques.</span></a></li>
-      <li><a class="carte" href="reglementation-procedes.html"><strong>7. Réglementation et procédés récents</strong><span>Ce qui a changé depuis 1997.</span></a></li>
-    </ul>
-    <p><a href="../revision.html">Réviser avec les cartes question-réponse</a></p>
+  <main class="etroit">
+    <p class="surtitre" style="margin-top:1rem">Votre parcours</p>
+    <h1 style="margin-top:0">De la goutte d'eau à la DERU 2</h1>
+    <div id="bilan" class="carte bilan"></div>
+    <ol class="chemin" id="chemin"></ol>
+    <h2>Vos badges</h2>
+    <ul class="grille deux" id="badges"></ul>
   </main>
 </body>
 </html>

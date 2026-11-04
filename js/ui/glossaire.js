@@ -17,7 +17,8 @@ function afficher() {
   liste.replaceChildren(...retenus.map((t) => {
     const bloc = document.createElement('article');
     bloc.className = 'carte';
-    bloc.style.marginBottom = '.6rem';
+    bloc.style.cssText = 'display:block;margin-bottom:.6rem';
+    bloc.id = t.terme;
 
     const titre = document.createElement('h2');
     titre.textContent = t.nom && t.nom !== t.terme ? `${t.terme} : ${t.nom}` : t.terme;
@@ -43,3 +44,6 @@ function afficher() {
 
 recherche.addEventListener('input', afficher);
 afficher();
+
+// Depuis la recherche : on défile jusqu'au terme demandé.
+if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();

@@ -2,36 +2,56 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Épuration biologique des eaux</title>
-  <meta name="description" content="Modules de formation, calculateurs et diagnostic sur l'épuration biologique des eaux usées.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Épuration : maîtrisez l'épuration biologique</title>
+  <meta name="description" content="Leçons animées, simulateur et diagnostic pour comprendre et piloter une station d'épuration biologique.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="img/icone.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#2c2a29">
+  <meta name="theme-color" content="#17151a">
   <script type="module" src="js/ui/habillage.js"></script>
+  <script type="module" src="js/ui/accueil.js"></script>
 </head>
 <body>
+  <section class="heros">
+    <canvas id="ambiance" aria-hidden="true"></canvas>
+    <div class="heros-contenu">
+      <p class="surtitre">Formation interactive · Gratuite · En français</p>
+      <h1>Des milliards de bactéries travaillent pour vous. <em>Apprenez à les piloter.</em></h1>
+      <p>Leçons animées de 3 minutes, simulateur en direct et diagnostic guidé : tout pour comprendre une station d'épuration.</p>
+      <div class="boutons" id="actions-heros"></div>
+      <div class="chiffres">
+        <div><b>7</b><span>modules</span></div>
+        <div><b>7</b><span>outils en direct</span></div>
+        <div><b>36</b><span>cartes de révision</span></div>
+      </div>
+    </div>
+  </section>
+
   <main>
-    <h1>Comprendre et piloter l'épuration biologique</h1>
-    <p class="intro">Des bactéries, de l'oxygène et un peu de méthode : ce site explique comment une station
-      nettoie l'eau, avec des cours à deux niveaux, des calculateurs et un outil de diagnostic.</p>
+    <div id="reprise"></div>
 
-    <h2>Par où commencer ?</h2>
-    <ul class="cartes">
-      <li><a class="carte" href="modules/"><strong>Se former</strong><span>7 modules avec cours, vidéo, présentation et quiz.</span></a></li>
-      <li><a class="carte" href="outils/boues-activees.html"><strong>Calculer</strong><span>Charge, âge des boues et qualité de l'eau de sortie.</span></a></li>
-      <li><a class="carte" href="outils/docteur-step.html"><strong>Diagnostiquer</strong><span>Docteur STEP : du symptôme à la cause probable et au remède.</span></a></li>
-      <li><a class="carte" href="revision.html"><strong>Réviser</strong><span>Des cartes question-réponse pour ancrer l'essentiel.</span></a></li>
-    </ul>
+    <section class="revele">
+      <p class="surtitre">La méthode</p>
+      <h2 style="margin-top:0">Vous apprenez en faisant</h2>
+      <ul class="grille trois">
+        <li class="carte"><span class="medaille" data-picto="lecture"></span><div><strong class="titre-carte">Regardez</strong><span class="sous">Des leçons courtes, animées, une idée à la fois.</span></div></li>
+        <li class="carte"><span class="medaille mauve" data-picto="engrenage"></span><div><strong class="titre-carte">Manipulez</strong><span class="sous">Réglez une station virtuelle et voyez le bassin réagir.</span></div></li>
+        <li class="carte"><span class="medaille vert" data-picto="cible"></span><div><strong class="titre-carte">Retenez</strong><span class="sous">Questions en cours de route et révision espacée.</span></div></li>
+      </ul>
+    </section>
 
-    <h2>Tout le site</h2>
-    <ul>
-      <li><a href="modules/">Modules de formation</a></li>
-      <li><a href="outils/">Calculateurs et diagnostic</a></li>
-      <li><a href="glossaire.html">Glossaire des notations</a></li>
-      <li><a href="a-propos.html">Sources et mentions</a></li>
-    </ul>
+    <section class="revele">
+      <p class="surtitre">Le parcours</p>
+      <h2 style="margin-top:0">De la goutte d'eau à la DERU 2</h2>
+      <ul class="grille trois" id="liste-modules"></ul>
+    </section>
+
+    <section class="revele">
+      <p class="surtitre">Le labo</p>
+      <h2 style="margin-top:0">Vos outils en direct</h2>
+      <ul class="grille trois" id="liste-outils"></ul>
+    </section>
   </main>
 </body>
 </html>

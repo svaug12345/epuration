@@ -3,62 +3,262 @@
   "slug": "methanisation",
   "titre": "La méthanisation",
   "accroche": "Sans oxygène, la pollution ne se brûle pas : elle se transforme en gaz combustible.",
-  "suivant": { "slug": "lagunage", "titre": "Le lagunage" },
+  "suivant": {
+    "slug": "lagunage",
+    "titre": "Le lagunage"
+  },
   "scenes": [
     {
-      "titre": "Épurer sans oxygène",
-      "points": ["Pas d'aération à payer", "Peu de boues produites", "Du biogaz à valoriser"],
-      "narration": "Jusqu'ici, nous avons toujours soufflé de l'air dans l'eau, et cela coûte cher. La méthanisation prend le chemin inverse : on retire tout contact avec l'oxygène. Dans une cuve fermée, le digesteur, des micro-organismes dégradent la matière organique lentement et produisent un gaz : le biogaz, un mélange de méthane et de gaz carbonique. Ce procédé a trois atouts. D'abord, il n'y a pas d'aération à payer. Ensuite, il produit peu de boues, car ces organismes tirent très peu d'énergie de leur travail. Enfin, le méthane peut être valorisé, et le bilan peut devenir producteur d'énergie. On s'en sert pour digérer les boues des stations, et pour traiter directement des eaux très chargées, comme celles de l'industrie agroalimentaire."
+      "titre": "Transformer la pollution en énergie",
+      "points": [
+        "Sans oxygène",
+        "Du biogaz à valoriser"
+      ],
+      "visuel": {
+        "type": "titre",
+        "surtitre": "Méthanisation",
+        "titre": "Et si la pollution devenait de l'énergie ?",
+        "picto": "flamme"
+      },
+      "narration": "Jusqu'ici, on a soufflé de l'air, et ça coûte très cher. Et si on faisait l'inverse ? Plus d'oxygène du tout. Dans une cuve fermée, des micro-organismes transforment la pollution en un gaz combustible : le biogaz."
     },
     {
-      "titre": "Une chaîne de travail",
+      "titre": "Trois atouts",
+      "points": [
+        "Pas d'aération",
+        "Peu de boues",
+        "Du méthane à valoriser"
+      ],
+      "visuel": {
+        "type": "liste",
+        "titre": "Trois atouts",
+        "items": [
+          {
+            "picto": "bulles",
+            "texte": "Pas d'aération à payer",
+            "sous": "Le premier poste d'énergie d'une station disparaît",
+            "couleur": "#2FD6C4"
+          },
+          {
+            "picto": "boues",
+            "texte": "Peu de boues",
+            "sous": "Ces organismes tirent très peu d'énergie de leur travail",
+            "couleur": "#9C9BE0"
+          },
+          {
+            "picto": "flamme",
+            "texte": "Du méthane valorisable",
+            "sous": "Le bilan peut devenir producteur d'énergie"
+          }
+        ]
+      },
+      "narration": "Ce procédé a trois atouts. Un : pas d'aération à payer. Deux : très peu de boues, car ces organismes tirent peu d'énergie de leur travail. Trois : le méthane se valorise, et le bilan peut devenir producteur d'énergie. On s'en sert pour digérer les boues des stations, et pour traiter les eaux très chargées de l'agroalimentaire."
+    },
+    {
+      "titre": "Un travail à la chaîne",
       "schema": "methanisation",
-      "legende": "Les étapes de la méthanisation, redessinées.",
-      "points": ["Hydrolyse : on découpe", "Acidification : acides gras volatils", "Méthanogenèse : méthane"],
-      "narration": "La méthanisation est un travail à la chaîne, où chaque équipe dépend de la précédente. D'abord l'hydrolyse : les grosses molécules et les particules sont découpées en composés solubles. Ensuite l'acidification : des bactéries transforment ces composés en acides gras volatils, qu'on appelle les AGV. Enfin, les méthanogènes convertissent ces acides en méthane et en gaz carbonique. Le point faible se trouve au bout de la chaîne. Les méthanogènes sont le maillon le plus lent, et c'est lui qui règle la vitesse de l'ensemble. Tout se passe comme dans une usine où le dernier poste serait le moins rapide : si l'amont produit plus vite qu'il ne peut absorber, les produits s'accumulent devant lui, ici sous forme d'acides."
+      "legende": "Les étapes de la méthanisation.",
+      "points": [
+        "Hydrolyse",
+        "Acidification : les AGV",
+        "Méthanogenèse : le maillon lent"
+      ],
+      "visuel": {
+        "type": "chaine",
+        "titre": "Une chaîne, et un maillon lent",
+        "noeuds": [
+          {
+            "picto": "boues",
+            "nom": "Hydrolyse"
+          },
+          {
+            "picto": "fiole",
+            "nom": "Acidification",
+            "couleur": "#9C9BE0"
+          },
+          {
+            "picto": "flamme",
+            "nom": "Méthanogenèse"
+          }
+        ],
+        "lent": 2,
+        "legende": "Les méthanogènes règlent la vitesse de tout le reste",
+        "couleur": "#FFC94D"
+      },
+      "narration": "C'est un vrai travail à la chaîne. D'abord l'hydrolyse : on découpe les grosses molécules. Ensuite l'acidification : des bactéries en font des acides gras volatils, les AGV. Enfin, les méthanogènes changent ces acides en méthane. Et voici le point faible : ce dernier maillon est le plus lent. Il règle la vitesse de toute la chaîne."
     },
     {
       "titre": "Des organismes très lents",
-      "points": ["À 35 °C : µ̂ de 0,32 par jour", "Y de 0,04 à 0,05", "Soit 3 jours au moins pour se renouveler"],
-      "narration": "Les chiffres montrent à quel point ces organismes sont lents. À 35 degrés, sur des acides gras volatils, les méthanogènes ont une vitesse de croissance maximale d'environ 0,32 par jour. Comparez avec les bactéries des boues activées, créditées d'environ 3 par jour à seulement 10 degrés : le rapport est de un à dix, à une température pourtant bien plus favorable. Leur rendement est lui aussi minuscule : 0,04 à 0,05 gramme de cellules par gramme de substrat. C'est pour cela que la méthanisation produit peu de boues. Mais c'est aussi sa faiblesse : un digesteur met très longtemps à reconstituer sa population si on la perd par accident. Il se conduit avec prudence et ne supporte pas les changements brutaux."
+      "points": [
+        "µ̂ de 0,32 par jour à 35 °C",
+        "Bien plus lents qu'en boues activées"
+      ],
+      "visuel": {
+        "type": "comparaison",
+        "titre": "Vitesse de croissance maximale",
+        "cartes": [
+          {
+            "picto": "bulles",
+            "titre": "Boues activées, à 10 °C",
+            "valeur": "3 /j",
+            "texte": "En DCO, sous réserve d'essais",
+            "couleur": "#37B6E8"
+          },
+          {
+            "picto": "flamme",
+            "titre": "Méthanogènes, à 35 °C",
+            "valeur": "0,32 /j",
+            "texte": "Dix fois moins, malgré la chaleur"
+          }
+        ]
+      },
+      "narration": "À quel point sont-ils lents ? À 35 degrés, leur croissance maximale est d'environ 0,32 par jour. Les bactéries des boues activées font environ 3 par jour, à seulement 10 degrés. Dix fois plus, et dans le froid ! Conséquence : un digesteur met très longtemps à reconstituer sa population s'il la perd. Il faut le conduire avec prudence."
     },
     {
       "titre": "Le réglage clé : l'âge des boues",
-      "points": ["3 jours au minimum en théorie", "10 à 30 jours en pratique", "Sans recyclage : θc = V / Q"],
-      "narration": "Comme pour les boues activées, le paramètre central est l'âge des boues. Il a un grand avantage : on peut le régler sans connaître la quantité de biomasse réellement active dans le digesteur. Sans recyclage, c'est simple : il vaut le volume divisé par le débit de boues introduit. En théorie, il faut au moins 3 jours pour qu'une digestion correcte ait lieu. Mais en pratique, on adopte de 10 à 30 jours. Edeline y voit le signe que la technologie a encore des progrès à faire, notamment sur la mise en contact du substrat et de la biomasse. Pour vous donner un ordre d'idée, un digesteur de mille mètres cubes alimenté à cinquante mètres cubes par jour présente un âge de vingt jours : il se trouve en plein dans la plage habituelle."
+      "points": [
+        "3 jours en théorie",
+        "10 à 30 jours en pratique",
+        "Sans recyclage : θc = V / Q"
+      ],
+      "visuel": {
+        "type": "jauge",
+        "titre": "L'âge des boues d'un digesteur",
+        "min": 0,
+        "max": 40,
+        "unite": "jours",
+        "zones": [
+          {
+            "de": 0,
+            "a": 3,
+            "nom": "",
+            "couleur": "#FF6B5E"
+          },
+          {
+            "de": 3,
+            "a": 10,
+            "nom": "Risqué",
+            "couleur": "#FFC94D"
+          },
+          {
+            "de": 10,
+            "a": 30,
+            "nom": "Pratique courante",
+            "couleur": "#63C95E"
+          },
+          {
+            "de": 30,
+            "a": 40,
+            "nom": "Large",
+            "couleur": "#D9D3D2"
+          }
+        ],
+        "valeurs": [
+          2,
+          20
+        ],
+        "messages": [
+          "Sous 3 jours : les méthanogènes sont évacués",
+          "1 000 m³ à 50 m³ par jour : 20 jours, idéal"
+        ]
+      },
+      "narration": "Le réglage clé, c'est encore l'âge des boues. Sans recyclage, c'est simplement le volume divisé par le débit. Sous 3 jours, les méthanogènes sont évacués. En pratique, on adopte de 10 à 30 jours. Exemple : un digesteur de mille mètres cubes, alimenté à cinquante mètres cubes par jour, donne vingt jours. C'est parfait."
     },
     {
-      "titre": "Quand le digesteur s'acidifie",
-      "points": ["L'amont va plus vite que l'aval", "Les AGV s'accumulent", "Séparer les phases : le split-phase"],
-      "narration": "Le risque typique d'un digesteur est la panne par acidification. Si on l'alimente trop vite, ou si un toxique touche les méthanogènes, les bactéries acidifiantes continuent de travailler, alors que le maillon suivant ne suit plus. Les acides gras volatils s'accumulent, ce qui gêne encore plus les méthanogènes : le phénomène s'entretient. Le suivi de ces acides et de l'alcalinité constitue donc un outil de surveillance important, et nous le détaillerons dans une prochaine version du site. Une idée technique découle de cette fragilité : séparer les deux équipes dans deux réacteurs successifs. Le premier, à temps de séjour court, inférieur à environ 14 heures, ne garde que les acidifiantes, car les méthanogènes y sont lessivés. Le second, à long temps de séjour, produit le méthane. C'est le procédé dit split-phase."
+      "titre": "La panne typique",
+      "points": [
+        "L'amont va plus vite que l'aval",
+        "Les AGV s'accumulent",
+        "Split-phase : séparer les phases"
+      ],
+      "visuel": {
+        "type": "chaine",
+        "titre": "La panne : les acides s'accumulent",
+        "noeuds": [
+          {
+            "picto": "fiole",
+            "nom": "Acidifiantes : elles continuent",
+            "couleur": "#9C9BE0"
+          },
+          {
+            "picto": "alerte",
+            "nom": "Méthanogènes : elles décrochent"
+          }
+        ],
+        "lent": 1,
+        "legende": "La solution : deux réacteurs, le split-phase",
+        "couleur": "#FF6B5E"
+      },
+      "narration": "La panne typique, c'est l'acidification. On alimente trop vite, ou un toxique frappe les méthanogènes. En amont, les acidifiantes continuent, et les acides s'accumulent, ce qui gêne encore plus les méthanogènes. Le cercle vicieux ! Une solution : deux réacteurs. Le premier, à séjour court, sous 14 heures environ, acidifie. Le second produit le méthane. C'est le split-phase."
     },
     {
-      "titre": "À quoi ça sert aujourd'hui",
-      "points": ["Digérer les boues des stations", "Traiter des eaux industrielles chargées", "Une pièce de la neutralité énergétique"],
-      "narration": "Pourquoi ce procédé mérite-t-il votre attention aujourd'hui ? Parce que l'énergie est devenue un enjeu central pour l'assainissement. Dans une grande station, digérer les boues réduit leur volume à évacuer et fournit un gaz utilisable pour produire de la chaleur et de l'électricité, ou pour l'injecter dans le réseau. La directive européenne révisée vise justement une neutralité énergétique progressive des stations, et le biogaz en est une pièce importante. Le procédé sert aussi à prétraiter des eaux très chargées, et le livre détaille plusieurs exemples agroalimentaires. Retenez les grandes idées : pas d'oxygène, une chaîne de micro-organismes, un dernier maillon lent, un âge des boues de 10 à 30 jours, et une vigilance permanente vis-à-vis de l'acidification."
+      "titre": "L'énergie, enjeu d'aujourd'hui",
+      "points": [
+        "Moins de boues à évacuer",
+        "Chaleur, électricité, réseau de gaz",
+        "Vers la neutralité énergétique"
+      ],
+      "visuel": {
+        "type": "chaine",
+        "titre": "Des boues à l'énergie",
+        "noeuds": [
+          {
+            "picto": "boues",
+            "nom": "Boues"
+          },
+          {
+            "picto": "flamme",
+            "nom": "Digesteur"
+          },
+          {
+            "picto": "eclair",
+            "nom": "Chaleur et électricité",
+            "couleur": "#FFC94D"
+          },
+          {
+            "picto": "feuille",
+            "nom": "Neutralité énergétique",
+            "couleur": "#63C95E"
+          }
+        ],
+        "couleur": "#FFC94D"
+      },
+      "narration": "Pourquoi tout cela compte aujourd'hui ? Parce que l'énergie est devenue centrale. Digérer les boues réduit leur volume, et fournit un gaz pour produire chaleur et électricité. La directive européenne révisée vise justement une neutralité énergétique progressive. Le biogaz en est une pièce importante."
     }
   ],
   "approfondir": [
     {
       "titre": "Modèle global",
-      "paragraphes": ["En admettant que les méthanogènes sont le chaînon le plus lent, le livre aboutit à la même équation que pour les boues activées : le rapport de la production P à la biomasse B est égal à l'inverse de l'âge des boues."],
-      "formules": ["P / B = 1 / θc = Y × U − b"],
+      "paragraphes": [
+        "En admettant que les méthanogènes sont le chaînon le plus lent, le livre aboutit à la même équation que pour les boues activées : le rapport de la production P à la biomasse B est égal à l'inverse de l'âge des boues."
+      ],
+      "formules": [
+        "P / B = 1 / θc = Y × U − b"
+      ],
       "source": "Edeline 1997, p. 196"
     },
     {
       "titre": "Constantes à 35 °C",
-      "paragraphes": ["Sur acides gras volatils, comme substrat des méthanogènes : Y = 0,04 à 0,05 ; b = 0,02 à 0,05 par jour ; k = 6 à 10 g/g.j ; kd = 0,02 par jour ; µ̂ = 0,32 par jour. Les valeurs de Ks divergent fortement, de 150 à 2 000 mg/l pour l'acide acétique. En paramètres globaux, acidification incluse : Y = 0,07 à 0,50 ; b = 0,01 à 0,10 par jour ; k = 0,3 à 1 g/g.j."],
+      "paragraphes": [
+        "Sur acides gras volatils, comme substrat des méthanogènes : Y = 0,04 à 0,05 ; b = 0,02 à 0,05 par jour ; k = 6 à 10 g/g.j ; kd = 0,02 par jour ; µ̂ = 0,32 par jour. Les valeurs de Ks divergent fortement, de 150 à 2 000 mg/l pour l'acide acétique. En paramètres globaux, acidification incluse : Y = 0,07 à 0,50 ; b = 0,01 à 0,10 par jour ; k = 0,3 à 1 g/g.j."
+      ],
       "source": "Edeline 1997, p. 197"
     },
     {
       "titre": "Âge minimal et âge pratique",
-      "paragraphes": ["Sans mortalité, 1/µ̂ = 1/0,32 ≈ 3,1 jours : on retrouve l'ordre de grandeur des 3 jours minimaux annoncés. L'âge pratique reste de 10 à 30 jours."],
-      "formules": ["θc (sans recyclage) = V / Q"],
+      "paragraphes": [
+        "Sans mortalité, 1/µ̂ = 1/0,32 ≈ 3,1 jours : on retrouve l'ordre de grandeur des 3 jours minimaux annoncés. L'âge pratique reste de 10 à 30 jours."
+      ],
+      "formules": [
+        "θc (sans recyclage) = V / Q"
+      ],
       "source": "Edeline 1997, p. 197"
     },
     {
       "titre": "Modèle à deux compartiments",
-      "paragraphes": ["Le produit de la première phase devient le substrat de la seconde. Un temps de séjour suffisamment faible, inférieur à environ 14 heures, lessive les ferments méthaniques. Les biomasses doivent rester séparées, par des décanteurs intermédiaires ou des membranes dialysantes."],
+      "paragraphes": [
+        "Le produit de la première phase devient le substrat de la seconde. Un temps de séjour suffisamment faible, inférieur à environ 14 heures, lessive les ferments méthaniques. Les biomasses doivent rester séparées, par des décanteurs intermédiaires ou des membranes dialysantes."
+      ],
       "source": "Edeline 1997, p. 197, d'après Ghosh et Pohland"
     }
   ],
@@ -79,14 +279,64 @@
     "solution": "L'âge passe de 20 jours à 5 jours. Il dépasse encore le minimum théorique de 3 jours, mais sort nettement de la plage pratique de 10 à 30 jours. Le risque d'acidification augmente. Pour 200 m³/j, il faudrait un volume utile de 2 000 à 6 000 m³."
   },
   "quiz": [
-    { "question": "De quoi le biogaz est-il principalement composé ?", "choix": ["Méthane et gaz carbonique", "Azote et oxygène", "Hydrogène pur"], "bonne": 0, "explication": "Le méthane en fait un gaz combustible." },
-    { "question": "Quel est le maillon le plus lent de la chaîne ?", "choix": ["L'hydrolyse des sucres", "L'acidification", "Les méthanogènes"], "bonne": 2, "explication": "Le modèle global admet que ce sont eux qui règlent la vitesse de l'ensemble.", "source": "Edeline 1997, p. 196" },
-    { "question": "Quel âge des boues adopte-t-on en pratique ?", "choix": ["1 à 2 jours", "10 à 30 jours", "100 à 300 jours"], "bonne": 1, "explication": "Le minimum théorique n'est que de 3 jours.", "source": "Edeline 1997, p. 197" },
-    { "question": "Pourquoi la méthanisation produit-elle peu de boues ?", "choix": ["Les boues se transforment en eau", "Le rendement de croissance est très faible", "Les boues s'échappent avec le gaz"], "bonne": 1, "explication": "Y vaut de 0,04 à 0,05 pour les méthanogènes.", "source": "Edeline 1997, p. 197" },
-    { "question": "Dans le procédé split-phase, le premier réacteur a un séjour court pour :", "choix": ["Économiser du volume seulement", "Lessiver les méthanogènes et ne garder que les acidifiantes", "Récupérer plus de méthane"], "bonne": 1, "explication": "Le second réacteur, à long séjour, produit le gaz.", "source": "Edeline 1997, p. 197" }
+    {
+      "question": "De quoi le biogaz est-il principalement composé ?",
+      "choix": [
+        "Méthane et gaz carbonique",
+        "Azote et oxygène",
+        "Hydrogène pur"
+      ],
+      "bonne": 0,
+      "explication": "Le méthane en fait un gaz combustible."
+    },
+    {
+      "question": "Quel est le maillon le plus lent de la chaîne ?",
+      "choix": [
+        "L'hydrolyse des sucres",
+        "L'acidification",
+        "Les méthanogènes"
+      ],
+      "bonne": 2,
+      "explication": "Le modèle global admet que ce sont eux qui règlent la vitesse de l'ensemble.",
+      "source": "Edeline 1997, p. 196"
+    },
+    {
+      "question": "Quel âge des boues adopte-t-on en pratique ?",
+      "choix": [
+        "1 à 2 jours",
+        "10 à 30 jours",
+        "100 à 300 jours"
+      ],
+      "bonne": 1,
+      "explication": "Le minimum théorique n'est que de 3 jours.",
+      "source": "Edeline 1997, p. 197"
+    },
+    {
+      "question": "Pourquoi la méthanisation produit-elle peu de boues ?",
+      "choix": [
+        "Les boues se transforment en eau",
+        "Le rendement de croissance est très faible",
+        "Les boues s'échappent avec le gaz"
+      ],
+      "bonne": 1,
+      "explication": "Y vaut de 0,04 à 0,05 pour les méthanogènes.",
+      "source": "Edeline 1997, p. 197"
+    },
+    {
+      "question": "Dans le procédé split-phase, le premier réacteur a un séjour court pour :",
+      "choix": [
+        "Économiser du volume seulement",
+        "Lessiver les méthanogènes et ne garder que les acidifiantes",
+        "Récupérer plus de méthane"
+      ],
+      "bonne": 1,
+      "explication": "Le second réacteur, à long séjour, produit le gaz.",
+      "source": "Edeline 1997, p. 197"
+    }
   ],
   "sources": [
     "F. Edeline, L'épuration biologique des eaux, 4e éd., Cebedoc, 1997 : chap. 7, p. 196-197 et 210-211.",
     "Directive (UE) 2024/3019, pour l'objectif de neutralité énergétique."
-  ]
+  ],
+  "picto": "flamme"
 }

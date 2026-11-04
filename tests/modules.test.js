@@ -40,9 +40,20 @@ test('les schémas et les liens de cas existent', async () => {
   }
 });
 
-test('la voix off dure au moins 3 minutes (environ 19 caractères par seconde)', () => {
+test('la voix off dure au moins 2 min 10 (environ 16 caractères par seconde)', () => {
   for (const m of modules) {
     const caracteres = m.scenes.reduce((total, s) => total + s.narration.length, 0);
-    assert.ok(caracteres / 19 >= 180, `${m.slug} : ${caracteres} caractères, soit ${Math.round(caracteres / 19)} s`);
+    assert.ok(caracteres / 16 >= 130, `${m.slug} : ${caracteres} caractères`);
+  }
+});
+
+test('chaque scène a une animation connue, un titre et un texte court', () => {
+  const types = ['titre', 'chiffre', 'liste', 'comparaison', 'chaine', 'bassin', 'circuit', 'jauge', 'courbe', 'biofilm', 'arrosage', 'lagune', 'alternance', 'frise'];
+  for (const m of modules) {
+    for (const s of m.scenes) {
+      assert.ok(types.includes(s.visuel?.type), `${m.slug} / ${s.titre} : animation inconnue`);
+      assert.ok(s.titre && s.points?.length, `${m.slug} / ${s.titre} : scène incomplète`);
+      assert.ok(s.narration.length <= 700, `${m.slug} / ${s.titre} : texte trop long pour une leçon courte`);
+    }
   }
 });
