@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur lagunage</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
+  <script type="module" src="../js/ui/habillage.js"></script>
+  <script type="module" src="../js/ui/calc-autres.js"></script>
+</head>
+<body>
+  <main data-bandeau data-calculateur="lagune">
+    <h1>Calculateur lagunage</h1>
+    <p class="intro">Un calcul volontairement simple : le bassin facultatif est traité comme un réacteur à mélange complet.</p>
+    <form id="formulaire" class="formulaire" novalidate>
+      <div class="champ"><label for="s">DBO5 en entrée (mg/l)</label><input id="s" name="dbo5Entree_mg_l" inputmode="decimal" value="200"></div>
+      <div class="champ"><label for="t">Température de l'eau (°C)</label><input id="t" name="temperature_C" inputmode="decimal" value="15"></div>
+      <div class="champ"><label for="j">Temps de séjour (j)</label><input id="j" name="sejour_j" inputmode="decimal" value="30"></div>
+      <div class="champ"><label for="e">Population raccordée (EH)</label><input id="e" name="habitants_EH" inputmode="decimal" value="500"></div>
+    </form>
+    <div id="erreur" aria-live="polite"></div>
+    <h2>Résultats</h2><div id="resultats"></div>
+    <h2>Alertes</h2><div id="alertes"></div>
+    <h2>Comment c'est calculé</h2>
+    <pre class="formule">S1 = S0 / (1 + k × θ)</pre>
+    <p class="discret">k dépend de la température, interpolé dans le Tab. 12.I (Edeline 1997, p. 263). Surfaces : p. 267. Le temps de séjour courant va de 7 à 40 jours.</p>
+    <p><a href="../modules/lagunage.html">Revoir le cours sur le lagunage</a></p>
+  </main>
+</body>
+</html>

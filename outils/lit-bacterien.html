@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur lit bactérien</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
+  <script type="module" src="../js/ui/habillage.js"></script>
+  <script type="module" src="../js/ui/calc-autres.js"></script>
+</head>
+<body>
+  <main data-bandeau data-calculateur="lit">
+    <h1>Calculateur lit bactérien</h1>
+    <p class="intro">Le flux sur le biofilm dit si la nitrification est possible. La force de rinçage dit si le film reste sain.</p>
+    <form id="formulaire" class="formulaire" novalidate>
+      <div class="champ"><label for="q">Débit (m³/j)</label><input id="q" name="debit_m3_j" inputmode="decimal" value="400"></div>
+      <div class="champ"><label for="s">DBO5 en entrée (mg/l)</label><input id="s" name="dbo5Entree_mg_l" inputmode="decimal" value="150"></div>
+      <div class="champ"><label for="a">Surface du lit (m²)</label><input id="a" name="surface_m2" inputmode="decimal" value="100"></div>
+      <div class="champ"><label for="h">Hauteur du lit (m)</label><input id="h" name="hauteur_m" inputmode="decimal" value="2"></div>
+      <div class="champ"><label for="g">Surface spécifique du support (m²/m³)</label><input id="g" name="surfaceSpecifique_m2_m3" inputmode="decimal" value="100"></div>
+      <div class="champ"><label for="b">Nombre de bras</label><input id="b" name="bras" inputmode="decimal" value="2"></div>
+      <div class="champ"><label for="n">Vitesse de rotation (tours/h)</label><input id="n" name="tours_par_h" inputmode="decimal" value="60"></div>
+      <div class="champ"><label><input id="biodisque" type="checkbox" style="width:auto;min-height:0"> C'est un biodisque</label></div>
+    </form>
+    <div id="erreur" aria-live="polite"></div>
+    <h2>Résultats</h2><div id="resultats"></div>
+    <h2>Alertes</h2><div id="alertes"></div>
+    <h2>Comment c'est calculé</h2>
+    <pre class="formule">Cv = Q × S0 / 1000 / (A × H)
+Flux = Cv × 1000 / σ
+Ch = Q / A / 24
+S = Ch × 1000 / (a × n)</pre>
+    <p class="discret">Edeline 1997, p. 106-107. Exemple de contrôle : 0,4 kg DBO5/m³.j avec σ = 100 m²/m³ donne 4 g DBO5/m².j.</p>
+    <p><a href="../modules/lits-bacteriens.html">Revoir le cours sur les lits bactériens</a></p>
+  </main>
+</body>
+</html>

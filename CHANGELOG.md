@@ -1,5 +1,9 @@
 # Journal des versions
 
+## v0.4.0 — 4 novembre 2026
+
+Calculateurs lit bactérien, azote, méthanisation, lagunage et choix du procédé, tous testés, avec page d'index des outils.
+
 ## v0.3.0 — 4 novembre 2026
 
 Docteur STEP : 7 symptômes, de la question à la cause probable et au remède, avec arbre en données contrôlé par des tests.

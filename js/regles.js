@@ -31,7 +31,9 @@ export function val(index, id) {
  */
 export function citer(index, id) {
   const { source } = index.get(id);
-  return `${source.ouvrage}, p. ${source.page} (${source.ref})`;
+  // « Texte » veut seulement dire « dans le corps du texte » : inutile de l'afficher.
+  const precision = source.ref === 'Texte' ? '' : ` (${source.ref})`;
+  return `${source.ouvrage}, p. ${source.page}${precision}`;
 }
 
 /** Charge les règles dans le navigateur. L'adresse reste juste quel que soit le sous-dossier. */

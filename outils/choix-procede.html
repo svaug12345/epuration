@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choix du procédé</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
+  <script type="module" src="../js/ui/habillage.js"></script>
+  <script type="module" src="../js/ui/calc-autres.js"></script>
+</head>
+<body>
+  <main data-bandeau data-calculateur="choix">
+    <h1>Choix du procédé</h1>
+    <p class="intro">Quelle charge volumique ne pas dépasser pour tenir une qualité de sortie ?</p>
+    <form id="formulaire" class="formulaire" novalidate>
+      <div class="champ"><label for="c">DBO5 que 80 % des mesures de sortie ne doivent pas dépasser (mg/l)</label>
+        <input id="c" name="cible_mg_l" inputmode="decimal" value="35"></div>
+    </form>
+    <div id="erreur" aria-live="polite"></div>
+    <h2>Repères</h2><div id="resultats"></div>
+    <div id="alertes"></div>
+    <p class="discret">Edeline 1997, appendice, p. 294. Ces repères aident à comparer, mais le choix réel dépend aussi du terrain, du coût, de l'exploitation et de la réglementation.
+      Les lits bactériens tiennent moins de charge que les boues activées pour une même qualité, en échange d'une exploitation souvent plus simple.</p>
+  </main>
+</body>
+</html>

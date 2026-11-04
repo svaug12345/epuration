@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur azote</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
+  <script type="module" src="../js/ui/habillage.js"></script>
+  <script type="module" src="../js/ui/calc-autres.js"></script>
+</head>
+<body>
+  <main data-bandeau data-calculateur="azote">
+    <h1>Calculateur azote</h1>
+    <p class="intro">Les nitrifiants poussent lentement, et encore moins vite dans le froid. Ce calcul donne l'âge minimal des boues et les besoins associés.</p>
+    <form id="formulaire" class="formulaire" novalidate>
+      <div class="champ"><label for="q">Débit (m³/j)</label><input id="q" name="debit_m3_j" inputmode="decimal" value="1000"></div>
+      <div class="champ"><label for="t">Température de l'eau (°C)</label><input id="t" name="temperature_C" inputmode="decimal" value="12"></div>
+      <div class="champ"><label for="n">Azote à nitrifier (mg N/l)</label><input id="n" name="azoteANitrifier_mg_l" inputmode="decimal" value="40"></div>
+      <div class="champ"><label for="d">Azote à dénitrifier avec du méthanol (mg N/l)</label><input id="d" name="azoteADenitrifier_mg_l" inputmode="decimal" value="20"></div>
+      <div class="champ"><label for="o">Oxygène dissous (mg/l)</label><input id="o" name="oxygene_mg_l" inputmode="decimal" value="2"></div>
+      <div class="champ"><label for="a">Âge des boues de la station (j)</label><input id="a" name="ageBoues_j" inputmode="decimal" value="10"></div>
+    </form>
+    <div id="erreur" aria-live="polite"></div>
+    <h2>Résultats</h2><div id="resultats"></div>
+    <h2>Alertes</h2><div id="alertes"></div>
+    <h2>Comment c'est calculé</h2>
+    <pre class="formule">µ = 0,47 × 1,103^(T − 15)
+âge minimal = 1 / µ
+O2 = 4,33 × azote nitrifié
+méthanol = 2,5 × azote dénitrifié</pre>
+    <p class="discret">Edeline 1997, p. 243 et 245 (nitrification), p. 227 (méthanol). L'âge minimal néglige la mortalité : prévoyez une marge. L'alcalinité n'est pas encore calculée ici, car ses valeurs restent à vérifier dans le livre.</p>
+    <p><a href="../modules/azote-phosphore.html">Revoir le cours sur l'azote et le phosphore</a></p>
+  </main>
+</body>
+</html>

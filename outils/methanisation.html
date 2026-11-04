@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur méthanisation</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
+  <script type="module" src="../js/ui/habillage.js"></script>
+  <script type="module" src="../js/ui/calc-autres.js"></script>
+</head>
+<body>
+  <main data-bandeau data-calculateur="digesteur">
+    <h1>Calculateur méthanisation</h1>
+    <p class="intro">Les méthanogènes croissent lentement : l'âge des boues est le premier contrôle d'un digesteur.</p>
+    <form id="formulaire" class="formulaire" novalidate>
+      <div class="champ"><label for="v">Volume utile du digesteur (m³)</label><input id="v" name="volume_m3" inputmode="decimal" value="1000"></div>
+      <div class="champ"><label for="q">Débit de boues (m³/j)</label><input id="q" name="debitBoues_m3_j" inputmode="decimal" value="50"></div>
+    </form>
+    <div id="erreur" aria-live="polite"></div>
+    <h2>Résultats</h2><div id="resultats"></div>
+    <h2>Alertes</h2><div id="alertes"></div>
+    <h2>Comment c'est calculé</h2>
+    <pre class="formule">θc = V / Q</pre>
+    <p class="discret">Valable sans recyclage de boues. Seuils : au moins 3 j en théorie, 10 à 30 j en pratique (Edeline 1997, p. 197). Le bilan thermique et le suivi des AGV ne sont pas encore couverts, car leurs valeurs restent à vérifier.</p>
+    <p><a href="../modules/methanisation.html">Revoir le cours sur la méthanisation</a></p>
+  </main>
+</body>
+</html>
