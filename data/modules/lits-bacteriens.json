@@ -10,7 +10,7 @@
       "schema": "lit-bacterien",
       "legende": "Lit bactérien et coupe du biofilm, redessinés.",
       "points": ["Biomasse fixée sur un support", "L'eau ruisselle en film mince", "L'air circule entre les pièces du support"],
-      "narration": "Dans un bassin de boues activées, les bactéries flottent, et il faut les maintenir en suspension. Le lit bactérien part de l'idée inverse : il leur offre un support où s'accrocher. Une tour est remplie de pierres, de pouzzolane ou de pièces en plastique. Un bras rotatif arrose le haut du lit et l'eau descend en ruisselant. Sur chaque surface se forme un film vivant, le biofilm. La pollution passe de l'eau vers ce film, et l'air circule entre les pièces du support. Le passage est rapide : l'eau séjourne dans le lit de quelques secondes à un quart d'heure environ. Ce qui explique ce résultat, c'est la grande surface offerte aux bactéries, et non un long séjour de l'eau."
+      "narration": "Dans un bassin de boues activées, les bactéries flottent, et il faut les maintenir en suspension. Le lit bactérien part de l'idée inverse : il leur offre un support où s'accrocher. Une tour est remplie de pierres, de pouzzolane ou de pièces en plastique. Un bras rotatif arrose le haut du lit et l'eau descend en ruisselant. Sur chaque surface se forme un film vivant, le biofilm. La pollution passe de l'eau vers ce film, et l'air circule entre les pièces du support. Le passage est rapide : l'eau séjourne dans le lit de quelques secondes à un quart d'heure environ. Malgré ce passage bref, l'épuration fonctionne, car l'eau rencontre une très grande surface couverte de bactéries."
     },
     {
       "titre": "Ce qui se passe dans le film",
@@ -25,7 +25,7 @@
     {
       "titre": "L'irrigation et le rinçage",
       "points": ["Force de rinçage S = Ch / (a × n)", "Optimum : environ 2 mm", "Trop fort : film arraché. Trop faible : mares"],
-      "narration": "L'eau ne fait pas que nourrir le film : elle le nettoie. Pour le mesurer, on utilise la force de rinçage, c'est-à-dire la hauteur d'eau déposée à chaque passage d'un bras. Elle dépend de la charge hydraulique, du nombre de bras et de leur vitesse de rotation. La valeur recommandée se situe autour de 2 millimètres. Trop élevée, elle arrache le film. Trop faible, elle le laisse s'épaissir, et des mares apparaissent à la surface du lit : c'est le ponding. Le recyclage d'une partie de l'eau traitée permet d'augmenter la charge hydraulique, mais il coûte de l'énergie. Il n'est plus recommandé quand la DBO5 de l'eau est de 150 milligrammes par litre ou moins, ou le serait après dilution."
+      "narration": "L'eau ne fait pas que nourrir le film : elle le nettoie. Pour le mesurer, on utilise la force de rinçage, c'est-à-dire la hauteur d'eau déposée à chaque passage d'un bras. Elle dépend de la charge hydraulique, du nombre de bras et de leur vitesse de rotation. La valeur recommandée se situe autour de 2 millimètres. Trop élevée, elle arrache le film. Trop faible, elle le laisse s'épaissir, et des mares apparaissent à la surface du lit : c'est le ponding. Le recyclage d'une partie de l'eau traitée permet d'augmenter la charge hydraulique, mais il coûte de l'énergie. Il n'est plus recommandé quand la DBO5 de l'eau est de 150 milligrammes par litre ou moins, ou qu'elle le deviendrait par dilution."
     },
     {
       "titre": "Quand le lit se colmate",

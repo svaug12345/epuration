@@ -4,7 +4,7 @@
   <g stroke="#2c2a29" stroke-width="2"><path d="M80 300H600"/><path d="M80 300V60"/></g>
   <path d="M80 90H600" stroke="#897879" stroke-width="2" stroke-dasharray="6 5"/>
   <text x="596" y="82" text-anchor="end">maximum µ̂</text>
-  <path d="M80 300C130 195 165 160 200 140C280 113 420 100 590 96" fill="none" stroke="#c2540a" stroke-width="4"/>
+  <polyline points="80,300.0 88,280.9 96,265.0 104,251.5 112,240.0 120,230.0 128,221.2 136,213.5 144,206.7 152,200.5 160,195.0 168,190.0 176,185.5 184,181.3 192,177.5 200,174.0 208,170.8 216,167.8 224,165.0 232,162.4 240,160.0 265,153.4 290,147.9 315,143.3 340,139.4 365,136.0 390,133.1 415,130.5 440,128.2 465,126.1 490,124.3 515,122.6 540,121.1 565,119.7 590,118.5" fill="none" stroke="#c2540a" stroke-width="4"/>
   <g stroke="#5f5556" stroke-width="1.5" stroke-dasharray="4 4"><path d="M80 195H160"/><path d="M160 195V300"/></g>
   <circle cx="160" cy="195" r="6" fill="#c2540a"/>
   <text x="172" y="222">moitié du maximum</text>

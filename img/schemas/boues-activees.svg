@@ -13,7 +13,7 @@
     <path d="M28 130H108"/><path d="M330 130H418"/><path d="M560 104H622"/>
   </g>
   <text x="62" y="118" text-anchor="middle">Eau usée</text>
-  <text x="592" y="92" text-anchor="middle">Eau épurée</text>
+  <text x="630" y="76" text-anchor="end">Eau épurée</text>
   <g stroke="#5c56c4" stroke-width="2.5" fill="none" marker-end="url(#m)">
     <path d="M490 214V276H220V216"/><path d="M490 276V316H580"/>
   </g>

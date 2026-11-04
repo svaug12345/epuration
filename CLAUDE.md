@@ -107,8 +107,8 @@ Principes :
 2. **Nom** : `epuration` → `baiji.fr/epuration/`.
 3. **Site public** sur GitHub Pages. Publication **automatique** à chaque version, sans redemander.
 4. **Formats** : pages web + **une présentation PowerPoint** et **une vidéo de 3 à 5 min par module**.
-5. **Charte** (remplace la charte SV) : palette SCE **sans logo ni nom SCE** sur le site, les présentations
-   et les vidéos, car sce.fr exige une autorisation écrite pour réutiliser ses éléments. Le logo reste dans `sources/`.
+5. **Charte** (remplace la charte SV) : palette ci-dessous, **sans aucun logo ni nom d'entreprise** sur le site,
+   les présentations et les vidéos. La raison de ce choix est notée dans `sources/decisions-privees.md`.
    Mention obligatoire : « Projet personnel indépendant, sans lien avec une entreprise ».
    Orange `#EB690B` (accent, grands éléments), orange foncé `#C2540A` (texte et boutons, contraste suffisant),
    anthracite `#2C2A29`, taupe `#897879`, mauve `#8685BB`, fond `#F6F7F8`, police Arial.

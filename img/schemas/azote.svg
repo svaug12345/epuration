@@ -13,7 +13,7 @@
     <path d="M154 132H248"/><path d="M380 132H484"/><path d="M551 164V260"/>
   </g>
   <g text-anchor="middle" font-size="15">
-    <text x="200" y="88">Nitrosomonas</text><text x="200" y="118" fill="#b3261e">étape limitante</text>
+    <text x="200" y="72">Nitrosomonas</text><text x="200" y="90" fill="#b3261e">étape limitante</text>
     <text x="432" y="118">Nitrobacter</text>
   </g>
   <rect x="24" y="190" width="400" height="44" rx="6" fill="#fdf0e6" stroke="#eb690b" stroke-width="2"/>

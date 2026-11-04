@@ -25,7 +25,9 @@ Le livre lui-même n'est pas dans ce dépôt, et il ne doit jamais y entrer.
 | `data/` | Règles chiffrées sourcées, diagnostic, glossaire, quiz |
 | `modules/` | Pages des modules de formation |
 | `outils/` | Pages des calculateurs |
-| `tests/` | Tests du moteur |
+| `tests/` | Tests du moteur et contrôle des données |
+| `medias/` | Présentations et vidéos publiées |
+| `outils/medias/` | Scripts qui les fabriquent, depuis `data/modules/` |
 
 ## Lancer le site et les tests
 
