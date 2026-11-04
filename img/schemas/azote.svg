@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#2c2a29" role="img" aria-label="Chemin de l'azote : l'ammonium devient nitrite puis nitrate avec de l'oxygène ; le nitrate devient azote gazeux sans oxygène, avec une source de carbone">
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2c2a29"/></marker></defs>
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="36" text-anchor="middle" font-size="22" font-weight="700">Le chemin de l'azote</text>
+  <g fill="#f6f7f8" stroke="#897879" stroke-width="2">
+    <rect x="24" y="100" width="130" height="64" rx="8"/><rect x="250" y="100" width="130" height="64" rx="8"/><rect x="486" y="100" width="130" height="64" rx="8"/>
+    <rect x="486" y="262" width="130" height="64" rx="8" fill="#eaf4ea" stroke="#2e7d32"/>
+  </g>
+  <g text-anchor="middle" font-weight="700">
+    <text x="89" y="138">NH₄⁺</text><text x="315" y="138">NO₂⁻</text><text x="551" y="138">NO₃⁻</text><text x="551" y="300">N₂ gaz</text>
+  </g>
+  <g stroke="#2c2a29" stroke-width="2.5" fill="none" marker-end="url(#a)">
+    <path d="M154 132H248"/><path d="M380 132H484"/><path d="M551 164V260"/>
+  </g>
+  <g text-anchor="middle" font-size="15">
+    <text x="200" y="88">Nitrosomonas</text><text x="200" y="118" fill="#b3261e">étape limitante</text>
+    <text x="432" y="118">Nitrobacter</text>
+  </g>
+  <rect x="24" y="190" width="400" height="44" rx="6" fill="#fdf0e6" stroke="#eb690b" stroke-width="2"/>
+  <text x="224" y="218" text-anchor="middle">Nitrification : oxygène, bactéries lentes</text>
+  <rect x="24" y="272" width="440" height="44" rx="6" fill="#efeff7" stroke="#8685bb" stroke-width="2"/>
+  <text x="244" y="300" text-anchor="middle">Dénitrification : sans oxygène, avec du carbone</text>
+</svg>

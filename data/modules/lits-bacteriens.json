@@ -1,0 +1,89 @@
+{
+  "numero": 3,
+  "slug": "lits-bacteriens",
+  "titre": "Les lits bactériens",
+  "accroche": "Ici, les bactéries ne flottent pas : elles s'accrochent, et c'est l'eau qui vient à elles.",
+  "suivant": { "slug": "azote-phosphore", "titre": "L'azote et le phosphore" },
+  "scenes": [
+    {
+      "titre": "Une autre façon d'héberger les bactéries",
+      "schema": "lit-bacterien",
+      "legende": "Lit bactérien et coupe du biofilm, redessinés.",
+      "points": ["Biomasse fixée sur un support", "L'eau ruisselle en film mince", "L'air circule entre les pièces du support"],
+      "narration": "Dans un bassin de boues activées, les bactéries flottent, et il faut les maintenir en suspension. Le lit bactérien part de l'idée inverse : il leur offre un support où s'accrocher. Une tour est remplie de pierres, de pouzzolane ou de pièces en plastique. Un bras rotatif arrose le haut du lit et l'eau descend en ruisselant. Sur chaque surface se forme un film vivant, le biofilm. La pollution passe de l'eau vers ce film, et l'air circule entre les pièces du support. Le passage est rapide : l'eau séjourne dans le lit de quelques secondes à un quart d'heure environ. Ce qui explique ce résultat, c'est la grande surface offerte aux bactéries, et non un long séjour de l'eau."
+    },
+    {
+      "titre": "Ce qui se passe dans le film",
+      "points": ["L'oxygène n'entre que sur 0,2 mm", "Le fond du film manque d'oxygène", "Seule la surface travaille en aérobie"],
+      "narration": "Regardons un biofilm au microscope. L'oxygène doit le traverser par simple diffusion, et il est vite consommé : il ne pénètre que sur environ 0,2 millimètre. En dessous, le film manque d'oxygène, et vers 1,3 millimètre, la réduction des sulfates peut démarrer. Ce détail a deux conséquences. D'abord, un film très épais n'épure pas mieux, car sa partie profonde ne participe pas à l'oxydation. Ensuite, un film qui s'épaissit trop finit par se décrocher ou par boucher les passages. On comprend alors la logique de l'exploitation d'un lit bactérien : garder un film mince et vivant, régulièrement renouvelé, et laisser l'air et l'eau circuler partout."
+    },
+    {
+      "titre": "Le bon indicateur : le flux",
+      "points": ["Charge volumique : kg DBO5/m³.j", "Flux : g DBO5/m².j", "Nitrification : 2 g/m².j au maximum"],
+      "narration": "Pour les boues activées, on raisonne en charge par kilo de boues. Ici, on ne peut pas peser facilement le film, alors on raisonne en surface. Le flux est la DBO5 reçue par mètre carré de support et par jour. Il permet de comparer des garnissages très différents. Exemple classique : la recommandation allemande de 0,4 kilo de DBO5 par mètre cube et par jour, sur un garnissage de 100 mètres carrés par mètre cube, équivaut à 4 grammes par mètre carré et par jour. Or, pour obtenir une nitrification complète, Edeline indique de ne pas dépasser 2 grammes par mètre carré et par jour sur un lit ordinaire, et 4 sur des biodisques. Au-delà de 2, les boues ne sont pas stabilisées, et un décanteur secondaire devient indispensable."
+    },
+    {
+      "titre": "L'irrigation et le rinçage",
+      "points": ["Force de rinçage S = Ch / (a × n)", "Optimum : environ 2 mm", "Trop fort : film arraché. Trop faible : mares"],
+      "narration": "L'eau ne fait pas que nourrir le film : elle le nettoie. Pour le mesurer, on utilise la force de rinçage, c'est-à-dire la hauteur d'eau déposée à chaque passage d'un bras. Elle dépend de la charge hydraulique, du nombre de bras et de leur vitesse de rotation. La valeur recommandée se situe autour de 2 millimètres. Trop élevée, elle arrache le film. Trop faible, elle le laisse s'épaissir, et des mares apparaissent à la surface du lit : c'est le ponding. Le recyclage d'une partie de l'eau traitée permet d'augmenter la charge hydraulique, mais il coûte de l'énergie. Il n'est plus recommandé quand la DBO5 de l'eau est de 150 milligrammes par litre ou moins, ou le serait après dilution."
+    },
+    {
+      "titre": "Quand le lit se colmate",
+      "points": ["Excès de boue dans les couches hautes", "Ébouage massif au printemps", "Salpêtre : 0,5 kg/m²"],
+      "narration": "La grande maladie du lit bactérien est le colmatage : trop de boue dans les couches supérieures, et l'eau ne passe plus. Il faut aussi connaître un phénomène saisonnier. L'hiver, les prédateurs sont absents et le film s'accumule. Au printemps, ils reviennent, et tout se détache d'un coup : un ébouage massif, souvent impressionnant, mais normal. Pour décolmater, trois options. La lance à haute pression décolle le film, mais déplace le problème vers le bas. Le chlore est très efficace, mais il tue tout, et le rendement reste bas longtemps. Le livre préfère la méthode au salpêtre : on arrête le lit, on répand un demi-kilo par mètre carré, on humidifie, puis on reprend l'irrigation après deux ou trois heures. Le lit se purge de lui-même en quelques jours."
+    },
+    {
+      "titre": "Boues activées ou lit bactérien ?",
+      "points": ["Lit : moins de charge pour la même qualité", "Exploitation plus simple, moins sensible", "Les supports mobiles prolongent cette idée"],
+      "narration": "Alors, faut-il préférer un lit bactérien aux boues activées ? Tout dépend de l'objectif. Pour garantir une même qualité, le lit doit rester moins chargé. Prenons une sortie à 35 milligrammes de DBO5 dans 80 pour cent des mesures : le tableau d'Edeline donne une charge maximale de 0,5 pour le lit, et de 1,6 pour les boues activées. En contrepartie, le lit bactérien n'a ni recyclage de boues à piloter, ni aération par insufflation, et sa boue décante très facilement. C'est pourquoi il garde sa place, notamment dans les petites installations. Cette idée de biomasse fixée n'a d'ailleurs pas vieilli. Les biofilms sur supports mobiles, que nous verrons au module 7, reprennent le même principe dans un bassin brassé. Entraînez-vous avec le calculateur du site pour voir comment le flux et le rinçage réagissent."
+    }
+  ],
+  "approfondir": [
+    {
+      "titre": "Charges et flux",
+      "paragraphes": ["Avec A la section du lit, H sa hauteur et σ la surface spécifique du support :"],
+      "formules": ["Cv = Q × S0 / 1000 / (A × H)      (kg DBO5/m³.j)", "F = Cv × 1000 / σ                 (g DBO5/m².j)", "Ch = Q / A                        (charge hydraulique)"],
+      "source": "Edeline 1997, p. 107"
+    },
+    {
+      "titre": "Force de rinçage",
+      "paragraphes": ["S est en mm, Ch en mm/h, a est le nombre de bras et n leur vitesse en tours par heure. Le livre recommande Ch de 0,2 à 0,4 m/h la nuit et de 0,6 à 0,8 m/h le jour, avec S = 2 mm. Les bras tournent généralement à environ 1 tour par minute."],
+      "formules": ["S = Ch / (a × n)"],
+      "source": "Edeline 1997, p. 106, d'après Wolf (1980)"
+    },
+    {
+      "titre": "Charge hydraulique et recyclage",
+      "paragraphes": ["La vitesse de percolation usuelle se situe entre 1,2 et 1,9 m/h, sans dépasser 10 m/h. On cite souvent 0,8 m/h comme irrigation minimale, 1,4 m/h pour un support plastique. Pourtant, de nombreuses installations à faible charge fonctionnent bien entre 0,05 et 0,25 m/h. Wolf recommande un recyclage de 100 % quand le lit est surchargé ou à sa charge nominale, et plus de 100 % seulement s'il est sous-chargé."],
+      "source": "Edeline 1997, p. 89 et 106"
+    },
+    {
+      "titre": "Production de boue",
+      "paragraphes": ["En g par g de DBO5 éliminée : 0,22 en très faible charge, 0,3 à 0,5 en faible charge, 0,63 à 1 en forte charge, pour un lit ayant un rendement en DBO de 80 %. La production est maximale au printemps et minimale en été."],
+      "source": "Edeline 1997, p. 107"
+    }
+  ],
+  "memo": [
+    "Le biofilm n'est aérobie que sur environ 0,2 mm.",
+    "Nitrification complète : au plus 2 g DBO5/m².j (lit), 4 g/m².j (biodisque).",
+    "Au-delà de 2 g/m².j : décanteur secondaire indispensable.",
+    "Force de rinçage S = Ch / (a × n), optimum vers 2 mm.",
+    "Recyclage inutile si la DBO5 de l'eau est de 150 mg/l ou moins.",
+    "Décolmatage : salpêtre à 0,5 kg/m². Le chlore tue tout.",
+    "Ébouage massif au printemps : c'est normal."
+  ],
+  "cas": {
+    "titre": "Étude de cas : nitrifier sur un lit existant",
+    "enonce": "Un lit de 100 m² et 2 m de haut, garni à 100 m²/m³, reçoit 400 m³/j à 150 mg/l de DBO5. Peut-on attendre une nitrification complète ? Jusqu'à quel débit peut-on aller pour y parvenir ?",
+    "lien": "outils/lit-bacterien.html",
+    "libelleLien": "Ouvrir le calculateur",
+    "solution": "La charge reçue est de 60 kg de DBO5 par jour pour 200 m³ de lit, soit 0,3 kg/m³.j, donc un flux de 3 g/m².j. C'est au-dessus de 2 g/m².j : pas de nitrification complète à attendre. Il faudrait descendre à 40 kg/j, soit environ 267 m³/j à la même concentration."
+  },
+  "quiz": [
+    { "question": "Sur quelle épaisseur l'oxygène pénètre-t-il dans le biofilm ?", "choix": ["0,2 mm", "2 mm", "2 cm"], "bonne": 0, "explication": "En dessous, le film manque d'oxygène.", "source": "Edeline 1997, p. 88" },
+    { "question": "Quel flux ne pas dépasser pour une nitrification complète sur un lit ordinaire ?", "choix": ["2 g DBO5/m².j", "10 g DBO5/m².j", "50 g DBO5/m².j"], "bonne": 0, "explication": "Les biodisques tolèrent 4 g/m².j.", "source": "Edeline 1997, p. 107" },
+    { "question": "Que provoque une force de rinçage trop faible ?", "choix": ["Le film est arraché", "Le film s'épaissit et des mares se forment", "L'eau s'échauffe"], "bonne": 1, "explication": "Trop élevée, au contraire, elle arrache le film.", "source": "Edeline 1997, p. 106" },
+    { "question": "Un ébouage massif au printemps est :", "choix": ["Une panne grave", "Un phénomène saisonnier", "Un signe de toxique"], "bonne": 1, "explication": "Les prédateurs reviennent et décrochent le film accumulé pendant l'hiver.", "source": "Edeline 1997, p. 107" },
+    { "question": "Quelle méthode de décolmatage le livre juge-t-il plus recommandable ?", "choix": ["La lance à haute pression", "La chloration", "Le salpêtre"], "bonne": 2, "explication": "La lance reporte le colmatage plus bas, et le chlore tue toute la biomasse.", "source": "Edeline 1997, p. 107" }
+  ],
+  "sources": ["F. Edeline, L'épuration biologique des eaux, 4e éd., Cebedoc, 1997 : chap. 5, p. 88-89 et 106-107 ; appendice, p. 294."]
+}

@@ -1,5 +1,14 @@
 # Journal des versions
 
+## v0.5.0 — 4 novembre 2026
+
+Modules de formation.
+
+- 7 modules à deux niveaux (Comprendre, Approfondir), avec schémas redessinés, fiche mémo, étude de cas et quiz.
+- Un seul fichier de données par module, qui alimentera aussi les présentations et les vidéos.
+- Page de révision par cartes question-réponse, tirées des quiz.
+- Contrôles automatiques de la structure des modules.
+
 ## v0.4.0 — 4 novembre 2026
 
 Calculateurs lit bactérien, azote, méthanisation, lagunage et choix du procédé, tous testés, avec page d'index des outils.

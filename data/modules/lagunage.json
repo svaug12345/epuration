@@ -1,0 +1,87 @@
+{
+  "numero": 6,
+  "slug": "lagunage",
+  "titre": "Le lagunage et les filières rustiques",
+  "accroche": "Du soleil, du temps et de la place : la version la plus sobre de l'épuration.",
+  "suivant": { "slug": "reglementation-procedes", "titre": "Réglementation et procédés récents" },
+  "scenes": [
+    {
+      "titre": "Le soleil comme aérateur",
+      "schema": "lagune",
+      "legende": "L'échange entre algues et bactéries dans un bassin facultatif.",
+      "points": ["De grands bassins peu profonds", "Les algues fournissent l'oxygène", "Les bactéries dégradent la pollution"],
+      "narration": "Et si on laissait la nature travailler ? C'est le principe du lagunage, aussi appelé étang de stabilisation. On construit de grands bassins peu profonds et on y laisse séjourner l'eau pendant des semaines. Un partenariat se met alors en place. Les bactéries dégradent la matière organique et rejettent du gaz carbonique, ainsi que de l'ammonium. Les algues utilisent tout cela avec la lumière du soleil et rejettent de l'oxygène, que les bactéries respirent à leur tour. Les biodégradations sont bien l'œuvre des bactéries, et rien ne prouve que les algues y participent directement : elles jouent le rôle d'aérateurs naturels. Il n'y a ni pompe de recyclage ni machine soufflante. C'est très économique, à condition que le terrain soit bon marché."
+    },
+    {
+      "titre": "Un bassin à étages",
+      "points": ["L'oxygène diffuse sur 1 à 1,7 m", "Facultatif : 2 à 3 m, avec une zone anaérobie", "Boues au fond"],
+      "narration": "Un bassin n'est pas homogène : il fonctionne par étages. En surface, la lumière pénètre et les algues produisent de l'oxygène. Celui-ci diffuse spontanément jusqu'à environ 1 à 1,7 mètre. Plus bas, le milieu manque d'oxygène, et les boues déposées au fond se dégradent sans air. C'est le principe du bassin dit facultatif : pour en créer un, le livre recommande une profondeur de 2 à 3 mètres. Même dans ce cas, il suffit que la photosynthèse agisse dans les 15 à 30 centimètres du haut pour bloquer les odeurs. Par temps chaud, les dépôts deviennent plus actifs : ils relâchent des gaz et des produits dégradables, qui peuvent créer localement un manque d'oxygène, malgré la photosynthèse."
+    },
+    {
+      "titre": "Un bassin vivant, qui change de couleur",
+      "points": ["Vert le matin, gris le soir : normal", "pH jusqu'à 9,8 en été", "Algues bleu-vert : à surveiller"],
+      "narration": "Un exploitant de lagune apprend vite à lire les couleurs. Un bassin vert le matin et gris le soir n'a rien d'inquiétant : les algues mobiles, comme les euglènes, fuient les zones trop éclairées et trop chaudes. Les euglènes sont d'ailleurs le signe d'un bassin en bonne santé. Le pH varie fortement au cours de la journée : en consommant le gaz carbonique, les algues peuvent le faire monter jusqu'à 9,8 en été. Dans ce cas, mieux vaut ne pas mélanger le bassin, car les bactéries restent à l'abri au fond. Un point demande plus de vigilance : vers 40 degrés, les algues bleu-vert dominent, et elles peuvent floculer en masse. Leur mort prive alors les bactéries d'oxygène, tout en ajoutant de la matière à dégrader. Il faut alors casser la stratification en mélangeant."
+    },
+    {
+      "titre": "Le calcul, volontairement simple",
+      "points": ["S1 = S0 / (1 + k × θ)", "k dépend de la température", "Séjour : 7 à 40 jours"],
+      "narration": "Comment dimensionner une lagune ? Le livre donne une formule étonnamment simple, en traitant le bassin facultatif comme un réacteur à mélange complet. La DBO5 de sortie vaut la DBO5 d'entrée, divisée par un plus le produit de k et du temps de séjour. Le coefficient k dépend beaucoup de la température : 0,10 par jour à 5 degrés, 0,35 à 20 degrés, 1,20 à 35 degrés. Exemple : avec 200 milligrammes par litre en entrée, à 20 degrés et pour 20 jours de séjour, on obtient 25 milligrammes par litre en sortie. Ce calcul ignore pourtant l'ensoleillement et les dépôts : le livre le juge acceptable pour des rendements inférieurs à 90 pour cent. Testez-le avec le calculateur du site : vous verrez à quel point l'hiver pèse sur le résultat."
+    },
+    {
+      "titre": "Des repères, et une limite : les algues",
+      "points": ["Environ 5 m² par EH", "Environ 100 kg DBO5/ha.j", "Algues dans l'eau de sortie"],
+      "narration": "Sur le terrain, on retient quelques repères simples. Une charge de l'ordre de 100 kilos de DBO5 par hectare et par jour, dans une plage citée qui va de 10 à 350. Une surface d'environ 5 mètres carrés par équivalent-habitant, alors que la norme allemande, jugée sévère, en demande 10. Le rendement en DBO5 atteint 70 à 85 pour cent, et souvent davantage. Mais il y a un revers. L'eau de sortie contient des algues, car elles ont largement proliféré : on en observe de 10 à 66 grammes par mètre carré et par jour, alors qu'il en suffirait de 0,3 pour fournir l'oxygène nécessaire. L'effluent est donc dit passable, même s'il est bien épuré. Sa DBO5 varie aussi avec la saison, d'environ 10 en été à environ 50 au dégel."
+    },
+    {
+      "titre": "Et les filières rustiques d'aujourd'hui ?",
+      "points": ["Filtres plantés de roseaux", "Très répandus dans les petites communes", "Absents du livre de 1997"],
+      "narration": "Le paysage a changé depuis la parution du livre. Pour les petites communes, une autre filière rustique s'est très largement répandue en France : les filtres plantés de roseaux. L'eau y traverse des massifs de graviers et de sable, où vivent des bactéries fixées, comme dans un lit bactérien. Les roseaux empêchent le colmatage de la surface, tout en permettant aux dépôts de se minéraliser. Le groupe de travail français EPNAC publie à leur sujet des guides d'exploitation, et ce sont eux qu'il faut consulter pour un projet réel. Le lagunage et les filtres plantés ont un point commun : ils demandent peu d'énergie et peu de technicité, mais beaucoup de place. C'est souvent le bon choix quand le terrain est disponible et la station de petite taille."
+    }
+  ],
+  "approfondir": [
+    {
+      "titre": "Calcul du bassin facultatif",
+      "paragraphes": ["Avec S0 et S1 les DBO5 d'entrée et de sortie, k une constante fonction de la température, et θ le temps de séjour, de 7 à 40 jours (exceptionnellement de 1 à 90). Valeurs de k : 0,10 à 5 °C ; 0,12 à 10 °C ; 0,24 à 15 °C ; 0,35 à 20 °C ; 0,53 à 25 °C ; 0,80 à 30 °C ; 1,20 à 35 °C."],
+      "formules": ["S1 = S0 / (1 + k × θ)"],
+      "source": "Edeline 1997, p. 263, Tab. 12.I"
+    },
+    {
+      "titre": "Production d'algues et d'oxygène",
+      "paragraphes": ["La production dépend de l'énergie lumineuse reçue, avec I l'insolation en cal/cm².j. On peut l'estimer grossièrement. Le rapport O₂/A est d'environ 1,6, d'où une production appréciable d'algues."],
+      "formules": ["O₂ = 0,90 × I    (kg O₂/ha.j)", "A = 0,54 × I     (kg d'algues/ha.j)"],
+      "source": "Edeline 1997, p. 266"
+    },
+    {
+      "titre": "Repères de conception",
+      "paragraphes": ["Charge : 10, 100 ou 350 kg DBO5/ha.j, soit environ 5 m²/EH pour la valeur centrale. Temps de séjour de 15 à 20 jours en été, et de 180 jours en hiver. En Bavière, sur de petites installations, une séquence d'un bassin anaérobie de 0,5 m³/EH et d'un bassin de stabilisation de 5 m²/EH donne une DBO de 30 à 45."],
+      "source": "Edeline 1997, p. 267"
+    }
+  ],
+  "memo": [
+    "Les algues fournissent l'oxygène, les bactéries dégradent la pollution.",
+    "L'oxygène diffuse jusqu'à 1 à 1,7 m. Bassin facultatif : 2 à 3 m.",
+    "Vert le matin, gris le soir : normal. pH jusqu'à 9,8 en été.",
+    "S1 = S0 / (1 + k × θ). Valable sous 90 % de rendement.",
+    "Repères : 100 kg DBO5/ha.j, environ 5 m²/EH.",
+    "Limite : des algues dans l'eau de sortie.",
+    "Filtres plantés de roseaux : voir les guides EPNAC."
+  ],
+  "cas": {
+    "titre": "Étude de cas : un village et son hiver",
+    "enonce": "Un village de 500 EH envisage une lagune. L'eau arrive à 200 mg/l de DBO5, et le séjour prévu est de 30 jours. Comparez la DBO5 de sortie à 20 °C et à 5 °C. Quelle surface prévoir ?",
+    "lien": "outils/lagunage.html",
+    "libelleLien": "Ouvrir le calculateur",
+    "solution": "À 20 °C : 200 / (1 + 0,35 × 30) ≈ 17 mg/l, mais le rendement dépasse 90 %, donc le résultat est optimiste. À 5 °C : 200 / (1 + 0,10 × 30) = 50 mg/l. Surface : environ 2 500 m² à 5 m²/EH, et 5 000 m² selon la norme allemande. L'hiver dimensionne l'ouvrage."
+  },
+  "quiz": [
+    { "question": "Quel est le rôle principal des algues dans une lagune ?", "choix": ["Dégrader la pollution", "Fournir de l'oxygène", "Évacuer les boues"], "bonne": 1, "explication": "La biodégradation reste essentiellement le fait des bactéries.", "source": "Edeline 1997, p. 262" },
+    { "question": "Jusqu'à quelle profondeur l'oxygène diffuse-t-il spontanément ?", "choix": ["10 cm", "1 à 1,7 m", "5 m"], "bonne": 1, "explication": "Un bassin de 2 à 3 m possède donc une zone anaérobie.", "source": "Edeline 1997, p. 263" },
+    { "question": "Un bassin vert le matin et gris le soir :", "choix": ["Est un phénomène normal", "Signale un toxique", "Doit être vidé"], "bonne": 0, "explication": "Les algues mobiles fuient les zones trop éclairées et trop chaudes.", "source": "Edeline 1997, p. 262" },
+    { "question": "Quelle est la surface repère par équivalent-habitant ?", "choix": ["0,5 m²", "5 m²", "50 m²"], "bonne": 1, "explication": "La norme allemande, jugée sévère, demande 10 m²/EH.", "source": "Edeline 1997, p. 267" },
+    { "question": "Pourquoi dit-on que l'effluent d'une lagune est « passable » ?", "choix": ["Il contient des algues", "Il sent toujours mauvais", "Il contient de l'oxygène"], "bonne": 0, "explication": "Même bien épuré, il entraîne des algues avec lui.", "source": "Edeline 1997, p. 267" }
+  ],
+  "sources": [
+    "F. Edeline, L'épuration biologique des eaux, 4e éd., Cebedoc, 1997 : chap. 12, p. 262-267.",
+    "EPNAC, guide d'exploitation des filtres plantés de roseaux, 2014."
+  ]
+}

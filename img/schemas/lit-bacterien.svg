@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Lit bactérien : un bras arrose un support couvert de biofilm ; à droite, coupe du biofilm où l'oxygène ne pénètre que sur environ 0,2 mm">
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="34" text-anchor="middle" font-size="22" font-weight="700">L'eau ruisselle sur un film vivant</text>
+  <path d="M40 92H300" stroke="#c2540a" stroke-width="7"/>
+  <text x="170" y="78" text-anchor="middle">Bras d'aspersion</text>
+  <g stroke="#3a6db0" stroke-width="2" stroke-dasharray="3 5"><path d="M70 96V128"/><path d="M120 96V128"/><path d="M170 96V128"/><path d="M220 96V128"/><path d="M270 96V128"/></g>
+  <rect x="40" y="130" width="260" height="170" rx="4" fill="#f6f7f8" stroke="#897879" stroke-width="2"/>
+  <g fill="#c9c1c2" stroke="#897879">
+    <circle cx="72" cy="165" r="19"/><circle cx="130" cy="160" r="21"/><circle cx="190" cy="168" r="19"/><circle cx="252" cy="160" r="21"/>
+    <circle cx="96" cy="218" r="21"/><circle cx="160" cy="222" r="19"/><circle cx="224" cy="216" r="21"/><circle cx="70" cy="266" r="19"/><circle cx="132" cy="268" r="21"/><circle cx="196" cy="268" r="19"/><circle cx="258" cy="264" r="20"/>
+  </g>
+  <text x="170" y="326" text-anchor="middle">Support couvert de biofilm</text>
+  <rect x="360" y="90" width="50" height="230" fill="#c9c1c2" stroke="#897879" stroke-width="2"/>
+  <rect x="410" y="90" width="42" height="230" fill="#fdf0e6" stroke="#eb690b" stroke-width="2"/>
+  <rect x="452" y="90" width="72" height="230" fill="#efeff7" stroke="#8685bb" stroke-width="2"/>
+  <rect x="524" y="90" width="90" height="230" fill="#e3f1fb" stroke="#3a6db0" stroke-width="2"/>
+  <g text-anchor="middle" font-size="15">
+    <text x="385" y="82">Support</text>
+    <text x="431" y="340">0,2 mm</text>
+    <text x="431" y="358" font-size="13">avec O₂</text>
+    <text x="488" y="210">sans</text><text x="488" y="228">O₂</text>
+    <text x="569" y="210">Eau</text>
+  </g>
+</svg>

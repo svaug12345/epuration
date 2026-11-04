@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Les procédés récents prolongent les procédés classiques : membrane à la place du décanteur, biofilm sur supports mobiles, boues granulaires, anammox et traitement des micropolluants">
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="36" text-anchor="middle" font-size="22" font-weight="700">Ce qui prolonge les bases de 1997</text>
+  <g fill="#f6f7f8" stroke="#897879" stroke-width="2">
+    <rect x="20" y="66" width="600" height="46" rx="6"/><rect x="20" y="120" width="600" height="46" rx="6"/><rect x="20" y="174" width="600" height="46" rx="6"/><rect x="20" y="228" width="600" height="46" rx="6"/><rect x="20" y="282" width="600" height="46" rx="6"/>
+  </g>
+  <g font-weight="700">
+    <text x="36" y="95">Membranes</text><text x="36" y="149">Supports mobiles</text><text x="36" y="203">Boues granulaires</text><text x="36" y="257">Anammox</text><text x="36" y="311">Micropolluants</text>
+  </g>
+  <g>
+    <text x="210" y="95">une membrane remplace le décanteur</text>
+    <text x="210" y="149">un biofilm sur des pièces en suspension</text>
+    <text x="210" y="203">des grains qui décantent très vite</text>
+    <text x="210" y="257">l'azote retiré avec moins d'oxygène</text>
+    <text x="210" y="311">ozone ou charbon actif en plus</text>
+  </g>
+</svg>

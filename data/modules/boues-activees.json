@@ -1,0 +1,94 @@
+{
+  "numero": 2,
+  "slug": "boues-activees",
+  "titre": "Les boues activées",
+  "accroche": "Le procédé le plus répandu tient en un réglage : la nourriture donnée à chaque kilo de boues.",
+  "suivant": { "slug": "lits-bacteriens", "titre": "Les lits bactériens" },
+  "scenes": [
+    {
+      "titre": "Le circuit",
+      "schema": "boues-activees",
+      "legende": "Le circuit des boues activées : aération, clarification, recyclage et purge.",
+      "points": ["Un bassin aéré, puis un clarificateur", "Les boues reviennent au bassin", "L'excès est purgé"],
+      "narration": "Le principe des boues activées tient en un circuit. L'eau usée arrive dans un bassin où l'on insuffle de l'air. Des flocons de bactéries y flottent et consomment la pollution. Ce mélange d'eau et de boues passe ensuite dans un clarificateur, un grand bassin calme où les flocs tombent au fond. L'eau claire déborde par le haut. La plupart des boues repartent vers le bassin : c'est le recyclage, l'idée géniale du procédé. Il permet de garder beaucoup de bactéries, bien plus que ce que l'eau seule pourrait entretenir. Et comme ces bactéries se multiplient, on en retire une partie : c'est la purge. Recyclage et purge sont les deux leviers de l'exploitant."
+    },
+    {
+      "titre": "Le réglage clé : la charge des boues",
+      "schema": "charge",
+      "legende": "Les grands seuils de la charge des boues.",
+      "points": ["Cb : nourriture par kilo de boues et par jour", "Cb = Cv / B", "Elle pilote la qualité de l'eau"],
+      "narration": "Pourquoi certaines stations rejettent-elles une eau limpide et d'autres non ? Regardez d'abord la charge des boues, notée Cb. C'est la quantité de DBO5 offerte chaque jour à chaque kilo de boues. On calcule d'abord la charge volumique, c'est-à-dire la DBO5 reçue par mètre cube de bassin, puis on la divise par la concentration en boues. Une charge très faible, autour de 0,05, affame les bactéries : elles digèrent presque tout, y compris elles-mêmes. Une charge très forte, autour de 2, les suralimente : on traite beaucoup, mais il reste environ 80 milligrammes par litre de DBO5 en sortie. Entre les deux, chaque station choisit son compromis entre volume construit, énergie et qualité."
+    },
+    {
+      "titre": "L'âge des boues",
+      "points": ["θc : masse de boues / masse évacuée par jour", "Il décide qui peut survivre", "Il baisse quand la charge monte"],
+      "narration": "Le deuxième réglage découle du premier : c'est l'âge des boues. Il se calcule simplement : la masse de boues présente, divisée par la masse évacuée chaque jour. Son intérêt est biologique. Un organisme qui pousse plus lentement que la cadence de purge disparaît du système. L'âge des boues décide donc qui peut s'installer. Edeline relie les deux réglages par une formule : quand la charge monte, l'âge baisse. Avec une charge de 0,2, on obtient environ sept jours et demi ; avec 0,05, environ trente-cinq jours. Trop jeunes, entre 0,4 et 3 jours, les boues floculent mal. Trop vieilles, vers 100 jours, elles sont dites brûlées, pleines de cellules mortes et de débris. Là encore, il y a un juste milieu."
+    },
+    {
+      "titre": "Ce que la charge change dans l'eau",
+      "points": ["Cb élevée : DBO5 de sortie plus élevée", "Au-delà de 0,35 : plus de nitrification", "Faible charge : plus d'oxygène, moins de boues"],
+      "narration": "Que voit-on à la sortie quand la charge augmente ? D'abord, la DBO5 remonte doucement. Mais le vrai changement concerne l'azote. Les bactéries nitrifiantes poussent lentement : dès que la charge dépasse 0,35, l'âge des boues devient trop court pour elles et l'ammonium traverse la station sans être transformé. Les chiffres sont parlants, même s'ils ne valent que pour un cas particulier. À une charge de 0,15, on trouve 2,5 milligrammes d'azote ammoniacal par litre en sortie. À 0,5, on en trouve 35. Autre effet : en faible charge, on consomme plus d'oxygène par kilo de DBO5, environ 1,3 à 1,5 kilo, et l'on produit moins de boues. C'est le prix d'une eau plus propre."
+    },
+    {
+      "titre": "Le cauchemar : le gonflement",
+      "points": ["SVI : normal vers 50, gonflement dès 200", "Filaments ou excès d'eau liée", "Une station sur deux concernée"],
+      "narration": "Tout ce système repose sur un point fragile : la boue doit tomber au fond du clarificateur. Pour le vérifier, on mesure l'indice de boue, le SVI. On laisse décanter un litre de liqueur pendant trente minutes, et on calcule le volume occupé par un gramme de boues. Une boue normale tourne autour de 50 millilitres par gramme. À 200 et plus, on parle de gonflement : la boue reste en suspension et s'échappe avec l'eau. D'après Edeline, environ la moitié des installations y sont confrontées, de façon permanente ou par épisodes. Il y a deux formes. Le gonflement zoogléal vient d'un excès d'eau retenue dans les flocs. Le gonflement filamenteux vient de bactéries en longs fils, favorisées par le manque d'oxygène, une charge inadaptée, une eau septique ou un manque de nutriments."
+    },
+    {
+      "titre": "Piloter simplement",
+      "points": ["Purger à taux constant : θc stable", "Au moins 2 mg/l d'O₂ dans le bassin", "Éviter les charges de 0,5 à 1"],
+      "narration": "Comment piloter tout cela au quotidien ? Le livre compare plusieurs modes de conduite, et l'un se distingue par sa simplicité : garder l'âge des boues constant, en purgeant une proportion fixe de la boue de retour. Il ne demande pas d'analyse permanente, et la boue évacuée garde une qualité stable. Trois réflexes complètent ce pilotage. Maintenez au moins 2 milligrammes d'oxygène par litre dans le bassin, avec une régulation automatique, pour que le cœur des flocs ne s'asphyxie pas. Évitez la plage de charge de 0,5 à 1, connue pour sa mauvaise décantation. Et surveillez le SVI, car il prévient avant que la qualité de l'eau ne se dégrade. Pour vous entraîner, le calculateur du site vous laisse faire varier tous ces paramètres, et Docteur STEP vous guide en cas de problème."
+    }
+  ],
+  "approfondir": [
+    {
+      "titre": "Charges et temps de séjour",
+      "paragraphes": ["Avec Q le débit en m³/j, S0 la DBO5 en mg/l, V le volume en m³ et B les boues en g/l :"],
+      "formules": ["Cv = Q × S0 / 1000 / V    (kg DBO5/m³.j)", "Cb = Cv / B              (kg DBO5/kg B.j)", "θl = V / Q                (temps de séjour)"],
+      "source": "Edeline 1997, p. 157"
+    },
+    {
+      "titre": "Âge des boues",
+      "paragraphes": ["Définition, avec Ba, Br et Be les concentrations dans l'aérateur, le recyclage et l'effluent, et Qp le débit de purge. La relation empirique avec la charge suit les âges normalement associés aux charges."],
+      "formules": ["θc = Ba × V / (Br × Qp + Be × (Q − Qp))", "θc = 1,224 × Cb^(−1,125)    (éq. 6.39)"],
+      "source": "Edeline 1997, p. 156 et 160"
+    },
+    {
+      "titre": "Le modèle de McCarty",
+      "paragraphes": ["Ces équations relient l'âge des boues, le substrat résiduel, le volume et le besoin en oxygène. U est le taux d'utilisation du substrat, a et b' sont déterminés au mieux par des essais. Les constantes proposées en DCO, sous réserve d'essais, sont a = 0,54, b' = 0,0094 par jour, Y = 0,47 (biomasse en poids) et b = 0,02 par jour."],
+      "formules": ["1/θc = Y × U − b", "S1 = Ks × (1 + b × θc) / (θc × (Y × K − b) − 1)", "V = Q × Y × ΔS × θc / ((1 + b × θc) × B)", "ΔO2/Δt = a × ΔS/θl + b' × B"],
+      "source": "Edeline 1997, p. 156 et 160"
+    },
+    {
+      "titre": "Remèdes au gonflement",
+      "paragraphes": ["À court terme, on diminue θc, ce qui avantage les formeurs de flocs à croissance rapide. À long terme, on compartimente l'aérateur, ou on crée un gradient de concentration. Un sélecteur occupe environ 1/20 du volume d'aération, avec θl ≈ 10 minutes. Le fer ou l'aluminium s'emploient à 20-50 mg/l. Le chlore sur la boue de retour se dose vers 2 g Cl/kg de boues par jour, mais au-delà de 5 g, l'effluent se dégrade et la nitrification diminue."],
+      "source": "Edeline 1997, p. 132 et 133"
+    }
+  ],
+  "memo": [
+    "Cb = nourriture par kilo de boues et par jour. C'est le réglage central.",
+    "θc = masse de boues / masse évacuée par jour. Il décide qui survit.",
+    "θc ≈ 1,224 × Cb^(−1,125) : la charge monte, l'âge baisse.",
+    "Cb > 0,35 : pas de nitrification à attendre.",
+    "Cb de 0,5 à 1 : plage à éviter pour la décantation.",
+    "θc de 0,4 à 3 j : boues de mauvaise qualité. θc vers 100 j : boue brûlée.",
+    "SVI normal vers 50 ml/g ; gonflement à 200 ml/g et plus.",
+    "Garder au moins 2 mg/l d'oxygène dans le bassin."
+  ],
+  "cas": {
+    "titre": "Étude de cas : l'été où l'ammonium est revenu",
+    "enonce": "Votre station de 1 500 m³ traite 2 000 m³/j à 250 mg/l de DBO5. Une usine se raccorde et la charge double. Les boues restent à 4 g/l. La nitrification tiendra-t-elle ? Testez avec le calculateur, en mettant 500 en DBO5 d'entrée.",
+    "lien": "outils/boues-activees.html",
+    "libelleLien": "Ouvrir le calculateur",
+    "solution": "La charge des boues passe d'environ 0,083 à environ 0,167. Elle reste sous 0,35, et l'âge estimé tombe d'environ 20 à environ 9 jours, ce qui reste suffisant à 15 °C. La nitrification devrait donc tenir, à condition que l'aération suive. Selon le calculateur, le besoin d'oxygène passe d'environ 1 000 à 1 300-1 500 kg/j, ce qui reste un ordre de grandeur. Le point à surveiller est donc l'aération, pas la charge."
+  },
+  "quiz": [
+    { "question": "À quoi sert le recyclage des boues ?", "choix": ["À refroidir le bassin", "À garder beaucoup de bactéries dans le bassin", "À évacuer la pollution"], "bonne": 1, "explication": "Il maintient une concentration en bactéries bien plus forte que ce que l'eau seule permettrait." },
+    { "question": "Au-delà de quelle charge des boues ne faut-il plus attendre de nitrification ?", "choix": ["0,05", "0,35", "2"], "bonne": 1, "explication": "Valeur donnée pour un système traditionnel en mélange complet.", "source": "Edeline 1997, p. 161" },
+    { "question": "Quelle plage de charge est à éviter pour la décantation ?", "choix": ["0,05 à 0,2", "0,2 à 0,35", "0,5 à 1"], "bonne": 2, "explication": "Pour des raisons de sédimentabilité, elle est rarement pratiquée.", "source": "Edeline 1997, p. 160" },
+    { "question": "Un SVI de 220 ml/g indique :", "choix": ["Une boue normale", "Un gonflement", "Une eau trop propre"], "bonne": 1, "explication": "Une boue normale est autour de 50 ml/g, un gonflement à 200 ml/g et plus.", "source": "Edeline 1997, p. 129" },
+    { "question": "Quel remède agit à court terme contre le gonflement filamenteux ?", "choix": ["Augmenter l'âge des boues", "Diminuer l'âge des boues", "Couper l'aération"], "bonne": 1, "explication": "Cela avantage les bactéries formant des flocs, qui croissent vite.", "source": "Edeline 1997, p. 132" },
+    { "question": "Quelle est la concentration minimale d'oxygène conseillée dans le bassin pour éviter les déficits au cœur des flocs ?", "choix": ["0,2 mg/l", "2 mg/l", "20 mg/l"], "bonne": 1, "explication": "Avec une régulation automatique de préférence.", "source": "Edeline 1997, p. 130" }
+  ],
+  "sources": ["F. Edeline, L'épuration biologique des eaux, 4e éd., Cebedoc, 1997 : chap. 6, p. 128-133 et 156-161."]
+}

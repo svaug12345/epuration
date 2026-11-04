@@ -1,0 +1,82 @@
+{
+  "numero": 7,
+  "slug": "reglementation-procedes",
+  "titre": "Réglementation et procédés récents",
+  "accroche": "Les bactéries n'ont pas changé depuis 1997. Les exigences et les outils, si.",
+  "scenes": [
+    {
+      "titre": "Ce qui a vieilli, ce qui tient",
+      "points": ["Les fondamentaux tiennent", "Les normes citées sont anciennes", "Des procédés sont apparus"],
+      "narration": "Le livre qui sert de base à cette formation date de 1997. Faut-il s'en méfier ? Sur l'essentiel, non : la biologie n'a pas bougé. La loi de Monod, l'âge des boues et les besoins en oxygène de la nitrification restent les mêmes. En revanche, deux choses ont changé. D'une part, la réglementation : les normes de rejet citées dans le livre sont anciennes, et il faut se référer aux textes en vigueur. D'autre part, la technique : plusieurs procédés aujourd'hui courants étaient absents ou balbutiants. Ce dernier module fait donc le lien. Attention, les textes évoluent : ce résumé donne des repères pour comprendre, mais il ne remplace pas la lecture des textes officiels, qui sont cités en bas de cette page."
+    },
+    {
+      "titre": "La référence française : l'arrêté de 2015",
+      "points": ["Arrêté du 21 juillet 2015, modifié depuis", "Au-delà de 120 kg DBO5/j : DBO5 25, DCO 125, MES 35 mg/l", "Plus strict en zone sensible"],
+      "narration": "En France, le texte de référence est l'arrêté du 21 juillet 2015, modifié à plusieurs reprises depuis. Il fixe les performances minimales de traitement, l'autosurveillance et le diagnostic des systèmes d'assainissement. Le seuil important se situe à 120 kilos de DBO5 par jour, soit deux mille équivalents-habitants. Au-delà, les stations visent en moyenne journalière 25 milligrammes par litre de DBO5, 125 de DCO et 35 de matières en suspension, ou bien des rendements minimaux, comme 80 pour cent sur la DBO5. En dessous, les exigences sont plus souples : par exemple 35 milligrammes de DBO5 par litre, ou 60 pour cent de rendement. Dans les zones sensibles à l'eutrophisation, des limites s'ajoutent sur l'azote et le phosphore pour les plus grosses stations. C'est là que les modules précédents trouvent toute leur utilité."
+    },
+    {
+      "titre": "La DERU 2 : ce qui arrive",
+      "points": ["Directive (UE) 2024/3019", "Secondaire dès 1 000 EH, quaternaire dès 150 000 EH", "Neutralité énergétique, de 2030 à 2045"],
+      "narration": "Le grand changement vient de l'Europe. La directive révisée, surnommée DERU 2, a été publiée fin 2024, et les États doivent la transposer au plus tard le 31 juillet 2027. Elle élargit le traitement secondaire aux agglomérations dès mille équivalents-habitants, à l'horizon 2035. Elle renforce le traitement de l'azote et du phosphore, et elle crée un traitement dit quaternaire pour les micropolluants, à partir de 150 mille équivalents-habitants, ou de 10 mille en zone à risque, avec des échéances qui s'étalent jusqu'en 2045. Elle impose une trajectoire vers la neutralité énergétique : 20 pour cent en 2030, 40 pour cent en 2035, et 100 pour cent en 2045. Enfin, les producteurs de médicaments et de cosmétiques devront financer une grande partie du coût des micropolluants, autour de 80 pour cent."
+    },
+    {
+      "titre": "De nouveaux procédés",
+      "schema": "procedes-recents",
+      "legende": "Cinq évolutions qui prolongent les procédés classiques.",
+      "points": ["Membranes : plus de clarificateur", "Supports mobiles : biofilm en bassin brassé", "Boues granulaires : décantation très rapide"],
+      "narration": "Côté technique, plusieurs procédés prolongent ce que vous connaissez déjà. Le bioréacteur à membrane remplace le clarificateur par une membrane. La séparation ne dépend plus de la décantation, et donc plus du gonflement. Le prix à payer est l'énergie et l'entretien des membranes. Les supports mobiles font vivre un biofilm sur de petites pièces plastiques qui circulent dans un bassin brassé : on combine ainsi la logique du lit bactérien et celle du bassin. Les boues granulaires aérobies vont plus loin : on favorise de gros grains compacts, qui décantent très vite. Le réacteur devient alors plus compact, et le même grain peut assurer plusieurs fonctions. Ces trois procédés répondent à un même souci : traiter plus dans moins de place, en s'affranchissant de la décantation classique."
+    },
+    {
+      "titre": "L'azote autrement, et les micropolluants",
+      "points": ["Anammox : moins d'oxygène, pas de carbone", "Ozone ou charbon actif", "Modèles ASM : la simulation"],
+      "narration": "Deux autres évolutions méritent votre attention. L'anammox a surpris les microbiologistes : ces bactéries combinent directement l'ammonium et le nitrite pour produire de l'azote gazeux. Plus besoin de nitrifier jusqu'au nitrate, ni d'ajouter du carbone : on économise beaucoup d'oxygène et de réactif. Ce procédé convient particulièrement aux eaux très chargées en ammonium, comme les retours de digestion. Pour les micropolluants, résidus de médicaments et produits du quotidien, la biologie ne suffit pas. On ajoute une étape d'ozonation, ou de charbon actif en poudre, ce qui prolonge le chapitre du livre sur le charbon actif. Enfin, côté calcul, les modèles de l'IWA, notamment ASM1 à ASM3, prolongent Monod et McCarty sous forme de simulation, et ils sont devenus l'outil de référence des bureaux d'études."
+    },
+    {
+      "titre": "Comment continuer",
+      "points": ["Guides EPNAC : l'exploitation", "Manuel IWA 2020 : l'équivalent moderne", "Toujours vérifier les textes officiels"],
+      "narration": "Où aller ensuite ? Pour l'exploitation au quotidien, les guides français d'EPNAC sont une excellente ressource, notamment pour les boues activées et les filtres plantés de roseaux. Pour la théorie moderne, l'équivalent actuel du livre d'Edeline est le manuel de l'IWA, Biological Wastewater Treatment, dans sa deuxième édition de 2020, accompagné d'un cahier d'exercices. Et pour la réglementation, reportez-vous toujours à Légifrance et à EUR-Lex, car cette transposition est en cours. Vous voici au terme du parcours. Vous savez ce que mesure la DBO5, vous savez lire une charge et un âge de boues, vous connaissez les besoins de la nitrification et les leviers du diagnostic. Retournez aux calculateurs et à Docteur STEP pour vous entraîner : c'est en jouant avec les chiffres que tout cela devient un réflexe."
+    }
+  ],
+  "approfondir": [
+    {
+      "titre": "Performances de l'arrêté du 21 juillet 2015",
+      "paragraphes": ["Repères de moyenne journalière, à confirmer sur le texte consolidé. Charge de 120 kg DBO5/j ou plus : DBO5 25 mg/l ou 80 % ; DCO 125 mg/l ou 75 % ; MES 35 mg/l ou 90 %. Charge inférieure : DBO5 35 mg/l ou 60 % ; DCO 200 mg/l ou 60 % ; MES : rendement de 50 %. En zone sensible à l'eutrophisation, en moyenne annuelle : azote global 15 mg/l au-delà de 600 kg DBO5/j, puis 10 mg/l au-delà de 6 000 ; phosphore total 2 mg/l puis 1 mg/l."],
+      "source": "Arrêté du 21 juillet 2015, annexe 3, consulté en résumé sur AIDA (INERIS). Ces repères n'alimentent aucun calculateur."
+    },
+    {
+      "titre": "Ce qu'il reste à vérifier sur la DERU 2",
+      "paragraphes": ["Les seuils et échéances de cette page proviennent de sources secondaires : plaquette du ministère et analyses juridiques. Les valeurs limites précises et l'état de la transposition française doivent être vérifiés sur EUR-Lex et Légifrance. C'est pourquoi le site ne propose pas encore de simulateur de conformité."],
+      "source": "Directive (UE) 2024/3019 ; plaquette du ministère chargé de l'écologie"
+    },
+    {
+      "titre": "Le lien avec le livre",
+      "paragraphes": ["Membranes et boues granulaires prolongent le chapitre 6 sur les boues activées, ainsi que le chapitre 13 pour les granules. Les supports mobiles prolongent le chapitre 5. L'anammox se rattache aux chapitres 8, 10 et 11. Le charbon actif renvoie au chapitre 14, et le biogaz au chapitre 7. Les modèles ASM prolongent les chapitres 4 et 6."]
+    }
+  ],
+  "memo": [
+    "Les fondamentaux tiennent, mais les normes de 1997 sont dépassées.",
+    "France : arrêté du 21 juillet 2015. Seuil de 120 kg DBO5/j.",
+    "DERU 2 : transposition au plus tard le 31 juillet 2027, échéances jusqu'en 2045.",
+    "Membranes, supports mobiles, granules : moins de place, moins de dépendance à la décantation.",
+    "Anammox : moins d'oxygène et pas de carbone. Micropolluants : ozone ou charbon actif.",
+    "Toujours vérifier la réglementation sur Légifrance et EUR-Lex."
+  ],
+  "cas": {
+    "titre": "Étude de cas : quel procédé pour quel besoin ?",
+    "enonce": "Une ville manque de place et veut augmenter sa capacité. Son clarificateur souffre de gonflement à répétition. Quels procédés récents regarder en premier, et pourquoi ?",
+    "solution": "Le bioréacteur à membrane et les boues granulaires répondent bien : le premier supprime la dépendance à la décantation, et les secondes décantent bien mieux dans un ouvrage compact. Les supports mobiles peuvent aussi augmenter la capacité d'un bassin existant. Un diagnostic du gonflement reste utile avant tout investissement, car un sélecteur ou un meilleur réglage peut suffire. Le choix réel relève d'une étude de faisabilité."
+  },
+  "quiz": [
+    { "question": "Quel est le texte français de référence sur les performances des stations ?", "choix": ["L'arrêté du 21 juillet 2015", "Le livre d'Edeline", "La directive de 2024"], "bonne": 0, "explication": "Il a été modifié à plusieurs reprises depuis." },
+    { "question": "Qu'est-ce que le traitement quaternaire de la DERU 2 vise ?", "choix": ["Les matières en suspension", "Les micropolluants", "Les sables"], "bonne": 1, "explication": "Il s'appuie par exemple sur l'ozonation ou le charbon actif." },
+    { "question": "Que remplace la membrane dans un bioréacteur à membrane ?", "choix": ["L'aération", "Le clarificateur", "Le prétraitement"], "bonne": 1, "explication": "La séparation de l'eau et des boues ne dépend plus de la décantation." },
+    { "question": "Quel avantage présente l'anammox ?", "choix": ["Moins d'oxygène et pas de carbone à ajouter", "Aucune bactérie nécessaire", "Il retire aussi le phosphore"], "bonne": 0, "explication": "Ces bactéries combinent directement l'ammonium et le nitrite." },
+    { "question": "Qui devra financer une grande partie du coût des micropolluants selon la DERU 2 ?", "choix": ["Les producteurs de médicaments et de cosmétiques", "Uniquement les communes", "Les stations de moins de 1 000 EH"], "bonne": 0, "explication": "C'est le principe de la responsabilité élargie des producteurs." }
+  ],
+  "sources": [
+    "Arrêté du 21 juillet 2015, texte consolidé sur AIDA (INERIS) : aida.ineris.fr/node/28428.",
+    "Directive (UE) 2024/3019 du 27 novembre 2024 ; plaquette du ministère ; Banque des Territoires.",
+    "G. Chen, M. van Loosdrecht, G. Ekama, D. Brdjanovic (dir.), Biological Wastewater Treatment, 2e éd., IWA, 2020.",
+    "EPNAC, guides d'exploitation des stations à boues activées (2015) et des filtres plantés de roseaux (2014)."
+  ]
+}

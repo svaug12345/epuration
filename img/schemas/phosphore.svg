@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Déphosphatation biologique : en phase anaérobie, les bactéries relâchent du phosphate et stockent du carbone ; en phase aérobie, elles reprennent plus de phosphate qu'elles n'en ont relâché, et la purge le retire">
+  <defs><marker id="p" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2c2a29"/></marker></defs>
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="36" text-anchor="middle" font-size="22" font-weight="700">Alterner pour stocker le phosphore</text>
+  <rect x="30" y="72" width="260" height="190" rx="8" fill="#efeff7" stroke="#8685bb" stroke-width="2"/>
+  <rect x="350" y="72" width="260" height="190" rx="8" fill="#fdf0e6" stroke="#eb690b" stroke-width="2"/>
+  <g text-anchor="middle">
+    <text x="160" y="104" font-weight="700">Phase sans oxygène</text>
+    <text x="160" y="146">Les bactéries captent</text><text x="160" y="168">le carbone facile</text>
+    <text x="160" y="212">et relâchent</text><text x="160" y="234" font-weight="700">du phosphate</text>
+    <text x="480" y="104" font-weight="700">Phase avec oxygène</text>
+    <text x="480" y="146">Elles brûlent leurs</text><text x="480" y="168">réserves de carbone</text>
+    <text x="480" y="212">et reprennent</text><text x="480" y="234" font-weight="700">plus de phosphate</text>
+  </g>
+  <path d="M290 160H348" stroke="#2c2a29" stroke-width="2.5" marker-end="url(#p)"/>
+  <path d="M480 262V300" stroke="#2c2a29" stroke-width="2.5" marker-end="url(#p)"/>
+  <rect x="290" y="302" width="320" height="42" rx="6" fill="#eaf4ea" stroke="#2e7d32" stroke-width="2"/>
+  <text x="450" y="329" text-anchor="middle">La purge des boues l'emporte</text>
+  <path d="M350 200H292" stroke="#2c2a29" stroke-width="2.5" marker-end="url(#p)" stroke-dasharray="6 4"/>
+  <text x="158" y="308" text-anchor="middle" font-size="15" fill="#5f5556">Recyclage des boues</text>
+  <text x="158" y="328" text-anchor="middle" font-size="15" fill="#5f5556">entre les deux phases</text>
+</svg>

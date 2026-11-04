@@ -1,0 +1,97 @@
+{
+  "numero": 4,
+  "slug": "azote-phosphore",
+  "titre": "L'azote et le phosphore",
+  "accroche": "Retirer le carbone ne suffit pas : l'azote et le phosphore nourrissent les algues des rivières.",
+  "suivant": { "slug": "methanisation", "titre": "La méthanisation" },
+  "scenes": [
+    {
+      "titre": "Le chemin de l'azote",
+      "schema": "azote",
+      "legende": "De l'ammonium au nitrate avec de l'oxygène, puis à l'azote gazeux sans oxygène.",
+      "points": ["L'azote arrive surtout sous forme réduite", "Nitrification : NH₄⁺ → NO₃⁻", "Dénitrification : NO₃⁻ → N₂"],
+      "narration": "Pourquoi s'occuper de l'azote ? Parce qu'une fois dans la rivière, l'ammonium consomme de l'oxygène et les nitrates nourrissent les algues. La station doit donc le faire disparaître, en deux temps qui n'ont rien à voir l'un avec l'autre. Dans un premier temps, avec de l'oxygène, des bactéries transforment l'ammonium en nitrite, puis en nitrate : c'est la nitrification. L'azote est toujours dans l'eau, il a seulement changé de forme. Dans un second temps, sans oxygène, d'autres bactéries respirent ce nitrate et le transforment en azote gazeux, qui s'échappe dans l'air : c'est la dénitrification. Cet azote gazeux n'est pas un polluant : l'air en contient déjà près de quatre-vingts pour cent."
+    },
+    {
+      "titre": "La nitrification, un travail de bactéries lentes",
+      "points": ["Nitrosomonas : l'étape limitante", "4,33 g d'O₂ par gramme d'azote", "Rendement très faible : peu de biomasse"],
+      "narration": "La nitrification repose sur deux types de bactéries. Nitrosomonas transforme l'ammonium en nitrite, et Nitrobacter transforme le nitrite en nitrate. Comme Nitrosomonas est la plus lente, c'est elle qui donne le rythme, et en conditions normales, le nitrite ne s'accumule pas. Ces bactéries sont autotrophes : elles tirent leur énergie de l'azote, et elles en récupèrent bien peu. Leur rendement est très faible, leur croissance lente, et elles sont gourmandes en oxygène : en théorie, 4,57 grammes par gramme d'azote, et en pratique environ 4,33. Il faut donc une aération sérieuse. Chaque kilo d'azote à nitrifier coûte plus d'oxygène qu'un kilo de DBO5 dans bien des stations. C'est aussi une réaction qui acidifie le milieu."
+    },
+    {
+      "titre": "Ce qui fait décrocher les nitrifiantes",
+      "points": ["Le froid : croissance divisée par 2,7 de 15 à 5 °C", "Moins de 1 mg/l d'oxygène", "Toxiques, y compris à faible dose"],
+      "narration": "Ces bactéries sont les plus fragiles de la station. Premier ennemi, le froid. Une formule de Downing et Hopwood donne leur vitesse de croissance selon la température : de 15 à 5 degrés, elle est divisée par plus de 2,6. Conséquence directe : l'âge des boues minimal passe d'environ 2 jours à près de 6 jours, sans aucune marge. C'est souvent en hiver que l'ammonium revient en sortie. Deuxième ennemi, le manque d'oxygène : il leur faut au moins 1 milligramme par litre. Troisième ennemi, les toxiques. Le cuivre et le nickel posent problème dès un dixième de milligramme par litre environ, et les cyanures dès 2. Même les sels de fer et d'aluminium utilisés contre le phosphore peuvent les inhiber, tout comme le surnageant des digesteurs renvoyé en tête de station."
+    },
+    {
+      "titre": "La dénitrification",
+      "points": ["Pas d'oxygène, mais du nitrate", "Il faut du carbone : 2,5 g de méthanol par g de N", "Rend la moitié de l'acidité"],
+      "narration": "Pour la seconde étape, le problème est différent. Les dénitrifiantes sont des bactéries ordinaires, qui se nourrissent de matière organique. Elles respirent simplement le nitrate quand l'oxygène manque. Mais, à la sortie de la nitrification, l'eau ne contient presque plus de carbone. Trois solutions existent : ajouter un peu d'eau usée, ajouter un produit comme le méthanol, ou compter sur les réserves des bactéries elles-mêmes, ce qui est plus lent. En théorie, il faut 1,9 gramme de méthanol par gramme d'azote. En pratique, c'est plutôt 2,5, car une partie sert à fabriquer des cellules. Bonne nouvelle : la réaction rend environ la moitié de l'acidité produite par la nitrification. Mais attention au clarificateur : si le nitrate y dépasse environ 16 milligrammes par litre, les bulles d'azote font remonter les boues."
+    },
+    {
+      "titre": "Le phosphore",
+      "points": ["4 g de P par EH et par jour", "Eaux urbaines : 10 à 30 mg/l", "Traitement classique : 30 % au mieux"],
+      "narration": "Passons au phosphore, l'autre engrais des rivières. Selon le livre, le métabolisme humain en rejette environ 2 grammes par équivalent-habitant et par jour, auxquels s'ajoutaient alors 2 grammes venant des lessives. La station ne le détruit pas : elle l'enlève uniquement en évacuant des boues qui en contiennent. Or, ce mécanisme naturel reste modeste. Dans une station ordinaire, l'élimination atteint au mieux environ 30 pour cent. Pour aller plus loin, on peut ajouter des sels de fer ou d'aluminium qui précipitent le phosphore. C'est un petit investissement, de l'ordre de 10 à 20 pour cent du coût de la station, mais le fonctionnement peut atteindre 30 pour cent du coût total. D'où l'intérêt d'une voie purement biologique."
+    },
+    {
+      "titre": "Alterner pour stocker",
+      "schema": "phosphore",
+      "legende": "Alternance des phases anaérobie et aérobie.",
+      "points": ["Sans oxygène : la bactérie relâche du phosphate", "Avec oxygène : elle en reprend davantage", "La purge retire le phosphore"],
+      "narration": "La déphosphatation biologique est une astuce élégante. On fait passer les boues alternativement dans une zone sans oxygène ni nitrate, puis dans une zone aérée. Dans la zone sans oxygène, certaines bactéries captent le carbone facile à dégrader et le stockent. Pour payer cette opération, elles brûlent leurs réserves de polyphosphates et relâchent du phosphate dans l'eau. Curieusement, le phosphore en sortie de cette zone augmente donc. Dans la zone aérée, elles utilisent ce carbone stocké, et reprennent le phosphate, plus qu'elles n'en avaient relâché. Il suffit alors de purger ces boues riches en phosphore. Cette alternance peut multiplier jusqu'à quatre fois la rétention. Retenez bien la condition : le nitrate doit rester absent de la première zone, sinon les autres bactéries consomment le carbone à leur place."
+    }
+  ],
+  "approfondir": [
+    {
+      "titre": "Stœchiométrie de la nitrification",
+      "paragraphes": ["Selon Haug et McCarty, pour chaque espèce. On y voit le faible rendement, le fort besoin en oxygène, et l'acidification."],
+      "formules": ["55 NH₄⁺ + 5 CO₂ + 76 O₂ → C₅H₇NO₂ + 54 NO₂⁻ + 52 H₂O + 109 H⁺", "400 NO₂⁻ + 5 CO₂ + NH₄⁺ + 195 O₂ + 2 H₂O → C₅H₇NO₂ + 400 NO₃⁻ + H⁺"],
+      "source": "Edeline 1997, p. 245"
+    },
+    {
+      "titre": "Vitesse de croissance et âge minimal",
+      "paragraphes": ["La formule de Downing et Hopwood donne µ. L'âge minimal 1/µ néglige la mortalité : c'est une borne basse, sans marge. L'activité diminue au-delà de 31 °C. Pour Nitrosomonas, µ̂ à 20 °C vaut de 0,48 à 0,71 par jour, Y = 0,05 g de biomasse par g de N, et Ks = 0,7 à 1 mg N/l."],
+      "formules": ["µT = 0,47 × 1,103^(T − 15)", "âge minimal ≈ 1 / µT"],
+      "source": "Edeline 1997, p. 243 et 245"
+    },
+    {
+      "titre": "Besoin en oxygène",
+      "paragraphes": ["Le besoin théorique est de 3,43 + 1,14 = 4,57 g O₂ par g de N. Le besoin réel, une fois l'assimilation déduite, est de 3,22 + 1,11 = 4,33 g O₂ par g de N."],
+      "source": "Edeline 1997, p. 243"
+    },
+    {
+      "titre": "Inhibiteurs de la nitrification",
+      "paragraphes": ["Seuils de toxicité en mg/l : cuivre 0,1 à 0,4 ; nickel 0,1 à 0,25 ; chrome 0,25 à 0,9 ; plomb 0,5 à 1 ; argent 0,25 ; mercure 2 ; zinc 10 ; cyanures 2 ; phénols 10. Nitrobacter est inhibé dès 20 mg/l de NH₃, et presque totalement vers 0,5 mg/l d'oxygène."],
+      "source": "Edeline 1997, p. 244 et 245"
+    },
+    {
+      "titre": "Dénitrification au méthanol",
+      "paragraphes": ["Selon l'équation, il faut 1,9 g de méthanol par g de N en théorie, et 2,5 g en pratique. Le domaine de pH optimal se situe de 6 à 8. L'oxygène inhibe à très faible concentration."],
+      "formules": ["6 NO₃⁻ + 5 CH₃OH → 3 N₂ + 5 CO₂ + 7 H₂O + 6 OH⁻"],
+      "source": "Edeline 1997, p. 227"
+    }
+  ],
+  "memo": [
+    "Nitrification : oxygène, bactéries lentes, 4,33 g O₂/g N. Elle acidifie.",
+    "Étape limitante : Nitrosomonas.",
+    "Il faut au moins 1 mg/l d'oxygène.",
+    "µ = 0,47 × 1,103^(T−15) : le froid impose un âge des boues plus grand.",
+    "Dénitrification : sans oxygène, avec du carbone. Méthanol : 2,5 g/g N.",
+    "Boues flottantes au clarificateur : pas sous environ 16 mg/l de nitrate.",
+    "Phosphore : éliminé seulement par la purge. Alternance anaérobie-aérobie : rétention jusqu'à 4 fois."
+  ],
+  "cas": {
+    "titre": "Étude de cas : l'hiver arrive",
+    "enonce": "Une station de 1 000 m³/j doit nitrifier 40 mg/l d'azote et fonctionne avec 5 jours d'âge de boues. Que devient la marge à 15 °C, puis à 5 °C ? Combien d'oxygène faut-il pour la nitrification ?",
+    "lien": "outils/azote.html",
+    "libelleLien": "Ouvrir le calculateur",
+    "solution": "À 15 °C, l'âge minimal est d'environ 2,1 jours : la marge est confortable. À 5 °C, il monte à environ 5,7 jours, au-dessus des 5 jours de la station : il faut réduire la purge avant l'hiver. Le besoin d'oxygène pour la nitrification est de 40 kg N/j × 4,33 ≈ 173 kg O₂/j, en plus de celui de la DBO5."
+  },
+  "quiz": [
+    { "question": "Quelle est l'étape limitante de la nitrification ?", "choix": ["La transformation de l'ammonium en nitrite", "La transformation du nitrite en nitrate", "Le dégagement d'azote"], "bonne": 0, "explication": "Nitrosomonas est plus lente que Nitrobacter.", "source": "Edeline 1997, p. 243" },
+    { "question": "Quel est le besoin réel en oxygène de la nitrification ?", "choix": ["1,1 g O₂/g N", "4,33 g O₂/g N", "10 g O₂/g N"], "bonne": 1, "explication": "Le besoin théorique, sans assimilation, est de 4,57 g.", "source": "Edeline 1997, p. 243" },
+    { "question": "Que faut-il aux bactéries dénitrifiantes ?", "choix": ["De l'oxygène et de la lumière", "Du nitrate et une source de carbone", "De l'ammonium seulement"], "bonne": 1, "explication": "Elles respirent le nitrate en consommant de la matière organique.", "source": "Edeline 1997, p. 226" },
+    { "question": "Pourquoi des boues peuvent-elles remonter au clarificateur ?", "choix": ["Par manque de lumière", "Par dénitrification et formation de bulles d'azote", "Parce que l'eau est trop froide"], "bonne": 1, "explication": "Le phénomène ne se produit pas sous environ 16 mg/l de nitrate.", "source": "Edeline 1997, p. 226" },
+    { "question": "Que font les bactéries déphosphatantes dans la phase sans oxygène ?", "choix": ["Elles relâchent du phosphate", "Elles stockent le phosphate", "Elles meurent"], "bonne": 0, "explication": "Elles paient avec leurs polyphosphates le stockage du carbone, puis reprennent davantage de phosphate en phase aérée.", "source": "Edeline 1997, p. 275" }
+  ],
+  "sources": ["F. Edeline, L'épuration biologique des eaux, 4e éd., Cebedoc, 1997 : chap. 8, p. 226-227 ; chap. 10, p. 242-245 ; chap. 13, p. 275."]
+}

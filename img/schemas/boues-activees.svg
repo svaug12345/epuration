@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Boues activées : l'eau entre dans le bassin aéré, passe au clarificateur et ressort épurée ; une partie des boues est recyclée vers le bassin, l'excès est purgé">
+  <defs><marker id="b" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2c2a29"/></marker>
+  <marker id="m" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#5c56c4"/></marker></defs>
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="36" text-anchor="middle" font-size="22" font-weight="700">Le circuit des boues activées</text>
+  <rect x="110" y="84" width="220" height="130" rx="6" fill="#fdf0e6" stroke="#eb690b" stroke-width="3"/>
+  <text x="220" y="112" text-anchor="middle" font-weight="700">Bassin d'aération</text>
+  <g fill="#897879"><circle cx="150" cy="186" r="5"/><circle cx="180" cy="168" r="4"/><circle cx="215" cy="190" r="5"/><circle cx="250" cy="165" r="4"/><circle cx="290" cy="186" r="5"/></g>
+  <text x="220" y="146" text-anchor="middle" font-size="15" fill="#5f5556">bactéries + oxygène</text>
+  <path d="M420 84H560V150L490 214L420 150Z" fill="#f6f7f8" stroke="#897879" stroke-width="2"/>
+  <text x="490" y="118" text-anchor="middle" font-weight="700">Clarificateur</text>
+  <g stroke="#2c2a29" stroke-width="2.5" fill="none" marker-end="url(#b)">
+    <path d="M28 130H108"/><path d="M330 130H418"/><path d="M560 104H622"/>
+  </g>
+  <text x="62" y="118" text-anchor="middle">Eau usée</text>
+  <text x="592" y="92" text-anchor="middle">Eau épurée</text>
+  <g stroke="#5c56c4" stroke-width="2.5" fill="none" marker-end="url(#m)">
+    <path d="M490 214V276H220V216"/><path d="M490 276V316H580"/>
+  </g>
+  <text x="340" y="268" text-anchor="middle" font-weight="700">Recyclage des boues</text>
+  <text x="522" y="340" text-anchor="middle">Purge des boues en excès</text>
+</svg>

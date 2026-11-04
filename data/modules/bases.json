@@ -1,0 +1,85 @@
+{
+  "numero": 1,
+  "slug": "bases",
+  "titre": "Les bases de l'épuration biologique",
+  "accroche": "Une station d'épuration est d'abord un élevage de micro-organismes, nourris avec notre pollution.",
+  "suivant": { "slug": "boues-activees", "titre": "Les boues activées" },
+  "scenes": [
+    {
+      "titre": "Une station, c'est un élevage",
+      "schema": "filiere",
+      "legende": "Le trajet de l'eau dans une station classique.",
+      "points": ["La pollution sert de nourriture", "Les micro-organismes font le travail", "Le rôle de la station : créer les bonnes conditions"],
+      "narration": "Imaginez une rivière qui se nettoie toute seule. Des bactéries y consomment la matière organique, et l'eau redevient claire plus loin. Une station d'épuration biologique fait exactement la même chose, mais en accéléré et sur un espace réduit. L'eau passe d'abord par un prétraitement, qui retire les gros déchets et les sables, puis souvent par un décanteur primaire. Vient ensuite le cœur du système : le traitement biologique, où des micro-organismes se nourrissent de la pollution. Un clarificateur sépare enfin l'eau épurée de ces organismes. Retenez cette idée : l'exploitant d'une station est un éleveur. Il ne détruit pas lui-même la pollution. Il donne à ses bactéries le gîte, le couvert et l'oxygène."
+    },
+    {
+      "titre": "Mesurer la pollution : DBO5 et DCO",
+      "points": ["DBO5 : ce que les bactéries consomment en 5 jours", "DCO : presque tout ce qui peut s'oxyder", "La DCO est toujours la plus élevée"],
+      "narration": "Comment mesurer une pollution invisible ? On ne compte pas les molécules une par une : on mesure l'oxygène qu'il faudrait pour les détruire. La DBO5, c'est la demande biochimique en oxygène sur cinq jours. On enferme un échantillon et on regarde combien d'oxygène les bactéries consomment pendant ce temps. Elle indique ce que la biologie sait attaquer facilement. La DCO, la demande chimique en oxygène, est plus large : un oxydant puissant attaque presque toute la matière, biodégradable ou non. Elle est donc toujours plus élevée que la DBO5, et son résultat s'obtient en quelques heures. Dans un exemple d'eau brute décantée cité par Edeline, on trouve 230 milligrammes par litre de DBO5 pour 370 de DCO."
+    },
+    {
+      "titre": "L'équivalent-habitant",
+      "points": ["1 EH = 60 g de DBO5 par jour", "Permet de comparer les stations", "Une station se décrit en EH"],
+      "narration": "Pour parler de la taille d'une station, on utilise une unité commode : l'équivalent-habitant. Il représente la pollution organique attribuée à une personne pendant une journée, soit 60 grammes de DBO5 selon la définition réglementaire européenne. Ainsi, une station de dix mille équivalents-habitants peut recevoir six cents kilos de DBO5 par jour, que cette charge vienne d'habitants ou d'une usine agroalimentaire. Attention, ce n'est pas un nombre d'habitants réels : une petite ville industrielle peut dépasser largement sa population. Cette unité sert à comparer les installations et à leur appliquer les règles adaptées."
+    },
+    {
+      "titre": "Qui travaille dans le bassin ?",
+      "points": ["Hétérotrophes : mangent la matière organique", "Autotrophes : tirent leur carbone du CO₂", "Oxygène, nitrate ou rien : trois milieux"],
+      "narration": "Dans un bassin vit un véritable écosystème. Les bactéries hétérotrophes sont les plus nombreuses : elles tirent leur carbone et leur énergie de la matière organique. C'est elles qui font baisser la DBO5. Les autotrophes, comme les nitrifiantes, prennent leur carbone dans le gaz carbonique dissous et vivent bien plus lentement. Des protozoaires et de petits animaux broutent ensuite les bactéries et aident à clarifier l'eau. Le milieu décide de qui travaille. Avec de l'oxygène dissous, on est en aérobie. Sans oxygène mais avec du nitrate, on parle d'anoxie, et des bactéries respirent ce nitrate. Sans l'un ni l'autre, c'est l'anaérobie, le monde de la méthanisation."
+    },
+    {
+      "titre": "La croissance plafonne",
+      "schema": "monod",
+      "legende": "La loi de Monod, redessinée : la croissance plafonne quand la nourriture abonde.",
+      "points": ["Beaucoup de nourriture : vitesse maximale", "Peu de nourriture : la vitesse chute", "Ks : la moitié du maximum"],
+      "narration": "Comment grandit cette population ? Une loi simple, celle de Monod, résume l'essentiel. Quand la nourriture abonde, les bactéries poussent à leur vitesse maximale : en ajouter davantage ne sert plus à rien. Quand elle se raréfie, la croissance ralentit nettement. Un paramètre, Ks, marque la frontière : c'est la concentration pour laquelle la vitesse atteint la moitié de son maximum. Cette courbe explique une chose essentielle. Plus on veut une eau de sortie propre, moins il reste de nourriture, et plus les bactéries travaillent lentement. Voilà pourquoi une épuration très poussée demande davantage de temps ou davantage de bactéries."
+    },
+    {
+      "titre": "Ce qui reste : les boues",
+      "points": ["La pollution devient de la biomasse", "L'excès doit être évacué", "Jusqu'aux 2/3 des coûts"],
+      "narration": "La pollution ne disparaît pas par magie. Une partie est brûlée pour produire de l'énergie et repart en gaz carbonique. Une autre sert à fabriquer de nouvelles cellules : ce sont les boues. On appelle rendement de croissance la masse de cellules produite par masse de pollution consommée. La station doit donc évacuer régulièrement cet excédent, et ce poste pèse lourd : Edeline rappelle que le traitement des boues peut atteindre les deux tiers des investissements et des frais de fonctionnement. Vous avez maintenant les clés pour la suite : une pollution mesurée en oxygène, une population de micro-organismes qui croît selon la nourriture disponible, et des boues à gérer. Le prochain module montre comment tout cela se pilote dans un bassin de boues activées."
+    }
+  ],
+  "approfondir": [
+    {
+      "titre": "La loi de Monod",
+      "paragraphes": ["La vitesse de croissance µ dépend de la concentration de substrat S. µ̂ est la vitesse maximale, Ks la constante de saturation."],
+      "formules": ["µ = µ̂ × S / (Ks + S)", "Si S = Ks, alors µ = µ̂ / 2", "Si S >> Ks, alors µ ≈ µ̂"],
+      "source": "Edeline 1997, chap. 4, à partir de la p. 53"
+    },
+    {
+      "titre": "Rendement et disparition de la biomasse",
+      "paragraphes": ["La biomasse produite dépend du rendement de croissance Y, tandis que le coefficient b traduit ses pertes. Empiriquement, sur la DBO5, Y prend des valeurs de 0,3 à 0,4 selon le substrat, et b varie de 0,01 à 0,07 par jour selon l'écosystème et le substrat."],
+      "formules": ["P = Y × ΔS / θl − b × B"],
+      "source": "Edeline 1997, p. 148 et 156"
+    },
+    {
+      "titre": "Ordres de grandeur des constantes en DCO",
+      "paragraphes": ["Pour les boues activées, le livre propose, sous réserve d'essais : µ̂ = 3 par jour à 10 °C et Ks = 20 mg de DCO par litre. Ces valeurs illustrent pourquoi une bactérie hétérotrophe va bien plus vite qu'une nitrifiante, dont le µ̂ à 20 °C reste de 0,48 à 0,71 par jour pour Nitrosomonas."],
+      "source": "Edeline 1997, p. 160 et 243"
+    }
+  ],
+  "memo": [
+    "DBO5 : oxygène consommé en 5 jours par les bactéries. DCO : oxydation chimique, toujours plus élevée.",
+    "1 EH = 60 g de DBO5 par jour.",
+    "Monod : la croissance plafonne quand la nourriture abonde, et chute quand elle manque.",
+    "Aérobie : oxygène. Anoxie : nitrate sans oxygène. Anaérobie : ni l'un ni l'autre.",
+    "Le traitement des boues peut atteindre les 2/3 des coûts."
+  ],
+  "cas": {
+    "titre": "Étude de cas : la taille d'une station",
+    "enonce": "Une station reçoit 2 000 m³/j d'eau à 300 mg/l de DBO5. Quelle charge reçoit-elle, en kilos de DBO5 par jour et en équivalents-habitants ?",
+    "solution": "Les mg/l valent des g/m³. La charge vaut donc 2 000 × 300 / 1 000 = 600 kg de DBO5 par jour. Avec 60 g par équivalent-habitant, cela représente 600 000 / 60 = 10 000 EH."
+  },
+  "quiz": [
+    { "question": "Pourquoi la DCO est-elle supérieure à la DBO5 ?", "choix": ["Elle dure plus longtemps", "Elle oxyde aussi ce qui n'est pas biodégradable", "Elle se mesure sur de l'eau plus sale"], "bonne": 1, "explication": "L'oxydant chimique attaque presque toute la matière, alors que la DBO5 ne compte que ce que les bactéries consomment en 5 jours." },
+    { "question": "Combien de DBO5 représente un équivalent-habitant ?", "choix": ["30 g par jour", "60 g par jour", "120 g par jour"], "bonne": 1, "explication": "C'est la définition réglementaire européenne." },
+    { "question": "Selon la loi de Monod, si la concentration de nourriture vaut Ks, la croissance est :", "choix": ["nulle", "à la moitié de son maximum", "à son maximum"], "bonne": 1, "explication": "Ks est justement défini par ce point à mi-hauteur.", "source": "Edeline 1997, chap. 4" },
+    { "question": "Quel milieu contient du nitrate mais pas d'oxygène dissous ?", "choix": ["Aérobie", "Anoxie", "Anaérobie"], "bonne": 1, "explication": "En anoxie, des bactéries respirent le nitrate à la place de l'oxygène." },
+    { "question": "Le traitement des boues peut représenter jusqu'à quelle part des coûts d'une station ?", "choix": ["Un dixième", "Un tiers", "Deux tiers"], "bonne": 2, "explication": "Investissements et frais de fonctionnement compris.", "source": "Edeline 1997, p. 128" }
+  ],
+  "sources": [
+    "F. Edeline, L'épuration biologique des eaux, 4e éd., Cebedoc, 1997 : chap. 4, p. 128, 148, 156, 158, 160 et 243.",
+    "Directive 91/271/CEE, pour la définition de l'équivalent-habitant."
+  ]
+}

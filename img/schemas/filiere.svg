@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Filière d'une station : prétraitement, décantation, traitement biologique, clarification, puis rejet">
+  <defs><marker id="f" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2c2a29"/></marker></defs>
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="38" text-anchor="middle" font-size="22" font-weight="700">Le trajet de l'eau</text>
+  <g stroke="#897879" stroke-width="2" fill="#f6f7f8">
+    <rect x="16" y="110" width="122" height="84" rx="8"/>
+    <rect x="166" y="110" width="110" height="84" rx="8"/>
+    <rect x="304" y="110" width="124" height="84" rx="8" fill="#fdf0e6" stroke="#eb690b" stroke-width="3"/>
+    <rect x="456" y="110" width="110" height="84" rx="8"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="77" y="147">Prétrai-</text><text x="77" y="168">tement</text>
+    <text x="221" y="147">Décanteur</text><text x="221" y="168">primaire</text>
+    <text x="366" y="147" font-weight="700">Traitement</text><text x="366" y="168" font-weight="700">biologique</text>
+    <text x="511" y="147">Clarifi-</text><text x="511" y="168">cateur</text>
+  </g>
+  <g stroke="#2c2a29" stroke-width="2" fill="none" marker-end="url(#f)">
+    <path d="M138 152H164"/><path d="M276 152H302"/><path d="M428 152H454"/><path d="M566 152H606"/>
+  </g>
+  <text x="590" y="132" text-anchor="middle">Rejet</text>
+  <g stroke="#8685bb" stroke-width="2" fill="none" marker-end="url(#f)">
+    <path d="M221 194V262"/><path d="M511 194V262"/>
+  </g>
+  <rect x="150" y="266" width="440" height="50" rx="8" fill="#efeff7" stroke="#8685bb" stroke-width="2"/>
+  <text x="370" y="298" text-anchor="middle">Traitement des boues</text>
+  <text x="77" y="100" text-anchor="middle" font-size="15" fill="#5f5556">grilles, sables</text>
+  <text x="366" y="100" text-anchor="middle" font-size="15" fill="#5f5556">bactéries + oxygène</text>
+</svg>

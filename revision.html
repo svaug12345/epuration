@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réviser</title>
+  <meta name="description" content="Cartes question-réponse pour réviser l'épuration biologique.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="img/icone.svg" type="image/svg+xml">
+  <script type="module" src="js/ui/habillage.js"></script>
+  <script type="module" src="js/ui/revision.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Réviser</h1>
+    <p class="intro">Essayez de répondre de tête, puis retournez la carte. Le tirage est aléatoire.</p>
+    <div class="champ">
+      <label for="module">Module</label>
+      <select id="module"><option value="">Tous les modules</option></select>
+    </div>
+    <div id="carte" style="margin-top:1rem" aria-live="polite"></div>
+  </main>
+</body>
+</html>

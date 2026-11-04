@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Méthanisation : la matière organique est hydrolysée, puis acidifiée en acides gras volatils, puis transformée en biogaz par les méthanogènes, qui sont le maillon le plus lent">
+  <defs><marker id="c" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2c2a29"/></marker></defs>
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="36" text-anchor="middle" font-size="22" font-weight="700">Une chaîne de micro-organismes</text>
+  <g fill="#f6f7f8" stroke="#897879" stroke-width="2">
+    <rect x="16" y="110" width="130" height="84" rx="8"/><rect x="176" y="110" width="130" height="84" rx="8"/><rect x="336" y="110" width="130" height="84" rx="8"/>
+    <rect x="496" y="110" width="130" height="84" rx="8" fill="#eaf4ea" stroke="#2e7d32"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="81" y="147">Matière</text><text x="81" y="168">organique</text>
+    <text x="241" y="147">Composés</text><text x="241" y="168">solubles</text>
+    <text x="401" y="147">Acides gras</text><text x="401" y="168">volatils</text>
+    <text x="561" y="147" font-weight="700">Biogaz</text><text x="561" y="168">CH₄ + CO₂</text>
+  </g>
+  <g stroke="#2c2a29" stroke-width="2.5" fill="none" marker-end="url(#c)">
+    <path d="M146 152H174"/><path d="M306 152H334"/><path d="M466 152H494"/>
+  </g>
+  <g text-anchor="middle" font-size="15" fill="#5f5556">
+    <text x="160" y="228">hydrolyse</text><text x="320" y="228">acidification</text>
+  </g>
+  <text x="480" y="228" text-anchor="middle" font-size="15" font-weight="700" fill="#b3261e">méthanogenèse</text>
+  <path d="M480 240V262" stroke="#b3261e" stroke-width="2"/>
+  <rect x="270" y="264" width="356" height="62" rx="6" fill="#fbeceb" stroke="#b3261e" stroke-width="2"/>
+  <text x="448" y="290" text-anchor="middle">Le maillon le plus lent et le plus fragile :</text>
+  <text x="448" y="312" text-anchor="middle">il impose un âge des boues élevé</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Lagune facultative : en surface, les algues produisent de l'oxygène pour les bactéries, qui leur rendent du gaz carbonique ; au fond, les boues se dégradent sans oxygène">
+  <defs><marker id="l" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2c2a29"/></marker></defs>
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="34" text-anchor="middle" font-size="22" font-weight="700">Algues et bactéries s'entraident</text>
+  <circle cx="584" cy="74" r="24" fill="#eb690b"/>
+  <path d="M30 104H610L560 320H80Z" fill="#e3f1fb" stroke="#3a6db0" stroke-width="2"/>
+  <path d="M73 282H567L560 320H80Z" fill="#c9c1c2" stroke="#897879"/>
+  <rect x="70" y="130" width="170" height="60" rx="8" fill="#eaf4ea" stroke="#2e7d32" stroke-width="2"/>
+  <text x="155" y="166" text-anchor="middle" font-weight="700">Algues</text>
+  <rect x="400" y="130" width="170" height="60" rx="8" fill="#fdf0e6" stroke="#eb690b" stroke-width="2"/>
+  <text x="485" y="166" text-anchor="middle" font-weight="700">Bactéries</text>
+  <g stroke="#2c2a29" stroke-width="2.5" fill="none" marker-end="url(#l)">
+    <path d="M240 146H398"/><path d="M400 176H242"/>
+  </g>
+  <text x="320" y="136" text-anchor="middle">oxygène</text>
+  <text x="320" y="198" text-anchor="middle">gaz carbonique</text>
+  <text x="320" y="240" text-anchor="middle" fill="#5f5556">La pollution nourrit les bactéries</text>
+  <text x="320" y="308" text-anchor="middle">Boues au fond, sans oxygène</text>
+  <text x="46" y="88" font-size="15" fill="#5f5556">Grande surface, faible profondeur</text>
+</svg>

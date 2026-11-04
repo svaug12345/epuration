@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#2c2a29" role="img" aria-label="Courbe de Monod : la croissance augmente avec la nourriture puis plafonne à son maximum ; Ks est la concentration qui donne la moitié du maximum">
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="320" y="36" text-anchor="middle" font-size="22" font-weight="700">La croissance plafonne : loi de Monod</text>
+  <g stroke="#2c2a29" stroke-width="2"><path d="M80 300H600"/><path d="M80 300V60"/></g>
+  <path d="M80 90H600" stroke="#897879" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="596" y="82" text-anchor="end">maximum µ̂</text>
+  <path d="M80 300C130 195 165 160 200 140C280 113 420 100 590 96" fill="none" stroke="#c2540a" stroke-width="4"/>
+  <g stroke="#5f5556" stroke-width="1.5" stroke-dasharray="4 4"><path d="M80 195H160"/><path d="M160 195V300"/></g>
+  <circle cx="160" cy="195" r="6" fill="#c2540a"/>
+  <text x="172" y="222">moitié du maximum</text>
+  <text x="160" y="322" text-anchor="middle" font-weight="700">Ks</text>
+  <text x="340" y="346" text-anchor="middle">Concentration de nourriture S</text>
+  <text x="26" y="180" transform="rotate(-90 26 180)" text-anchor="middle">Vitesse de croissance µ</text>
+</svg>
