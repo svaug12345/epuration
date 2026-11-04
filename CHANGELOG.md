@@ -1,5 +1,9 @@
 # Journal des versions
 
+## v0.7.1 — 4 novembre 2026
+
+Virgule décimale sur l'axe du graphique, et icônes PNG pour installer l'application sur Android.
+
 ## v0.7.0 — 4 novembre 2026
 
 Une vidéo de 4 à 5 minutes par module, avec la voix SebastienV, en français, et une signature discrète.

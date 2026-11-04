@@ -3,7 +3,7 @@
 // Stratégie « le réseau d'abord » : on demande toujours la version récente,
 // et on ne se sert de la copie que si le réseau ne répond pas. Ainsi, une mise à jour
 // du site est visible tout de suite, ce qui évite le piège classique des vieilles pages.
-const VERSION = '0.7.0';
+const VERSION = '0.7.1';
 const CACHE = `epuration-${VERSION}`;
 
 self.addEventListener('install', () => self.skipWaiting());

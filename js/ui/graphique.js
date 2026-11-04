@@ -41,7 +41,7 @@ export function dessinerCourbes(conteneur, { series, xs, titreX, titreY, lireVal
   // Grille horizontale discrète et graduations.
   for (let y = 0; y <= yMax; y += yMax / 4) {
     svg.append(creer('line', { x1: marge.gauche, x2: marge.gauche + largeur, y1: py(y), y2: py(y), stroke: 'var(--bord)', 'stroke-width': 1 }));
-    svg.append(texte(String(y), { x: marge.gauche - 5, y: py(y) + 4, 'text-anchor': 'end' }));
+    svg.append(texte(y.toLocaleString('fr-FR'), { x: marge.gauche - 5, y: py(y) + 4, 'text-anchor': 'end' }));
   }
   for (const x of xs) {
     svg.append(texte(x.toLocaleString('fr-FR'), { x: px(x), y: marge.haut + hauteur + 15, 'text-anchor': 'middle' }));
