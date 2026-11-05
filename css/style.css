@@ -438,35 +438,49 @@ summary { cursor: pointer; font-weight: 700; font-family: var(--titre); min-heig
    Le bouton micro de la barre du haut, teinté mauve pour qu'on le repère sans qu'il crie. */
 .bouton-jim { color: var(--mauve); position: relative; }
 .bouton-jim[aria-expanded='true'] { background: var(--mauve-clair); }
-/* Le panneau : une feuille qui monte du bas sur mobile, une carte en bas à droite sur grand écran. */
+/* Le panneau de Jim. Deux tailles :
+   - compact (par défaut) : une barre basse, la page reste visible et utilisable au-dessus ;
+   - .complet : un grand panneau avec toute la conversation.
+   Sur téléphone il se pose juste au-dessus des onglets ; sur ordinateur, dans le coin en bas à droite. */
 .jim-panneau {
-  position: fixed; z-index: 45; left: 0; right: 0;
-  bottom: calc(var(--hauteur-onglets) + env(safe-area-inset-bottom));
-  max-height: min(78vh, 40rem); display: flex; flex-direction: column; gap: .6rem;
-  padding: 1rem 1rem .9rem; background: var(--surface); color: var(--texte);
-  border-radius: 24px 24px 0 0; border: 1px solid var(--bord); box-shadow: var(--ombre-forte);
-  transform: translateY(110%); visibility: hidden;
+  position: fixed; z-index: 45; left: .5rem; right: .5rem;
+  bottom: calc(var(--hauteur-onglets) + env(safe-area-inset-bottom) + .5rem);
+  display: flex; flex-direction: column; gap: .6rem; padding: .6rem .6rem .6rem .7rem;
+  background: var(--surface); color: var(--texte);
+  border-radius: 22px; border: 1px solid var(--bord); box-shadow: var(--ombre-forte);
+  transform: translateY(calc(100% + 6rem)); visibility: hidden;
   transition: transform .35s cubic-bezier(.2,.8,.2,1), visibility 0s .35s;
 }
 .jim-panneau.ouvert { transform: none; visibility: visible; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+.jim-panneau.complet { max-height: min(75vh, 38rem); padding: .8rem; }
 @media (min-width: 760px) {
-  /* Sur ordinateur, pas d'onglets en bas : la carte flotte dans le coin. */
-  .jim-panneau { left: auto; right: 1.2rem; bottom: 1.2rem; width: 23rem; border-radius: var(--rayon); }
+  .jim-panneau { left: auto; right: 1.2rem; bottom: 1.2rem; width: 24rem; }
 }
-.jim-tete { display: flex; align-items: center; gap: .7rem; }
-.jim-tete .medaille { width: 40px; height: 40px; border-radius: 13px; }
-.jim-tete div { flex: 1; line-height: 1.2; }
-.jim-tete strong { font-family: var(--titre); font-size: 1.1rem; display: block; }
-.jim-tete .sous { color: var(--texte-doux); font-size: .85rem; }
+/* La ligne du haut : bouton d'appel, textes, agrandir, fermer. */
+.jim-ligne { display: flex; align-items: center; gap: .55rem; }
+.jim-ligne .bouton-icone { width: 38px; height: 38px; border-radius: 12px; flex: none; color: var(--texte-doux); }
+.bouton-appel.mini { width: 52px; height: 52px; flex: none; box-shadow: 0 6px 16px rgba(194, 84, 10, .32); }
+.jim-panneau.en-ligne.ecoute .bouton-appel.mini { box-shadow: 0 0 0 5px var(--mauve-clair); }
+.jim-textes { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; }
+.jim-textes strong { font-family: var(--titre); font-size: 1rem; }
+.jim-statut { color: var(--texte-doux); font-size: .8rem; }
+/* La dernière phrase de Jim, sur deux lignes au plus (seulement en compact). */
+.jim-derniere { font-size: .88rem; margin-top: .15rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.jim-derniere:empty, .jim-panneau.complet .jim-derniere { display: none; }
+/* La partie complète n'existe qu'en grand. */
+.jim-complet { display: none; flex-direction: column; gap: .6rem; min-height: 0; flex: 1; }
+.jim-panneau.complet .jim-complet { display: flex; }
 .jim-contexte { margin: 0; font-size: .85rem; color: var(--texte-doux); background: var(--mauve-clair); padding: .45rem .7rem; border-radius: 12px; }
-.jim-appel { text-align: center; }
-.jim-appel .libelle-appel { margin-top: .7rem; font-size: 1rem; }
-.bouton-appel.petit { width: 84px; height: 84px; }
-.jim-fil { overflow-y: auto; min-height: 0; flex: 1; font-size: .95rem; }
-.jim-fil:empty { display: none; }
+.jim-fil { overflow-y: auto; min-height: 4rem; flex: 1; font-size: .95rem; }
 .jim-lien { align-self: center; font-size: .85rem; color: var(--orange-texte); }
-/* Les états de l'appel (parle, ecoute, connexion) sont posés sur le panneau :
-   les règles de la grande page s'appliquent telles quelles au petit bouton. */
+/* En compact, on réserve la place de la barre en bas de page : rien n'est caché dessous.
+   Les boutons « Précédent / Suivant » des leçons remontent juste au-dessus. */
+body.jim-compact main { padding-bottom: 6rem; }
+body.jim-compact .actions-lecon { bottom: calc(var(--hauteur-onglets) + env(safe-area-inset-bottom) + 5.4rem); }
+body.jim-compact .toast { bottom: calc(var(--hauteur-onglets) + env(safe-area-inset-bottom) + 6rem); }
+@media (min-width: 760px) {
+  body.jim-compact .actions-lecon { bottom: 1rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   .jim-panneau, .jim-panneau.ouvert { transition: none; }
 }

@@ -45,6 +45,9 @@ export const PICTOS = {
   feu: 'M12 21a7 7 0 0 0 7-7c0-5-5-6-5-11-3 2-5 5-5 8-1-.5-2-2-2-3-1 1.500-2 3.500-2 6a7 7 0 0 0 7 7z',
   theme: 'M20 14A8 8 0 1 1 10 4a7 7 0 0 0 10 10z',
   menu: 'M4 7h16M4 12h16M4 17h16',
+  // Agrandir / réduire : des flèches vers les coins, ou vers le centre (panneau de Jim).
+  agrandir: 'M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7',
+  reduire: 'M19 11h-6V5M5 13h6v6M13 11l7-7M11 13l-7 7',
   // Micro : la capsule, l'arceau du pied et la base (assistant vocal).
   micro: 'M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5.500 11.500a6.500 6.500 0 0 0 13 0M12 18v3M8.500 21h7',
 };

@@ -40,7 +40,7 @@ function sousTitre(source, texte) {
   b.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-function repos(message = 'Conversation terminée. Vous pouvez en relancer une quand vous voulez.') {
+function repos(message = 'Conversation terminée. Relance-le quand tu veux.') {
   session = null;
   etat(null);
   icone.replaceChildren(picto('micro', 40));
@@ -62,7 +62,7 @@ async function basculer() {
         etat(`en-ligne ${e}`);
         icone.replaceChildren(picto('croix', 40));
         libelle.textContent = 'Raccrocher';
-        etatAppel.textContent = e === 'parle' ? 'Jim parle… (vous pouvez le couper)' : 'À vous, Jim vous écoute';
+        etatAppel.textContent = e === 'parle' ? 'Jim parle… (tu peux le couper)' : 'À toi, Jim t\'écoute';
       },
       surMessage: sousTitre,
       surFin: () => repos(),

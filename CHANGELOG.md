@@ -1,5 +1,14 @@
 # Journal des versions
 
+## v1.4.0 — 5 novembre 2026
+
+- Jim **tutoie** toujours, dès son message d'accueil.
+- Le panneau de Jim s'ouvre désormais en **barre compacte** en bas de l'écran : la page reste visible et utilisable
+  pendant la conversation, avec la dernière phrase de Jim en sous-titre. Un bouton l'**agrandit** en conversation
+  complète (tous les sous-titres), un autre la réduit, sans couper l'appel. Le dernier choix est mémorisé.
+- Les boutons « Précédent / Suivant » des leçons remontent au-dessus de la barre de Jim.
+- Jim sait que la page reste visible : il peut proposer de regarder un résultat ou de bouger un curseur.
+
 ## v1.3.1 — 5 novembre 2026
 
 - Nouvelle voix pour Jim, à l'accent parisien (la précédente sonnait québécoise).

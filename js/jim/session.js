@@ -150,5 +150,5 @@ export async function ouvrirSession(rappels, { suivre = true } = {}) {
 
 /** Message d'erreur lisible : micro refusé, ou autre souci (réseau, service indisponible). */
 export const messageErreur = (e) => (e && e.name === 'NotAllowedError'
-  ? 'Le micro est bloqué : autorisez-le dans les réglages du navigateur, puis réessayez.'
-  : 'Impossible de joindre Jim pour l\'instant. Vérifiez la connexion et réessayez.');
+  ? 'Le micro est bloqué : autorise-le dans les réglages du navigateur, puis réessaie.'
+  : 'Impossible de joindre Jim pour l\'instant. Vérifie la connexion et réessaie.');
