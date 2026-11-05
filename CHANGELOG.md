@@ -1,5 +1,12 @@
 # Journal des versions
 
+## v1.3.1 — 5 novembre 2026
+
+- Nouvelle voix pour Jim, à l'accent parisien (la précédente sonnait québécoise).
+- Les conversations avec Jim sont enregistrées (voix et texte, sans limite de durée), avec un résumé en français
+  et une fiche par conversation : page d'origine, sujet, type de demande, hypothèse vérifiée, questions restées sans réponse.
+  La mention sous la page de Jim le signale.
+
 ## v1.3.0 — 5 novembre 2026
 
 - L'assistant vocal s'appelle désormais **Jim** : très pro sur le fond, détendu dans la forme, avec une voix jeune et dynamique (James).
