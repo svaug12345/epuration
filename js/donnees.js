@@ -10,6 +10,7 @@ export const MODULES = [
 ];
 
 export const OUTILS = [
+  { chemin: 'outils/assistant.html', titre: 'Assistant vocal', sous: 'Posez vos questions, testez vos hypothèses, à voix haute', picto: 'micro', teinte: 'mauve' },
   { chemin: 'outils/boues-activees.html', titre: 'Simulateur boues activées', sous: 'Réglez la station, regardez le bassin réagir', picto: 'bulles', teinte: '' },
   { chemin: 'outils/docteur-step.html', titre: 'Docteur STEP', sous: 'Du symptôme au remède, en quelques questions', picto: 'stetho', teinte: 'mauve' },
   { chemin: 'outils/lit-bacterien.html', titre: 'Lit bactérien', sous: 'Flux sur le biofilm et force de rinçage', picto: 'couches', teinte: 'eau' },

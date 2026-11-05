@@ -1,5 +1,12 @@
 # Journal des versions
 
+## v1.2.0 — 5 novembre 2026
+
+- Nouvel outil du Labo : l'**assistant vocal**. On lui parle à voix haute pour poser une question, comprendre une notion,
+  réfléchir à deux ou vérifier une hypothèse ; il s'appuie sur les leçons, les valeurs chiffrées et le Docteur STEP du site.
+- Sous-titres de la conversation à l'écran (sigles remis en forme : DBO5, DCO…), cartes d'idées pour démarrer.
+- La base de connaissances de l'assistant est fabriquée depuis `data/` par `outils/assistant/construire_connaissances.py`.
+
 ## v1.1.0 — 4 novembre 2026
 
 - Logo JMT « Jamais Mal Traitée » sur tout le site, les vidéos et les présentations, et comme icône de l'application.

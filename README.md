@@ -28,6 +28,7 @@ Le livre lui-même n'est pas dans ce dépôt, et il ne doit jamais y entrer.
 | `tests/` | Tests du moteur et contrôle des données |
 | `medias/` | Présentations et vidéos publiées |
 | `outils/medias/` | Scripts qui les fabriquent, depuis `data/modules/` |
+| `outils/assistant/` | Assistant vocal : consignes, base de connaissances et son générateur (voir LISEZMOI) |
 
 ## Lancer le site et les tests
 

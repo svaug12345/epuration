@@ -401,3 +401,35 @@ summary { cursor: pointer; font-weight: 700; font-family: var(--titre); min-heig
 @keyframes intro-vague { to { stroke-dashoffset: 0; } }
 @keyframes intro-disparition { to { opacity: 0; visibility: hidden; } }
 @media (prefers-reduced-motion: reduce) { #intro { display: none; } }
+
+/* ---------- Assistant vocal : le gros bouton d'appel ----------
+   L'état vient des classes posées sur <body> par js/ui/assistant.js :
+   connexion → le bouton respire ; en-ligne parle → ondes orange ; en-ligne ecoute → anneau mauve. */
+.appel { text-align: center; padding: 2rem 1rem 1.4rem; margin: 1.2rem 0 1.6rem; }
+.bouton-appel {
+  position: relative; width: 132px; height: 132px; border-radius: 50%; border: 0; cursor: pointer;
+  display: grid; place-items: center; margin: 0 auto; color: #fff;
+  background: linear-gradient(135deg, #f7a25f, #c2540a);
+  box-shadow: 0 12px 32px rgba(194, 84, 10, .38);
+  transition: transform .2s, background .3s, box-shadow .3s;
+}
+.bouton-appel:hover { transform: scale(1.04); }
+.bouton-appel:active { transform: scale(.97); }
+.bouton-appel:focus-visible { outline: 3px solid var(--mauve); outline-offset: 6px; }
+.icone-appel { position: relative; z-index: 1; display: grid; }
+/* Les deux ondes : des cercles qui grandissent et s'effacent, seulement quand l'assistant parle. */
+.bouton-appel .onde { position: absolute; inset: 0; border-radius: 50%; background: var(--orange); opacity: 0; }
+.en-ligne.parle .bouton-appel .onde { animation: appel-onde 1.8s ease-out infinite; }
+.en-ligne.parle .bouton-appel .onde.deux { animation-delay: .9s; }
+@keyframes appel-onde { from { transform: scale(1); opacity: .45; } to { transform: scale(1.7); opacity: 0; } }
+/* Quand c'est à vous : le bouton passe en mauve, avec un anneau qui « écoute ». */
+.en-ligne.ecoute .bouton-appel { background: linear-gradient(135deg, #b9b8ee, #6f6dc9); box-shadow: 0 0 0 8px var(--mauve-clair), 0 12px 32px rgba(111, 109, 201, .35); }
+.connexion .bouton-appel { animation: appel-respire 1.2s ease-in-out infinite; }
+@keyframes appel-respire { 50% { transform: scale(.94); opacity: .8; } }
+.libelle-appel { font-family: var(--titre); font-weight: 700; font-size: 1.15rem; margin: 1.1rem 0 .2rem; }
+.etat-appel { color: var(--texte-doux); font-size: .95rem; margin: 0; min-height: 1.4em; }
+.idees button.carte { width: 100%; text-align: left; }
+#sous-titres { margin-bottom: 1rem; }
+@media (prefers-reduced-motion: reduce) {
+  .en-ligne.parle .bouton-appel .onde, .connexion .bouton-appel { animation: none; }
+}
