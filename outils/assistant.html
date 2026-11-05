@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Assistant vocal · Épuration</title>
-  <meta name="description" content="Parlez à voix haute avec l'assistant : questions, notions à comprendre, hypothèses à vérifier sur l'épuration biologique.">
+  <title>Jim, l'assistant vocal · Épuration</title>
+  <meta name="description" content="Parlez à voix haute avec Jim : questions, notions à comprendre, hypothèses à vérifier sur l'épuration biologique.">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
@@ -15,8 +15,9 @@
   <!-- data-bandeau : habillage.js ajoute le bandeau « Outil pédagogique » en haut de la page -->
   <main data-bandeau class="etroit">
     <p class="surtitre">Le labo · à voix haute</p>
-    <h1 style="margin-top:0;font-size:clamp(1.7rem,6vw,2.8rem)">Assistant vocal</h1>
-    <p class="intro">Un tuteur à qui parler : il répond, vous fait réfléchir et vérifie vos raisonnements avec les règles du site.</p>
+    <h1 style="margin-top:0;font-size:clamp(1.7rem,6vw,2.8rem)">Jim, l'assistant vocal</h1>
+    <p class="intro">Un tuteur à qui parler : il répond, vous fait réfléchir et vérifie vos raisonnements avec les règles du site.
+      Sur les autres pages, Jim se cache derrière le petit micro de la barre du haut, et il voit la page où vous êtes.</p>
 
     <!-- La carte d'appel : un gros bouton rond qui pulse quand l'assistant parle.
          Les classes posées sur <body> (connexion, en-ligne, parle, ecoute) pilotent l'apparence. -->
@@ -26,7 +27,7 @@
         <span class="onde deux" aria-hidden="true"></span>
         <span id="icone-appel" class="icone-appel"></span>
       </button>
-      <p id="libelle" class="libelle-appel">Parler à l'assistant</p>
+      <p id="libelle" class="libelle-appel">Parler à Jim</p>
       <p id="etat-appel" class="etat-appel" aria-live="polite">Autorisez le micro quand le navigateur le demande.</p>
     </section>
 
@@ -38,7 +39,7 @@
     <h2 id="titre-fil" hidden>La conversation</h2>
     <div id="sous-titres" class="fil" aria-live="polite"></div>
 
-    <p class="discret" style="margin-top:1.5rem">L'assistant s'appuie sur les leçons, les valeurs chiffrées et le Docteur STEP du site.
+    <p class="discret" style="margin-top:1.5rem">Jim est une intelligence artificielle. Il s'appuie sur les leçons, les valeurs chiffrées et le Docteur STEP du site.
       Il peut se tromper : vérifiez les chiffres importants dans les modules. Une séance dure au plus 10 minutes ;
       la conversation passe par un service vocal externe, qui peut l'enregistrer : n'y donnez pas d'informations personnelles.</p>
   </main>

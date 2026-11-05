@@ -92,9 +92,29 @@ function creerEntete() {
   });
   majTheme();
 
-  ligne.append(marque, creerLiens('nav-haut'), pastille, recherche, theme);
+  // Jim, l'assistant vocal : un simple bouton micro, discret, sur toutes les pages.
+  // Pas sur la page « Assistant vocal », qui a déjà son grand bouton.
+  const elements = [marque, creerLiens('nav-haut'), pastille];
+  if (!location.pathname.endsWith('outils/assistant.html')) elements.push(creerBoutonJim());
+  ligne.append(...elements, recherche, theme);
   entete.append(ligne);
   return entete;
+}
+
+/** Bouton micro de la barre du haut. Le panneau de Jim (js/ui/jim.js) n'est chargé qu'au premier toucher. */
+function creerBoutonJim() {
+  const bouton = document.createElement('button');
+  bouton.className = 'bouton-icone bouton-jim';
+  bouton.type = 'button';
+  bouton.setAttribute('aria-label', 'Parler à Jim, l\'assistant vocal');
+  bouton.setAttribute('aria-expanded', 'false');
+  bouton.title = 'Jim, l\'assistant vocal';
+  bouton.append(picto('micro', 22));
+  bouton.addEventListener('click', async () => {
+    const { basculerPanneau } = await import('./jim.js');
+    basculerPanneau();
+  });
+  return bouton;
 }
 
 function creerPied() {

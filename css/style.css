@@ -433,3 +433,41 @@ summary { cursor: pointer; font-weight: 700; font-family: var(--titre); min-heig
 @media (prefers-reduced-motion: reduce) {
   .en-ligne.parle .bouton-appel .onde, .connexion .bouton-appel { animation: none; }
 }
+
+/* ---------- Jim sur toutes les pages ----------
+   Le bouton micro de la barre du haut, teinté mauve pour qu'on le repère sans qu'il crie. */
+.bouton-jim { color: var(--mauve); position: relative; }
+.bouton-jim[aria-expanded='true'] { background: var(--mauve-clair); }
+/* Le panneau : une feuille qui monte du bas sur mobile, une carte en bas à droite sur grand écran. */
+.jim-panneau {
+  position: fixed; z-index: 45; left: 0; right: 0;
+  bottom: calc(var(--hauteur-onglets) + env(safe-area-inset-bottom));
+  max-height: min(78vh, 40rem); display: flex; flex-direction: column; gap: .6rem;
+  padding: 1rem 1rem .9rem; background: var(--surface); color: var(--texte);
+  border-radius: 24px 24px 0 0; border: 1px solid var(--bord); box-shadow: var(--ombre-forte);
+  transform: translateY(110%); visibility: hidden;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), visibility 0s .35s;
+}
+.jim-panneau.ouvert { transform: none; visibility: visible; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+@media (min-width: 760px) {
+  /* Sur ordinateur, pas d'onglets en bas : la carte flotte dans le coin. */
+  .jim-panneau { left: auto; right: 1.2rem; bottom: 1.2rem; width: 23rem; border-radius: var(--rayon); }
+}
+.jim-tete { display: flex; align-items: center; gap: .7rem; }
+.jim-tete .medaille { width: 40px; height: 40px; border-radius: 13px; }
+.jim-tete div { flex: 1; line-height: 1.2; }
+.jim-tete strong { font-family: var(--titre); font-size: 1.1rem; display: block; }
+.jim-tete .sous { color: var(--texte-doux); font-size: .85rem; }
+.jim-contexte { margin: 0; font-size: .85rem; color: var(--texte-doux); background: var(--mauve-clair); padding: .45rem .7rem; border-radius: 12px; }
+.jim-appel { text-align: center; }
+.jim-appel .libelle-appel { margin-top: .7rem; font-size: 1rem; }
+.bouton-appel.petit { width: 84px; height: 84px; }
+.jim-fil { overflow-y: auto; min-height: 0; flex: 1; font-size: .95rem; }
+.jim-fil:empty { display: none; }
+.jim-lien { align-self: center; font-size: .85rem; color: var(--orange-texte); }
+/* Les états de l'appel (parle, ecoute, connexion) sont posés sur le panneau :
+   les règles de la grande page s'appliquent telles quelles au petit bouton. */
+@media (prefers-reduced-motion: reduce) {
+  .jim-panneau, .jim-panneau.ouvert { transition: none; }
+}
+@media print { .bouton-jim, .jim-panneau { display: none; } }

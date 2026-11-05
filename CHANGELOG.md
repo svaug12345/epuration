@@ -1,5 +1,13 @@
 # Journal des versions
 
+## v1.3.0 — 5 novembre 2026
+
+- L'assistant vocal s'appelle désormais **Jim** : très pro sur le fond, détendu dans la forme, avec une voix jeune et dynamique (James).
+- Jim est disponible **sur toutes les pages**, derrière un petit micro mauve dans la barre du haut : il s'ouvre dans un panneau discret.
+- Jim **voit la page où vous êtes** : titre, étape de leçon en cours, valeurs saisies dans un calculateur et résultats affichés.
+  Si vous changez d'étape ou de valeur pendant l'appel, il est prévenu sans interrompre la conversation.
+- Code de conversation commun aux deux interfaces (`js/jim/session.js`).
+
 ## v1.2.0 — 5 novembre 2026
 
 - Nouvel outil du Labo : l'**assistant vocal**. On lui parle à voix haute pour poser une question, comprendre une notion,
