@@ -1,0 +1,42 @@
+# Glossaire : sigles et notions
+
+- **DBO5** (Demande biochimique en oxygène à 5 jours) : Oxygène consommé en 5 jours par les bactéries pour dégrader la matière organique de l'eau. Elle mesure la pollution que la biologie sait attaquer rapidement. (unité : mg O2/l)
+- **DCO** (Demande chimique en oxygène) : Oxygène nécessaire pour oxyder chimiquement presque toute la matière de l'eau, biodégradable ou non. Elle est donc supérieure à la DBO5. (unité : mg O2/l)
+- **MES** (Matières en suspension) : Particules solides retenues par un filtre. Une eau de sortie riche en MES signale souvent un problème de décantation. (unité : mg/l)
+- **MVS** (Matières volatiles en suspension) : Part organique des matières en suspension, celle qui disparaît par calcination. Elle approche la biomasse réelle. (unité : mg/l)
+- **MS** (Matières sèches) : Masse de solides restant après séchage. La concentration en boues d'un bassin s'exprime souvent ainsi. (unité : g/l)
+- **EH** (Équivalent-habitant) : Unité de pollution : la charge organique attribuée à un habitant par jour, soit 60 g de DBO5 selon la définition réglementaire européenne. (unité : g DBO5/j)
+- **Cb** (Charge biologique, ou charge des boues) : Nourriture apportée chaque jour à chaque kilogramme de boues. C'est le réglage central d'une station : il décide de la qualité de l'eau, de la nitrification et de la décantation. (unité : kg DBO5/kg de boues.j)
+- **Cv** (Charge volumique (notée Co dans le livre)) : DBO5 apportée chaque jour par mètre cube de bassin. Elle mesure l'intensité d'utilisation de l'ouvrage. (unité : kg DBO5/m³.j)
+- **Ch** (Charge hydraulique) : Hauteur d'eau répartie sur la surface d'un lit bactérien par unité de temps. (unité : m/h ou m³/m².j)
+- **θc** (Âge des boues) : Durée moyenne de présence des boues dans le système : masse de boues présente divisée par la masse évacuée chaque jour. Il décide quels organismes peuvent se maintenir. (unité : j)
+- **θl** (Temps de séjour hydraulique) : Durée moyenne de passage de l'eau dans le bassin : volume divisé par débit. À ne pas confondre avec l'âge des boues, car les boues sont recyclées et l'eau non. (unité : h ou j)
+- **Y** (Rendement de croissance) : Masse de biomasse fabriquée par masse de pollution consommée. (unité : g de biomasse/g de substrat)
+- **b** (Taux de disparition de la biomasse) : Part de la biomasse perdue chaque jour par mortalité, prédation et respiration endogène. (unité : 1/j)
+- **µ** (Taux de croissance) : Vitesse à laquelle une population de micro-organismes augmente. µ̂ désigne sa valeur maximale. (unité : 1/j)
+- **Ks** (Constante de saturation) : Concentration de nourriture pour laquelle la croissance atteint la moitié de son maximum, dans la loi de Monod. (unité : mg/l)
+- **S0, S1** (Substrat en entrée et en sortie) : Concentrations de pollution à l'entrée et à la sortie du réacteur. (unité : mg/l)
+- **B** (Concentration de biomasse) : Quantité de boues par litre. Ba, Br et Be désignent les boues de l'aérateur, du recyclage et de l'effluent. (unité : mg/l ou g/l)
+- **r** (Taux de recyclage) : Débit de boues renvoyé vers le bassin, rapporté au débit d'eau entrant. (unité : sans unité)
+- **σ** (Surface spécifique) : Surface de support offerte au biofilm par mètre cube de lit bactérien. (unité : m²/m³)
+- **S (rinçage)** (Force de rinçage) : Hauteur d'eau déposée à chaque passage d'un bras d'un lit bactérien. Elle règle l'épaisseur du biofilm. (unité : mm)
+- **SVI** (Indice de boue) : Volume occupé par un gramme de boues après 30 minutes de décantation dans une éprouvette d'un litre. Plus il est élevé, plus la boue décante mal. (unité : ml/g)
+- **AGV** (Acides gras volatils) : Produits intermédiaires de la digestion anaérobie, que les méthanogènes transforment en méthane. Leur accumulation signale un digesteur en difficulté. (unité : mg/l)
+- **Biomasse** () : Ensemble des êtres vivants du réacteur : bactéries, protozoaires et petits animaux.
+- **Boues activées** () : Procédé où des flocons de bactéries en suspension dans un bassin aéré dégradent la pollution, puis décantent et sont en partie recyclés.
+- **Lit bactérien** () : Procédé où l'eau ruisselle sur un support couvert d'un film de bactéries, appelé biofilm, aéré naturellement ou par ventilation.
+- **Biofilm** () : Couche de micro-organismes fixée sur un support. L'oxygène n'y pénètre que sur une très faible épaisseur.
+- **Floc** () : Petit amas de bactéries et de matières qui décante. Sa bonne formation conditionne la clarté de l'eau de sortie.
+- **Clarificateur** (Décanteur secondaire) : Bassin calme placé après le traitement biologique, où les boues se déposent pour être séparées de l'eau épurée.
+- **Gonflement** (Bulking) : Boue qui décante mal parce qu'elle retient trop d'eau, ou parce que des bactéries filamenteuses s'y développent.
+- **Nitrification** () : Oxydation de l'ammonium en nitrite puis en nitrate par des bactéries autotrophes lentes. Elle demande de l'oxygène et un âge des boues suffisant.
+- **Dénitrification** () : Réduction du nitrate en azote gazeux par des bactéries hétérotrophes, sans oxygène dissous et avec une source de carbone.
+- **Déphosphatation biologique** () : Élimination renforcée du phosphore en faisant alterner des phases anaérobies et aérobies, qui poussent certaines bactéries à le stocker.
+- **Méthanisation** (Digestion anaérobie) : Dégradation sans oxygène qui transforme la matière organique en biogaz, un mélange de méthane et de gaz carbonique.
+- **Lagunage** (Étang de stabilisation) : Épuration lente dans de grands bassins peu profonds, où les bactéries consomment la pollution et les algues produisent une partie de l'oxygène.
+- **Hétérotrophe** () : Se dit d'un organisme qui tire son carbone de la matière organique.
+- **Autotrophe** () : Se dit d'un organisme qui tire son carbone du gaz carbonique dissous, comme les bactéries nitrifiantes.
+- **Anoxie** () : Absence d'oxygène dissous, avec présence de nitrate que les bactéries peuvent utiliser à sa place.
+- **Anaérobie** () : Absence d'oxygène dissous et de nitrate.
+- **Liqueur mixte** () : Mélange d'eau et de boues contenu dans le bassin d'aération.
+- **Sélecteur** () : Petit bassin placé en tête d'aération, où l'eau rencontre la boue à forte concentration de nourriture. Il favorise les bactéries formant de bons flocs.
